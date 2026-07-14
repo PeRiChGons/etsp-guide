@@ -80,6 +80,32 @@
         'La evolución observada solicita una copia del Spirit y otro material de estrella.',
         'La interfaz ofrece Quick evolution y filtros All, SR, SSR y Meta.'
       ],
+      treasure: {
+        tabs: ['Kismet', 'Cross-Server Log', 'Personal Records'],
+        drawActions: ['Single Draw', '10-Draw', '50-Draw'],
+        guarantees: ['Cada 50 draws garantiza 3-Star SSR', 'Cada 10 draws garantiza 2-Star SR'],
+        visibleMessages: ['Fortuna Favors You!', 'Kismet Spirit Treasure Luck Points have been cleared!'],
+        voucher: 'Wisp Voucher',
+        voucherPrompt: 'Spend 110 to purchase and complete this Treasure Hunt?',
+        arraycore: [
+          'Alioth Arraycore · T22 · HP 575 · DEF 72',
+          'Mizar Arraycore · T22 · ATK 21 · S.A 72',
+          'Alkaid Arraycore · T14 · HP 2300 · DEF 288'
+        ],
+        arrayFacts: [
+          'La pantalla muestra Main Array, Assistance Array y Arraycore.',
+          'El texto visible indica que los Spirits del Assistance Array aumentan el daño de Awakening Skill según sus estrellas.',
+          'Fast Evolution permite mejorar rápidamente Spirits inferiores a 5 estrellas que puedan evolucionar.',
+          'Los Spirits de 5 estrellas o superiores aparecen seleccionados por defecto en Fast Evolution.',
+          'Put in spirits solicita dos Spirits de 5 estrellas en la pantalla observada.'
+        ],
+        pending: [
+          'Coste real de cada tipo de draw y moneda utilizada.',
+          'Reglas completas de Luck Points y del Treasure Hunt.',
+          'Relación exacta entre Wisp Voucher, Kismet y Spirit Treasure.',
+          'Recompensas completas y requisitos de Fast Evolution.'
+        ]
+      },
       bond: {
         tabs: ['Present', 'Biography'],
         ranks: ['Stranger', 'Familiar', 'Confidant', 'Admired'],

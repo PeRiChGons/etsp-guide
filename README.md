@@ -14,6 +14,7 @@ Aplicación web responsive y comunitaria para organizar una futura guía de **Et
 - página propia de Spirit con 15 Spirits, Array, Evolution, Cleanse y Pill Array;
 - estructura de Bond documentada mediante dos vídeos, con rangos, afinidad, Biography y capítulos;
 - primera pantalla documentada del nuevo sistema Wisp;
+- registro provisional de Hot Spring, Kunlun, Love/Token y Kismet/Spirit Treasure a partir de vídeos;
 - registro de fuentes oficiales, guías externas y contradicciones detectadas;
 - información de autoría, fuentes y carácter no oficial del proyecto.
 

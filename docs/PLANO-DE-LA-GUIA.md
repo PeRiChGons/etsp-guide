@@ -13,6 +13,7 @@ La web es una aplicación de una sola página compatible con GitHub Pages. `inde
 - `404.html`: devuelve rutas desconocidas a la aplicación mediante hash.
 - `assets/images/`: carpetas preparadas para imágenes futuras.
 - `docs/INVESTIGACION-WEB.md`: fuentes públicas consultadas, contradicciones y datos pendientes de comprobar.
+- `docs/REGISTRO-VIDEOS.md`: observaciones provisionales de vídeos del juego y criterios de verificación.
 
 No se utilizan frameworks, iframes externos, traductor automático ni integraciones reales de comentarios o Discord.
 
@@ -24,7 +25,7 @@ Las clases Dragon Lancer, Lunarborn, Spiritfox y Swordsage cuentan con rutas ind
 
 Las páginas maestras de Stats, Spirit Root, Technique, Spirit y Wisp ya distinguen entre datos confirmados y datos pendientes. SwordFlight y Zodiac disponen de catálogos iniciales para incorporar la información sin duplicarla dentro de cada clase.
 
-Spirit dispone de la ruta `#/sistemas-del-personaje/spirit`. Es un sistema independiente de Wisp y organiza las pantallas de Details, Upgrade, Array, Evolution, Bond, Cleanse y Demoncore. El PDF y los vídeos permiten documentar 15 Spirits, varios Pill Arrays y la estructura de Bond, aunque sus costes y efectos completos siguen pendientes.
+Spirit dispone de la ruta `#/sistemas-del-personaje/spirit`. Es un sistema independiente de Wisp y organiza las pantallas de Details, Upgrade, Array, Evolution, Bond, Cleanse y Demoncore. El PDF y los vídeos permiten documentar 15 Spirits, varios Pill Arrays y la estructura de Bond, aunque sus costes y efectos completos siguen pendientes. La ruta incluye también un apartado provisional de Kismet / Spirit Treasure, separado de Wisp hasta confirmar la relación entre ambos sistemas.
 
 Wisp dispone de la ruta `#/sistemas-del-personaje/wisp`. Registra únicamente la primera pantalla observada y mantiene como pendientes Sacrifice, Spirit Beast Bag, Resonance, Stats Overview y Northern Abyss Order.
 

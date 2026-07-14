@@ -159,6 +159,7 @@
     var data = window.REFERENCE_DATA.spirit;
     var cleanseVideo = data.cleanseVideo;
     var bond = data.bond;
+    var treasure = data.treasure;
     var rarityCards = data.rarities.map(function (group) {
       return '<article class="fact-card"><h3>' + escapeHtml(group.label) + '</h3>' + tags(group.names, false) + '</article>';
     }).join('');
@@ -180,6 +181,10 @@
       '<article class="fact-card"><h3>Upgrade</h3>' + tags(data.upgradeActions, false) + '<p>La pantalla compara los valores actuales con los posteriores a la mejora y avisa de que el progreso se conserva al cambiar el Spirit desplegado.</p></article></div></section>' +
       '<section class="system-section" id="array-y-arraycore"><h2>Array y Arraycore</h2><div class="fact-grid"><article class="fact-card"><h3>Funcionamiento observado</h3>' + facts(data.arrayFacts) + '</article>' +
       '<article class="fact-card"><h3>Acciones observadas</h3>' + tags(data.arrayActions, false) + '<p>La pestaña <span lang="en">Arraycore</span> muestra piezas con tier y estadísticas, pero todavía falta documentar sus reglas completas.</p></article></div></section>' +
+      '<section class="system-section" id="kismet-spirit-treasure"><h2>Kismet / Spirit Treasure</h2><div class="fact-grid"><article class="fact-card"><h3>Pantallas y acciones visibles</h3>' + tags(treasure.tabs, false) + tags(treasure.drawActions, false) + '<p>La pantalla muestra un contador de suerte y registros de premios. No se presenta como un sistema permanente hasta verificar su duración.</p></article>' +
+      '<article class="fact-card"><h3>Garantías mostradas</h3>' + tags(treasure.guarantees, false) + '<p>Son textos observados en el vídeo y deben comprobarse en la ayuda del juego antes de publicarse como regla general.</p></article>' +
+      '<article class="fact-card"><h3>Wisp Voucher</h3>' + badge('Texto visible; relación pendiente', true) + '<p><span lang="en">' + escapeHtml(treasure.voucher) + '</span> aparece en una ventana que pregunta si se quieren gastar 110 para completar el <span lang="en">Treasure Hunt</span>.</p></article></div>' +
+      '<h3>Arraycore y evolución mostrados en la misma grabación</h3>' + tags(treasure.arraycore, false) + facts(treasure.arrayFacts) + '<aside class="verification-note"><strong>Contenido pendiente:</strong> costes, monedas, recompensas completas y relación exacta entre Kismet, Spirit Treasure y Wisp Voucher.</aside></section>' +
       '<section class="system-section" id="evolution"><h2>Evolution</h2>' + facts(data.evolutionFacts) + '<aside class="verification-note"><strong>Límite de la evidencia:</strong> los requisitos cambian según rareza, estrellas y estado del Spirit; no se publica todavía una tabla de costes.</aside></section>' +
       '<section class="system-section" id="bond"><h2>Bond</h2>' + badge('Flujo confirmado en vídeos', false) + '<p>Bond es la pantalla de afinidad de cada Spirit. Los vídeos muestran las pestañas <span lang="en">Present</span> y <span lang="en">Biography</span>, varios rangos de relación y capítulos de historia.</p>' +
       '<div class="fact-grid"><article class="fact-card"><h3>Present</h3>' + tags(bond.actions, false) + tags(bond.intimacyObserved, false) + '<p>La pantalla también muestra estadísticas de referencia y los botones <span lang="en">Quick Upgrade</span> y <span lang="en">Upgrade</span>. Las cifras observadas dependen del Spirit y de la cuenta mostrada.</p></article>' +

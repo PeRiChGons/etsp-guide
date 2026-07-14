@@ -157,6 +157,7 @@
 
   function renderSpirit(page) {
     var data = window.REFERENCE_DATA.spirit;
+    var cleanseVideo = data.cleanseVideo;
     var rarityCards = data.rarities.map(function (group) {
       return '<article class="fact-card"><h3>' + escapeHtml(group.label) + '</h3>' + tags(group.names, false) + '</article>';
     }).join('');
@@ -178,7 +179,17 @@
       '<section class="system-section" id="evolution"><h2>Evolution</h2>' + facts(data.evolutionFacts) + '<aside class="verification-note"><strong>Límite de la evidencia:</strong> los requisitos cambian según rareza, estrellas y estado del Spirit; no se publica todavía una tabla de costes.</aside></section>' +
       '<section class="system-section" id="bond"><h2>Bond</h2>' + badge('Pestaña confirmada', false) + '<p>La pestaña aparece en todas las fichas revisadas, pero el PDF no incluye su contenido abierto.</p>' + badge('Funcionamiento pendiente', true) + '</section>' +
       '<section class="system-section" id="cleanse-y-tier-up"><h2>Cleanse y Tier Up</h2><div class="fact-grid"><article class="fact-card"><h3>Aptitudes observadas</h3>' + tags(data.cleanseStats, false) + '</article>' +
-      '<article class="fact-card"><h3>Acciones y materiales</h3>' + tags(data.cleanseActions, false) + tags(data.cleanseMaterials, false) + '<p>Las capturas muestran un límite de Cleanse relacionado con estrellas, categoría y tier, pero la regla completa todavía debe verificarse.</p></article></div></section>' +
+      '<article class="fact-card"><h3>Acciones y materiales</h3>' + tags(data.cleanseActions, false) + tags(data.cleanseMaterials, false) + '<p>Las capturas muestran un límite de Cleanse relacionado con estrellas, categoría y tier, pero la regla completa todavía debe verificarse.</p></article>' +
+      '<article class="fact-card"><h3>Prueba grabada</h3>' + badge('Flujo confirmado en vídeo', false) + facts([
+        cleanseVideo.spirit + ' · ' + cleanseVideo.rarity + ' · ' + cleanseVideo.tier + '.',
+        'Duración revisada: ' + cleanseVideo.duration + '.',
+        'Límite mostrado: ' + cleanseVideo.displayedCap + '.',
+        'Spirit Aptitude mostrado: ' + cleanseVideo.startingTotal + ' → ' + cleanseVideo.observedTotal + '.',
+        'Power mostrado: ' + cleanseVideo.startingPower + ' → ' + cleanseVideo.observedPower + '.'
+      ]) + '</article></div>' +
+      '<h3>Cleanse manual</h3><p>Valores iniciales del ejemplo:</p>' + tags(cleanseVideo.startingAptitudes, false) + facts(cleanseVideo.manualFlow) +
+      '<p>En el estado inicial estable, la suma de las cinco aptitudes coincide con <strong>Spirit Aptitude ' + cleanseVideo.startingTotal + '</strong>. El material seleccionado pasa de <strong>' + escapeHtml(cleanseVideo.basicPillCounter) + '</strong> durante toda la grabación.</p>' +
+      '<h3>Auto Refine y Smart Refinement</h3>' + facts(cleanseVideo.automaticFlow) + '<aside class="verification-note"><strong>Pendiente:</strong> el vídeo no abre Tier Up ni la ayuda del sistema, por lo que todavía no se explica cómo aumenta el máximo de cada aptitud ni qué condición exacta utiliza Smart Refinement.</aside></section>' +
       '<section class="system-section" id="demoncore-y-pill-array"><h2>Demoncore y Pill Array</h2><div class="fact-grid"><article class="fact-card"><h3>Grupos observados</h3>' + tags(data.pillArrayGroups, false) + '<p>Un Pill Array se activa al equipar la cantidad, color y estrellas de Demoncores indicados. Al activarse muestra estadísticas de conjunto.</p></article>' +
       '<article class="fact-card"><h3>Pill Arrays observados</h3>' + tags(data.pillArrays, false) + '</article>' +
       '<article class="fact-card"><h3>Gestión de Demoncores</h3>' + tags(data.demoncoreActions, false) + '<p>Las piezas abiertas figuran como <span lang="en">Universal</span> y muestran estrellas, estadísticas y Power.</p></article></div></section>' +

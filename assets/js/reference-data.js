@@ -83,6 +83,32 @@
       cleanseStats: ['HP Aptitude', 'ATK Aptitude', 'DEF Aptitude', 'S.A Aptitude', 'PEN Aptitude', 'CRIT Aptitude', 'Block Aptitude', 'TEN Aptitude'],
       cleanseActions: ['Auto Refine', 'Cleanse', 'Smart Refinement', 'Tier Up'],
       cleanseMaterials: ['Basic Cleansing Pill', 'Advanced Cleansing Pill'],
+      cleanseVideo: {
+        captureDate: '14 de julio de 2026',
+        duration: '47,77 segundos',
+        spirit: 'Dark Phoenix',
+        rarity: 'UR',
+        tier: 'T7',
+        displayedCap: '14-Star Meta Spirit Cleanse Cap: T10',
+        startingAptitudes: ['HP 437/500', 'ATK 406/500', 'PEN 399/500', 'Crit 414/500', 'TEN 435/500'],
+        startingTotal: 2091,
+        startingPower: '5.251.158',
+        observedTotal: 2119,
+        observedPower: '5.296.924',
+        basicPillCounter: '33/1 → 6/1',
+        manualFlow: [
+          'Cleanse genera una propuesta para las cinco aptitudes.',
+          'Las flechas verdes y rojas comparan la propuesta con los valores aceptados.',
+          'Do not replace descarta la propuesta y Replace la aplica.',
+          'El contador de Basic Cleansing Pill disminuye una unidad por intento observado.'
+        ],
+        automaticFlow: [
+          'Auto Refine repite los intentos sin nuevas pulsaciones.',
+          'Mientras está activo, el botón cambia a Stop Refining.',
+          'Smart Refinement estaba activado durante la ejecución automática.',
+          'El criterio exacto usado por Smart Refinement no se muestra en el vídeo.'
+        ]
+      },
       pillArrayGroups: ['Trace Pill Array', 'Spirit Pill Array'],
       pillArrays: [
         'Sweeping Sand Array', 'Nether Frost Array', 'Earth Heart Array', 'Pit Treasure Array',

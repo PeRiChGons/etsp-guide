@@ -77,6 +77,23 @@ Las etiquetas **Battle** y **Aid** se observan en las fichas y en los arrays. Su
 - Están disponibles Auto Refine, Cleanse y Smart Refinement.
 - La pantalla muestra límites asociados a estrellas, categoría y tier, pero todavía falta determinar la regla completa.
 
+#### Flujo confirmado en vídeo
+
+El vídeo `Cleanse.mp4`, de 47,77 segundos, muestra una sesión con Dark Phoenix UR en T7:
+
+- estado inicial: HP 437/500, ATK 406/500, PEN 399/500, Crit 414/500 y TEN 435/500;
+- la suma de esas cinco cifras coincide con Spirit Aptitude 2091;
+- el Power inicial mostrado es 5.251.158;
+- al pulsar Cleanse se genera una propuesta con diferencias verdes y rojas;
+- Do not replace descarta la propuesta y Replace la aplica;
+- cada intento observado reduce una unidad el contador de Basic Cleansing Pill;
+- el contador pasa de 33/1 a 6/1 durante la grabación;
+- Auto Refine repite las tiradas y cambia el botón a Stop Refining;
+- Smart Refinement está activado durante la ejecución automática;
+- mientras Auto Refine sigue funcionando, Spirit Aptitude alcanza 2119 y el Power mostrado 5.296.924.
+
+El vídeo no abre Tier Up ni la ayuda. Por ello, siguen pendientes el criterio exacto de Smart Refinement, los límites por tier y el funcionamiento de Advanced Cleansing Pill.
+
 ### Demoncore y Pill Array
 
 - Existen los grupos Trace Pill Array y Spirit Pill Array.

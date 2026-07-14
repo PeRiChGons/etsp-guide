@@ -24,7 +24,7 @@ Las clases Dragon Lancer, Lunarborn, Spiritfox y Swordsage cuentan con rutas ind
 
 Las páginas maestras de Stats, Spirit Root, Technique, Spirit y Wisp ya distinguen entre datos confirmados y datos pendientes. SwordFlight y Zodiac disponen de catálogos iniciales para incorporar la información sin duplicarla dentro de cada clase.
 
-Spirit dispone de la ruta `#/sistemas-del-personaje/spirit`. Es un sistema independiente de Wisp y organiza las pantallas de Details, Upgrade, Array, Evolution, Bond, Cleanse y Demoncore. El material aportado permite documentar 15 Spirits y varios Pill Arrays, pero Bond permanece pendiente porque no aparece abierto.
+Spirit dispone de la ruta `#/sistemas-del-personaje/spirit`. Es un sistema independiente de Wisp y organiza las pantallas de Details, Upgrade, Array, Evolution, Bond, Cleanse y Demoncore. El PDF y los vídeos permiten documentar 15 Spirits, varios Pill Arrays y la estructura de Bond, aunque sus costes y efectos completos siguen pendientes.
 
 Wisp dispone de la ruta `#/sistemas-del-personaje/wisp`. Registra únicamente la primera pantalla observada y mantiene como pendientes Sacrifice, Spirit Beast Bag, Resonance, Stats Overview y Northern Abyss Order.
 
@@ -74,7 +74,7 @@ Ya se ha incorporado la estructura contrastada de Stats, Spirit Root, Technique,
 - habilidades y recomendaciones verificadas de cada clase;
 - costes, probabilidades, materiales y métodos de obtención que todavía no se hayan capturado;
 - explicaciones detalladas de SwordFlight y Zodiac;
-- Bond, reglas completas de Arraycore, costes de Evolution y límites de Cleanse del sistema Spirit;
+- materiales, umbrales y efectos completos de Bond, reglas completas de Arraycore, costes de Evolution y límites de Cleanse del sistema Spirit;
 - funcionamiento de Wisp, Sacrifice, Resonance, Stats Overview, Spirit Beast Bag y Northern Abyss Order;
 - imágenes, capturas y recursos gráficos definitivos;
 - traducción automática;

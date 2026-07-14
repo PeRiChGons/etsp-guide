@@ -158,8 +158,12 @@
   function renderSpirit(page) {
     var data = window.REFERENCE_DATA.spirit;
     var cleanseVideo = data.cleanseVideo;
+    var bond = data.bond;
     var rarityCards = data.rarities.map(function (group) {
       return '<article class="fact-card"><h3>' + escapeHtml(group.label) + '</h3>' + tags(group.names, false) + '</article>';
+    }).join('');
+    var bondExamples = bond.examples.map(function (example) {
+      return '<article class="fact-card"><h3>' + escapeHtml(example.spirit) + '</h3>' + badge('Bond: ' + example.bond, false) + facts(example.details) + '</article>';
     }).join('');
 
     return pageHeader(
@@ -177,7 +181,12 @@
       '<section class="system-section" id="array-y-arraycore"><h2>Array y Arraycore</h2><div class="fact-grid"><article class="fact-card"><h3>Funcionamiento observado</h3>' + facts(data.arrayFacts) + '</article>' +
       '<article class="fact-card"><h3>Acciones observadas</h3>' + tags(data.arrayActions, false) + '<p>La pestaña <span lang="en">Arraycore</span> muestra piezas con tier y estadísticas, pero todavía falta documentar sus reglas completas.</p></article></div></section>' +
       '<section class="system-section" id="evolution"><h2>Evolution</h2>' + facts(data.evolutionFacts) + '<aside class="verification-note"><strong>Límite de la evidencia:</strong> los requisitos cambian según rareza, estrellas y estado del Spirit; no se publica todavía una tabla de costes.</aside></section>' +
-      '<section class="system-section" id="bond"><h2>Bond</h2>' + badge('Pestaña confirmada', false) + '<p>La pestaña aparece en todas las fichas revisadas, pero el PDF no incluye su contenido abierto.</p>' + badge('Funcionamiento pendiente', true) + '</section>' +
+      '<section class="system-section" id="bond"><h2>Bond</h2>' + badge('Flujo confirmado en vídeos', false) + '<p>Bond es la pantalla de afinidad de cada Spirit. Los vídeos muestran las pestañas <span lang="en">Present</span> y <span lang="en">Biography</span>, varios rangos de relación y capítulos de historia.</p>' +
+      '<div class="fact-grid"><article class="fact-card"><h3>Present</h3>' + tags(bond.actions, false) + tags(bond.intimacyObserved, false) + '<p>La pantalla también muestra estadísticas de referencia y los botones <span lang="en">Quick Upgrade</span> y <span lang="en">Upgrade</span>. Las cifras observadas dependen del Spirit y de la cuenta mostrada.</p></article>' +
+      '<article class="fact-card"><h3>Biography</h3>' + tags(bond.biographyFields, false) + tags(bond.chapters, false) + '<p>Los capítulos se despliegan uno a uno y pueden incluir requisitos de <span lang="en">Affinity</span>. No se traduce el texto narrativo ni se presenta como una bonificación jugable.</p></article>' +
+      '<article class="fact-card"><h3>Rangos observados</h3>' + tags(bond.ranks, false) + '<p>Los vídeos muestran <span lang="en">Stranger</span>, <span lang="en">Familiar</span>, <span lang="en">Confidant</span> y <span lang="en">Admired</span>. No se afirma que sean todos los rangos disponibles.</p></article></div>' +
+      '<h3>Ejemplos transcritos</h3><div class="fact-grid">' + bondExamples + '</div>' +
+      '<h3>Datos confirmados</h3>' + facts(bond.confirmed) + '<aside class="verification-note"><strong>Contenido pendiente:</strong> faltan los costes, los umbrales completos, los efectos exactos y la forma de conseguir afinidad.</aside></section>' +
       '<section class="system-section" id="cleanse-y-tier-up"><h2>Cleanse y Tier Up</h2><div class="fact-grid"><article class="fact-card"><h3>Aptitudes observadas</h3>' + tags(data.cleanseStats, false) + '</article>' +
       '<article class="fact-card"><h3>Acciones y materiales</h3>' + tags(data.cleanseActions, false) + tags(data.cleanseMaterials, false) + '<p>Las capturas muestran un límite de Cleanse relacionado con estrellas, categoría y tier, pero la regla completa todavía debe verificarse.</p></article>' +
       '<article class="fact-card"><h3>Prueba grabada</h3>' + badge('Flujo confirmado en vídeo', false) + facts([
@@ -193,7 +202,7 @@
       '<section class="system-section" id="demoncore-y-pill-array"><h2>Demoncore y Pill Array</h2><div class="fact-grid"><article class="fact-card"><h3>Grupos observados</h3>' + tags(data.pillArrayGroups, false) + '<p>Un Pill Array se activa al equipar la cantidad, color y estrellas de Demoncores indicados. Al activarse muestra estadísticas de conjunto.</p></article>' +
       '<article class="fact-card"><h3>Pill Arrays observados</h3>' + tags(data.pillArrays, false) + '</article>' +
       '<article class="fact-card"><h3>Gestión de Demoncores</h3>' + tags(data.demoncoreActions, false) + '<p>Las piezas abiertas figuran como <span lang="en">Universal</span> y muestran estrellas, estadísticas y Power.</p></article></div></section>' +
-      '<section class="system-section verification-method" id="datos-pendientes"><h2>Datos pendientes</h2><p>El PDF permite construir la página, pero no demuestra todavía estos detalles:</p>' + tags(data.pending, true) + '</section>' + futureZone();
+      '<section class="system-section verification-method" id="datos-pendientes"><h2>Datos pendientes</h2><p>El material disponible permite documentar la estructura, pero no demuestra todavía estos detalles:</p>' + tags(data.pending.concat(bond.pending), true) + '</section>' + futureZone();
   }
 
   function renderCatalog(page, data, description) {

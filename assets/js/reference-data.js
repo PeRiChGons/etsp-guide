@@ -80,6 +80,43 @@
         'La evolución observada solicita una copia del Spirit y otro material de estrella.',
         'La interfaz ofrece Quick evolution y filtros All, SR, SSR y Meta.'
       ],
+      bond: {
+        tabs: ['Present', 'Biography'],
+        ranks: ['Stranger', 'Familiar', 'Confidant', 'Admired'],
+        biographyFields: ['Title', 'Faction', 'Ability', 'Likes', 'Dislikes'],
+        chapters: ['Chapter 1', 'Chapter 2', 'Chapter 3', 'Chapter 4', 'Chapter 5'],
+        actions: ['Voice', 'Story', 'Return'],
+        intimacyObserved: [
+          'Zhuyan · UR · Intimacy Points Lv.200 · 0/450',
+          'Lu Wu · UR · Intimacy Points Lv.101 · 20/380',
+          'Jiang Ziya · UR · Intimacy Points Lv.146 · 20/380',
+          'Goddess Luo · SSR · Intimacy Points Lv.101 · 20/380',
+          'Vermilion Bird · SR · Intimacy Points Lv.31 · 60/240',
+          'Nezha · LR · Intimacy Points Lv.0 · 0/100'
+        ],
+        examples: [
+          { spirit: 'Zhuyan', bond: 'Admired', details: ['Title: Chaos Root', 'Faction: Ancient Demoncourt', 'Ability: War Snare', 'Likes: Banana, Yaoji', 'Dislikes: Title: Huodou'] },
+          { spirit: 'Lu Wu', bond: 'Confidant', details: ['Title: Enlightened Primabeast', 'Faction: Celestial Court', 'Ability: Circle of Sun&Moon', 'Likes: Meat, Wine', 'Dislikes: Vegetable'] },
+          { spirit: 'Yaoji', bond: 'Confidant', details: ['Title: Mount Goddess', 'Faction: Celestial Court', 'Ability: Mount Charm', 'Likes: flowers, bask in the sun', 'Dislikes: Insect'] },
+          { spirit: 'White Tiger', bond: 'Confidant', details: ['Title: White Tiger Sage', 'Faction: Ancient Demoncourt', 'Ability: White Tiger Dash', 'Likes: Monkey Head, Meat', 'Dislikes: Werewolf'] },
+          { spirit: 'Dreamsnake', bond: 'Familiar', details: ['Title: Mount Li Spirit', 'Faction: Ancient Demoncourt', 'Ability: Serpent Step', 'Likes: practice sword, read stories (texto parcialmente visible)', 'Dislikes: Realgar'] },
+          { spirit: 'Nezha', bond: 'Stranger', details: ['Title: Third Prince', 'Faction: Celestial Court', 'Ability: Samadhi Fire', 'Likes: Lotus root, toys', 'Dislikes: Pagoda King'] }
+        ],
+        confirmed: [
+          'Present muestra Intimacy Points, una barra de progreso, estadísticas de referencia y los botones Quick Upgrade y Upgrade.',
+          'Biography muestra el rango de Bond, los campos descriptivos y capítulos desplegables.',
+          'En Nezha se observan capítulos bloqueados con requisitos de Affinity Lv.1 y Affinity Lv.11.',
+          'Los vídeos recorren fichas de rareza UR, SSR, SR y LR y muestran que los valores de Intimacy Points dependen del Spirit.'
+        ],
+        pending: [
+          'Materiales y métodos para obtener Intimacy Points.',
+          'Umbrales completos de cada rango de Bond.',
+          'Bonificaciones mecánicas exactas asociadas a cada rango.',
+          'Coste y resultado de Quick Upgrade y Upgrade.',
+          'Requisitos completos de desbloqueo de cada capítulo.',
+          'Efecto de Voice, Story y de los objetos de regalo.'
+        ]
+      },
       cleanseStats: ['HP Aptitude', 'ATK Aptitude', 'DEF Aptitude', 'S.A Aptitude', 'PEN Aptitude', 'CRIT Aptitude', 'Block Aptitude', 'TEN Aptitude'],
       cleanseActions: ['Auto Refine', 'Cleanse', 'Smart Refinement', 'Tier Up'],
       cleanseMaterials: ['Basic Cleansing Pill', 'Advanced Cleansing Pill'],

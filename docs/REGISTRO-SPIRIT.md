@@ -16,7 +16,7 @@ Spirit y Wisp son sistemas distintos. La guía mantiene rutas, datos pendientes 
 | 81–91 | Cleanse, aptitudes, materiales y acceso a Tier Up |
 | 92–104 | Demoncore, Pill Array, conjuntos y bolsa de Demoncores |
 
-La pestaña **Bond** aparece en la navegación lateral, pero no está abierta en ninguna de las capturas.
+La pestaña **Bond** aparece en la navegación lateral del PDF. Su contenido se documentó después mediante los vídeos `Bond part1.mp4` y `Bond part2.mp4`.
 
 ## Spirits identificados
 
@@ -70,6 +70,35 @@ Las etiquetas **Battle** y **Aid** se observan en las fichas y en los arrays. Su
 - Existen filtros All, SR, SSR y Meta.
 - No se generalizan costes porque cambian entre las fichas observadas.
 
+### Bond
+
+Los dos vídeos muestran la pantalla de afinidad de varios Spirits. Se distinguen dos pestañas:
+
+- **Present**, con Intimacy Points, barra de progreso, estadísticas de referencia y los botones Quick Upgrade y Upgrade.
+- **Biography**, con el rango de Bond, los campos Title, Faction, Ability, Likes y Dislikes, y hasta cinco capítulos desplegables.
+
+Rangos leídos en el material: **Stranger**, **Familiar**, **Confidant** y **Admired**. En Nezha se ven capítulos bloqueados con requisitos `Unlocked at Affinity Lv.1` y `Unlocked at Affinity Lv.11`.
+
+Valores de Intimacy Points observados, sin generalizarlos a todos los Spirits:
+
+- Zhuyan UR: Lv.200, 0/450.
+- Lu Wu UR: Lv.101, 20/380.
+- Jiang Ziya UR: Lv.146, 20/380.
+- Goddess Luo SSR: Lv.101, 20/380.
+- Vermilion Bird SR: Lv.31, 60/240.
+- Nezha LR: Lv.0, 0/100.
+
+Ejemplos de fichas de Biography:
+
+- Zhuyan: Bond Admired; Chaos Root; Ancient Demoncourt; War Snare.
+- Lu Wu: Bond Confidant; Enlightened Primabeast; Celestial Court; Circle of Sun&Moon.
+- Yaoji: Bond Confidant; Mount Goddess; Celestial Court; Mount Charm.
+- White Tiger: Bond Confidant; White Tiger Sage; Ancient Demoncourt; White Tiger Dash.
+- Dreamsnake: Bond Familiar; Mount Li Spirit; Ancient Demoncourt; Serpent Step.
+- Nezha: Bond Stranger; Third Prince; Celestial Court; Samadhi Fire.
+
+Los capítulos contienen texto narrativo y no se convierten en recomendaciones de juego. Los vídeos no permiten confirmar los materiales de afinidad, los umbrales completos, las bonificaciones mecánicas de cada rango ni el coste o resultado de Quick Upgrade.
+
 ### Cleanse y Tier Up
 
 - Cleanse modifica aptitudes como HP, ATK, DEF, S.A, PEN, CRIT, BLOCK y TEN según el Spirit.
@@ -117,7 +146,7 @@ Pill Arrays legibles en el material:
 
 ## Información pendiente de verificación
 
-- contenido y efectos de Bond;
+- materiales, umbrales y efectos completos de Bond;
 - funcionamiento de Talent y Roll Back;
 - reglas completas, tiers y obtención de Arraycore;
 - todos los costes de Upgrade y Evolution;

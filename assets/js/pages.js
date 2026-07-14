@@ -155,6 +155,36 @@
       '<section class="system-section verification-method" id="datos-pendientes"><h2>Datos pendientes</h2><p>Para explicar el sistema con precisión todavía hacen falta estas pantallas:</p>' + tags(data.pendingScreens, true) + '<p>También quedan pendientes los materiales, las formas de obtención, las mejoras, los efectos de cada posición y cualquier parte gratuita o de pago.</p></section>' + futureZone();
   }
 
+  function renderSpirit(page) {
+    var data = window.REFERENCE_DATA.spirit;
+    var rarityCards = data.rarities.map(function (group) {
+      return '<article class="fact-card"><h3>' + escapeHtml(group.label) + '</h3>' + tags(group.names, false) + '</article>';
+    }).join('');
+
+    return pageHeader(
+      page,
+      'Sistema independiente documentado mediante 104 capturas',
+      'La interfaz del juego denomina Spirit a este sistema de personajes coleccionables. No es Wisp: ambos conservan páginas y mecánicas separadas.',
+      'Quince Spirits, sus pantallas principales y cinco áreas de progresión confirmadas en capturas del ' + data.captureDate + '. Bond y varias reglas detalladas siguen pendientes.'
+    ) +
+      '<section class="system-section" id="vista-general"><h2>Vista general</h2><div class="fact-grid"><article class="fact-card"><h3>Pestañas observadas</h3>' + tags(data.tabs, false) + '</article>' +
+      '<article class="fact-card"><h3>Clasificación visible</h3>' + tags(data.deploymentLabels, false) + '<p>En la lista lateral aparecen etiquetas <span lang="en">Battle</span> y <span lang="en">Aid</span>. La guía todavía no atribuye funciones adicionales a esas etiquetas.</p></article>' +
+      '<article class="fact-card"><h3>Estadísticas visibles</h3>' + tags(data.visibleStats, false) + '<p>La combinación mostrada cambia entre Spirits.</p></article></div></section>' +
+      '<section class="system-section" id="spirits-documentados"><h2>Spirits documentados</h2><p>Estos nombres y rarezas se leen en las capturas. No constituyen todavía una lista completa del juego.</p><div class="fact-grid">' + rarityCards + '</div></section>' +
+      '<section class="system-section" id="basic-y-upgrade"><h2>Basic y Upgrade</h2><div class="fact-grid"><article class="fact-card"><h3>Basic</h3>' + facts(['Spirit Rating y estadísticas del Spirit.', 'Bonificaciones porcentuales asociadas a sus estadísticas.', 'Spirit Basic Attack y Spirit Skill o Awakening Skill.', 'Role, School, alcance y Evolution Effect visibles al abrir una habilidad.']) + '</article>' +
+      '<article class="fact-card"><h3>Upgrade</h3>' + tags(data.upgradeActions, false) + '<p>La pantalla compara los valores actuales con los posteriores a la mejora y avisa de que el progreso se conserva al cambiar el Spirit desplegado.</p></article></div></section>' +
+      '<section class="system-section" id="array-y-arraycore"><h2>Array y Arraycore</h2><div class="fact-grid"><article class="fact-card"><h3>Funcionamiento observado</h3>' + facts(data.arrayFacts) + '</article>' +
+      '<article class="fact-card"><h3>Acciones observadas</h3>' + tags(data.arrayActions, false) + '<p>La pestaña <span lang="en">Arraycore</span> muestra piezas con tier y estadísticas, pero todavía falta documentar sus reglas completas.</p></article></div></section>' +
+      '<section class="system-section" id="evolution"><h2>Evolution</h2>' + facts(data.evolutionFacts) + '<aside class="verification-note"><strong>Límite de la evidencia:</strong> los requisitos cambian según rareza, estrellas y estado del Spirit; no se publica todavía una tabla de costes.</aside></section>' +
+      '<section class="system-section" id="bond"><h2>Bond</h2>' + badge('Pestaña confirmada', false) + '<p>La pestaña aparece en todas las fichas revisadas, pero el PDF no incluye su contenido abierto.</p>' + badge('Funcionamiento pendiente', true) + '</section>' +
+      '<section class="system-section" id="cleanse-y-tier-up"><h2>Cleanse y Tier Up</h2><div class="fact-grid"><article class="fact-card"><h3>Aptitudes observadas</h3>' + tags(data.cleanseStats, false) + '</article>' +
+      '<article class="fact-card"><h3>Acciones y materiales</h3>' + tags(data.cleanseActions, false) + tags(data.cleanseMaterials, false) + '<p>Las capturas muestran un límite de Cleanse relacionado con estrellas, categoría y tier, pero la regla completa todavía debe verificarse.</p></article></div></section>' +
+      '<section class="system-section" id="demoncore-y-pill-array"><h2>Demoncore y Pill Array</h2><div class="fact-grid"><article class="fact-card"><h3>Grupos observados</h3>' + tags(data.pillArrayGroups, false) + '<p>Un Pill Array se activa al equipar la cantidad, color y estrellas de Demoncores indicados. Al activarse muestra estadísticas de conjunto.</p></article>' +
+      '<article class="fact-card"><h3>Pill Arrays observados</h3>' + tags(data.pillArrays, false) + '</article>' +
+      '<article class="fact-card"><h3>Gestión de Demoncores</h3>' + tags(data.demoncoreActions, false) + '<p>Las piezas abiertas figuran como <span lang="en">Universal</span> y muestran estrellas, estadísticas y Power.</p></article></div></section>' +
+      '<section class="system-section verification-method" id="datos-pendientes"><h2>Datos pendientes</h2><p>El PDF permite construir la página, pero no demuestra todavía estos detalles:</p>' + tags(data.pending, true) + '</section>' + futureZone();
+  }
+
   function renderCatalog(page, data, description) {
     var cards = data.names.map(function (name) {
       return '<article class="catalog-card" id="' + window.slugify(name) + '"><h2>' + escapeHtml(name) + '</h2>' + badge('Detalles pendientes', true) + '<p>Nombre documentado en el material del proyecto. Falta transcribir su pantalla dentro del juego.</p></article>';
@@ -171,6 +201,7 @@
       ['/sistemas-del-personaje/technique', 'Technique', 'Plantas, fichas y materiales'],
       ['/sistemas-del-personaje/swordflight', 'SwordFlight', 'Catálogo preparado'],
       ['/sistemas-del-personaje/zodiac', 'Zodiac Transformations', 'Transformaciones documentadas'],
+      ['/sistemas-del-personaje/spirit', 'Spirit', '15 Spirits y sistemas asociados'],
       ['/sistemas-del-personaje/wisp', 'Wisp', 'Primera pantalla documentada']
     ].map(function (item) {
       return '<a class="quick-link" href="#' + item[0] + '"><strong>' + item[1] + '</strong><span>' + item[2] + '</span></a>';
@@ -204,6 +235,7 @@
     if (page.type === 'technique') { return renderTechnique(page); }
     if (page.type === 'swordflight') { return renderCatalog(page, window.REFERENCE_DATA.swordFlight, 'Página maestra preparada para documentar el funcionamiento y cada SwordFlight sin duplicar información entre clases.'); }
     if (page.type === 'zodiac') { return renderCatalog(page, window.REFERENCE_DATA.zodiac, 'Página maestra para las Zodiac Transformations observadas en el material recopilado.'); }
+    if (page.type === 'spirit') { return renderSpirit(page); }
     if (page.type === 'wisp') { return renderWisp(page); }
     if (page.type === 'project') { return renderProject(page); }
     return null;

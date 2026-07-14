@@ -22,7 +22,9 @@ El menú se divide en Inicio, Guía general, Sistemas del personaje, Equipamient
 
 Las clases Dragon Lancer, Lunarborn, Spiritfox y Swordsage cuentan con rutas independientes y apartados preparados para descripción, habilidades, estadísticas recomendadas, SwordFlight, Technique, Spirit Root, Zodiac, PvE y PvP.
 
-Las páginas maestras de Stats, Spirit Root, Technique y Wisp ya distinguen entre datos confirmados y datos pendientes. SwordFlight y Zodiac disponen de catálogos iniciales para incorporar la información sin duplicarla dentro de cada clase.
+Las páginas maestras de Stats, Spirit Root, Technique, Spirit y Wisp ya distinguen entre datos confirmados y datos pendientes. SwordFlight y Zodiac disponen de catálogos iniciales para incorporar la información sin duplicarla dentro de cada clase.
+
+Spirit dispone de la ruta `#/sistemas-del-personaje/spirit`. Es un sistema independiente de Wisp y organiza las pantallas de Details, Upgrade, Array, Evolution, Bond, Cleanse y Demoncore. El material aportado permite documentar 15 Spirits y varios Pill Arrays, pero Bond permanece pendiente porque no aparece abierto.
 
 Wisp dispone de la ruta `#/sistemas-del-personaje/wisp`. Registra únicamente la primera pantalla observada y mantiene como pendientes Sacrifice, Spirit Beast Bag, Resonance, Stats Overview y Northern Abyss Order.
 
@@ -52,7 +54,7 @@ Después se podrá abrir con `#/nueva-seccion`. Si la ruta tiene una lógica esp
 4. Utiliza rutas relativas, por ejemplo `assets/images/classes/dragon-lancer/ejemplo.webp`.
 5. Verifica que se dispone de permiso para publicar la imagen y registra su fuente cuando sea necesario.
 
-Las carpetas incluyen `general`, `classes`, `spirit-root`, `technique`, `swordflight` y `zodiac`. Cuando se autorice una captura de Wisp para publicación se añadirá `assets/images/wisp/`. No hay imágenes definitivas todavía.
+Las carpetas incluyen `general`, `classes`, `spirit-root`, `spirit`, `technique`, `swordflight`, `wisp` y `zodiac`. No hay imágenes definitivas todavía; las capturas de investigación no se publican automáticamente.
 
 ## Enlaces directos a un apartado concreto
 
@@ -66,12 +68,13 @@ Al abrirlo, el enrutador desplaza el foco al apartado correspondiente. Para nuev
 
 ## Contenido pendiente
 
-Ya se ha incorporado la estructura contrastada de Stats, Spirit Root, Technique y la primera pantalla de Wisp. Los nombres conocidos de SwordFlight y Zodiac también están organizados, pero sus detalles continúan marcados como **Contenido pendiente**. Además, están pendientes:
+Ya se ha incorporado la estructura contrastada de Stats, Spirit Root, Technique, Spirit y la primera pantalla de Wisp. Los nombres conocidos de SwordFlight y Zodiac también están organizados, pero sus detalles continúan marcados como **Contenido pendiente**. Además, están pendientes:
 
 - descripciones y fórmulas completas de las estadísticas;
 - habilidades y recomendaciones verificadas de cada clase;
 - costes, probabilidades, materiales y métodos de obtención que todavía no se hayan capturado;
 - explicaciones detalladas de SwordFlight y Zodiac;
+- Bond, reglas completas de Arraycore, costes de Evolution y límites de Cleanse del sistema Spirit;
 - funcionamiento de Wisp, Sacrifice, Resonance, Stats Overview, Spirit Beast Bag y Northern Abyss Order;
 - imágenes, capturas y recursos gráficos definitivos;
 - traducción automática;

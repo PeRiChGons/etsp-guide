@@ -11,6 +11,7 @@ Aplicación web responsive y comunitaria para organizar una futura guía de **Et
 - estructura documentada de Spirit Root;
 - plantas, nombres, fichas y materiales observados de Technique;
 - catálogos iniciales de SwordFlight y Zodiac Transformations;
+- página propia de Spirit con 15 Spirits, Array, Evolution, Cleanse y Pill Array;
 - primera pantalla documentada del nuevo sistema Wisp;
 - registro de fuentes oficiales, guías externas y contradicciones detectadas;
 - información de autoría, fuentes y carácter no oficial del proyecto.
@@ -42,3 +43,5 @@ La publicación todavía debe configurarse o activarse desde la rama que se deci
 Consulta [docs/PLANO-DE-LA-GUIA.md](docs/PLANO-DE-LA-GUIA.md) para conocer la arquitectura, el mapa de contenidos y la forma de ampliar la guía.
 
 El archivo [docs/INVESTIGACION-WEB.md](docs/INVESTIGACION-WEB.md) registra las fuentes consultadas, los límites de cada una y la información que todavía debe verificarse dentro del juego.
+
+El archivo [docs/REGISTRO-SPIRIT.md](docs/REGISTRO-SPIRIT.md) clasifica las 104 capturas aportadas para el sistema Spirit y separa los datos confirmados de los pendientes.

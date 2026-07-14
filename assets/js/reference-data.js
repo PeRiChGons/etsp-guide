@@ -55,6 +55,50 @@
     zodiac: {
       names: ['Gonggong', 'Hou Yi', 'Western Queen']
     },
+    spirit: {
+      captureDate: '14 de julio de 2026',
+      capturedPages: 104,
+      tabs: ['Details', 'Array', 'Evolution', 'Bond', 'Cleanse', 'Demoncore'],
+      rarities: [
+        { label: 'UR', names: ['Zhuyan', 'Dark Phoenix', 'Daji', 'Jiang Ziya', 'Yaoji', 'Lu Wu'] },
+        { label: 'SSR', names: ['Huodou', 'Azure Ox', 'Sleek Rat', 'Jade Rabbit', 'Goddess Luo', 'White Tiger'] },
+        { label: 'SR', names: ['Vermilion Bird', 'Dreamsnake', 'Martial Lord'] }
+      ],
+      deploymentLabels: ['Battle', 'Aid'],
+      visibleStats: ['HP', 'ATK', 'DEF', 'S.A', 'PEN', 'CRIT', 'BLOCK', 'TEN'],
+      upgradeActions: ['Quick Upgrade', 'Upgrade', 'Roll Back', 'Talent'],
+      arrayFacts: [
+        'La captura muestra tres posiciones en Main Array.',
+        'La captura muestra nueve posiciones ocupadas en Assistance Array.',
+        'Las estadísticas de los Spirits desplegados se añaden a las del personaje.',
+        'El Assistance Array aumenta el daño de Awakening Skill del Main Spirit según sus estrellas.'
+      ],
+      arrayActions: ['Get Spirit', 'Unlock Position', 'Quick Use', 'Remove the spirit'],
+      evolutionFacts: [
+        'Spirit Evolution aumenta la estrella del Spirit.',
+        'La vista previa muestra cambios de Power, Rating, estadísticas y nivel de Awakening Skill.',
+        'La evolución observada solicita una copia del Spirit y otro material de estrella.',
+        'La interfaz ofrece Quick evolution y filtros All, SR, SSR y Meta.'
+      ],
+      cleanseStats: ['HP Aptitude', 'ATK Aptitude', 'DEF Aptitude', 'S.A Aptitude', 'PEN Aptitude', 'CRIT Aptitude', 'Block Aptitude', 'TEN Aptitude'],
+      cleanseActions: ['Auto Refine', 'Cleanse', 'Smart Refinement', 'Tier Up'],
+      cleanseMaterials: ['Basic Cleansing Pill', 'Advanced Cleansing Pill'],
+      pillArrayGroups: ['Trace Pill Array', 'Spirit Pill Array'],
+      pillArrays: [
+        'Sweeping Sand Array', 'Nether Frost Array', 'Earth Heart Array', 'Pit Treasure Array',
+        'Yin-Yang Nine Stars Array', 'Endless Ice Array', 'Soaring Trigrams Array',
+        'Three Talents Array', 'Six Heavens Array', 'The Plough Array'
+      ],
+      demoncoreActions: ['Inlay', 'Fuse', 'Decompose', 'Acquisition Method', 'Unequip'],
+      pending: [
+        'Contenido de Bond.',
+        'Reglas completas de Arraycore.',
+        'Costes y métodos de obtención de cada Spirit.',
+        'Probabilidades y equivalencias de los materiales de Evolution.',
+        'Funcionamiento exacto de Tier Up y límites de Cleanse.',
+        'Lista completa de Demoncores y requisitos de cada Pill Array.'
+      ]
+    },
     wisp: {
       captureDate: '14 de julio de 2026',
       arrayLevel: 7,

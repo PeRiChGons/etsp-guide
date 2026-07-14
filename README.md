@@ -11,6 +11,8 @@ Aplicación web responsive y comunitaria para organizar una futura guía de **Et
 - estructura documentada de Spirit Root;
 - plantas, nombres, fichas y materiales observados de Technique;
 - catálogos iniciales de SwordFlight y Zodiac Transformations;
+- primera pantalla documentada del nuevo sistema Wisp;
+- registro de fuentes oficiales, guías externas y contradicciones detectadas;
 - información de autoría, fuentes y carácter no oficial del proyecto.
 
 Las páginas todavía incompletas muestran claramente **Contenido pendiente** y no presentan suposiciones como datos del juego.
@@ -38,3 +40,5 @@ La publicación todavía debe configurarse o activarse desde la rama que se deci
 ## Documentación
 
 Consulta [docs/PLANO-DE-LA-GUIA.md](docs/PLANO-DE-LA-GUIA.md) para conocer la arquitectura, el mapa de contenidos y la forma de ampliar la guía.
+
+El archivo [docs/INVESTIGACION-WEB.md](docs/INVESTIGACION-WEB.md) registra las fuentes consultadas, los límites de cada una y la información que todavía debe verificarse dentro del juego.

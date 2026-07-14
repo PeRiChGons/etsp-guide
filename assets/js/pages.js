@@ -52,6 +52,10 @@
       badge('Contenido pendiente', true) + '<p>Espacio reservado para comentarios o Discord. Todavía no está conectado a ningún servicio.</p></section>';
   }
 
+  function externalLink(url, label) {
+    return '<a class="external-link" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(label) + '<span class="sr-only"> (se abre en una pestaña nueva)</span></a>';
+  }
+
   function statsRows(items) {
     return items.map(function (name) {
       return '<tr><th scope="row">' + escapeHtml(name) + '</th><td>' + badge('Nombre confirmado', false) + '</td><td>Descripción detallada pendiente de verificación.</td></tr>';
@@ -129,6 +133,28 @@
       '<article class="fact-card"><h3>Obtención observada</h3><p><span lang="en">' + escapeHtml(data.observedSource) + '</span> aparece relacionado con la obtención del material.</p>' + badge('Recompensas exactas pendientes', true) + '</article></div></section>' + futureZone();
   }
 
+  function renderWisp(page) {
+    var data = window.REFERENCE_DATA.wisp;
+
+    return pageHeader(
+      page,
+      'Sistema nuevo documentado mediante captura',
+      'La primera pantalla de Wisp se ha transcrito sin completar con suposiciones los botones o mecánicas que todavía no se han abierto.',
+      'Interfaz general confirmada en una captura del ' + data.captureDate + '. Funcionamiento, costes, probabilidades y efectos detallados pendientes.'
+    ) +
+      '<section class="system-section" id="vista-general"><h2>Vista general</h2><div class="fact-grid"><article class="fact-card"><h3>Datos visibles</h3>' + facts([
+        'Wisp Array Level: ' + data.arrayLevel + '.',
+        'Power mostrado: ' + data.power + '.',
+        'Progreso de nivel: ' + data.experience + '.',
+        data.occupiedSlots + ' posiciones ocupadas y ' + data.emptySlots + ' posiciones vacías en la captura.'
+      ]) + '</article><article class="fact-card"><h3>Secciones visibles</h3>' + tags(data.tabs, false) + '<p>La pestaña <span lang="en">Sprite</span> está seleccionada en la captura.</p></article></div></section>' +
+      '<section class="system-section" id="wisp-array"><h2>Wisp Array</h2><p>Los retratos colocados alrededor del Array muestran un valor de <span lang="en">Aptitude</span>. Estos son los valores legibles en la captura:</p>' + tags(data.aptitudeValues.map(String), false) + '<aside class="verification-note"><strong>Límite de la evidencia:</strong> todavía no se conoce cómo se calcula Aptitude, qué estadísticas aporta cada Wisp ni si todas las posiciones tienen el mismo efecto.</aside></section>' +
+      '<section class="system-section" id="sprite-y-summon"><h2>Sprite y Summon</h2><div class="fact-grid"><article class="fact-card"><h3>Acciones disponibles</h3>' + tags(data.actions, false) + '<p>Se observan tres objetos de invocación, todos con cantidad <strong>0/1</strong> en la captura.</p></article><article class="fact-card"><h3>Texto mostrado</h3><p lang="en">' + escapeHtml(data.summonText) + '</p><p>La interfaz indica que abrir el objeto añade un punto de EXP al nivel del Wisp Array. No se documentan todavía recompensas ni probabilidades.</p></article></div></section>' +
+      '<section class="system-section" id="sacrifice"><h2>Sacrifice</h2>' + badge('Pestaña confirmada', false) + '<p>La pestaña existe, pero su contenido no aparece abierto en la captura disponible.</p>' + badge('Funcionamiento pendiente', true) + '</section>' +
+      '<section class="system-section" id="accesos-relacionados"><h2>Accesos relacionados</h2><p>Botones visibles junto al panel de Wisp:</p>' + tags(data.relatedAccess, false) + '<p><span lang="en">Northern Abyss Order</span> muestra el contador <strong>' + escapeHtml(data.observedCountdown) + '</strong> en el momento de la captura. No se presupone si es un evento, una temporada o un desbloqueo hasta abrir su pantalla.</p></section>' +
+      '<section class="system-section verification-method" id="datos-pendientes"><h2>Datos pendientes</h2><p>Para explicar el sistema con precisión todavía hacen falta estas pantallas:</p>' + tags(data.pendingScreens, true) + '<p>También quedan pendientes los materiales, las formas de obtención, las mejoras, los efectos de cada posición y cualquier parte gratuita o de pago.</p></section>' + futureZone();
+  }
+
   function renderCatalog(page, data, description) {
     var cards = data.names.map(function (name) {
       return '<article class="catalog-card" id="' + window.slugify(name) + '"><h2>' + escapeHtml(name) + '</h2>' + badge('Detalles pendientes', true) + '<p>Nombre documentado en el material del proyecto. Falta transcribir su pantalla dentro del juego.</p></article>';
@@ -144,7 +170,8 @@
       ['/sistemas-del-personaje/spirit-root', 'Spirit Root', 'Estructura y elementos observados'],
       ['/sistemas-del-personaje/technique', 'Technique', 'Plantas, fichas y materiales'],
       ['/sistemas-del-personaje/swordflight', 'SwordFlight', 'Catálogo preparado'],
-      ['/sistemas-del-personaje/zodiac', 'Zodiac Transformations', 'Transformaciones documentadas']
+      ['/sistemas-del-personaje/zodiac', 'Zodiac Transformations', 'Transformaciones documentadas'],
+      ['/sistemas-del-personaje/wisp', 'Wisp', 'Primera pantalla documentada']
     ].map(function (item) {
       return '<a class="quick-link" href="#' + item[0] + '"><strong>' + item[1] + '</strong><span>' + item[2] + '</span></a>';
     }).join('');
@@ -164,6 +191,9 @@
       '<section class="system-section project-block" id="autores"><h2>Autores</h2><p><strong>PeRiChGons</strong>: autor, editor, responsable de las pruebas y aprobación final del contenido.</p><p><strong>ChatGPT de OpenAI</strong>: asistencia en organización, redacción, diseño y programación.</p></section>' +
       '<section class="system-section project-block" id="verificacion-de-la-informacion"><h2>Verificación de la información</h2>' + facts(['Capturas y datos obtenidos dentro del juego.', 'Experiencia directa y pruebas realizadas por el autor.', 'Comparación con fuentes públicas cuando estén disponibles.', 'Información dudosa señalada como pendiente, sin presentarla como un hecho.']) + '</section>' +
       '<section class="system-section project-block" id="fuentes"><h2>Fuentes</h2><p>Las páginas indicarán la procedencia concreta de la información cuando se utilice una fuente externa. “La web” no se considera una referencia suficiente sin identificar la página o publicación.</p></section>' +
+      '<section class="system-section project-block" id="investigacion-web"><h2>Investigación web</h2><p><strong>Última revisión:</strong> 14 de julio de 2026.</p><div class="fact-grid"><article class="fact-card"><h3>Fuentes oficiales</h3><p>' + externalLink('https://play.google.com/store/apps/details?id=com.mten.tgp', 'Eternal Sword Pact en Google Play') + '</p><p>' + externalLink('https://apps.apple.com/ph/app/eternal-sword-pact/id6754371626', 'Eternal Sword Pact en App Store') + '</p><p>Confirman el desarrollador, la temática general, las plataformas y las notas públicas de la aplicación. Las notas disponibles no detallan Wisp ni los sistemas internos.</p></article>' +
+      '<article class="fact-card"><h3>Fuentes secundarias</h3><p>' + externalLink('https://www.bluestacks.com/blog/game-guides/eternal-sword-pact/esp-beginners-guide-en.html', 'Guía para principiantes de BlueStacks') + '</p><p>' + externalLink('https://www.bluestacks.com/blog/game-guides/eternal-sword-pact/esp-classes-guide-en.html', 'Guía de clases de BlueStacks') + '</p><p>' + externalLink('https://www.bluestacks.com/blog/game-guides/eternal-sword-pact/esp-combat-strategy-guide.html', 'Guía de combate de BlueStacks') + '</p><p>Se utilizan solo para localizar temas que después deben contrastarse dentro del juego.</p></article></div>' +
+      '<aside class="verification-note"><strong>Resultado del contraste:</strong> las guías secundarias se contradicen en el tipo de daño y el papel de algunas clases. Por ello, la web no publicará esas afirmaciones como hechos hasta disponer de capturas o pruebas directas.</aside><p>Consulta el <a href="docs/INVESTIGACION-WEB.md">registro detallado de búsquedas y decisiones</a>.</p></section>' +
       '<section class="system-section project-block" id="aviso-sobre-contenido-no-oficial"><h2>Aviso sobre contenido no oficial</h2><p>Esta es una guía creada por aficionados y no está afiliada con los desarrolladores o distribuidores de Eternal Sword Pact. Los nombres, marcas e imágenes del juego pertenecen a sus respectivos titulares. El contenido puede requerir cambios después de actualizaciones del juego.</p></section>' + futureZone();
   }
 
@@ -174,6 +204,7 @@
     if (page.type === 'technique') { return renderTechnique(page); }
     if (page.type === 'swordflight') { return renderCatalog(page, window.REFERENCE_DATA.swordFlight, 'Página maestra preparada para documentar el funcionamiento y cada SwordFlight sin duplicar información entre clases.'); }
     if (page.type === 'zodiac') { return renderCatalog(page, window.REFERENCE_DATA.zodiac, 'Página maestra para las Zodiac Transformations observadas en el material recopilado.'); }
+    if (page.type === 'wisp') { return renderWisp(page); }
     if (page.type === 'project') { return renderProject(page); }
     return null;
   };

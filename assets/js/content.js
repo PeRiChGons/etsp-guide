@@ -15,7 +15,8 @@
       { title: 'Spirit Root', route: '/sistemas-del-personaje/spirit-root', children: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root', 'Obtención y materiales'] },
       { title: 'Technique', route: '/sistemas-del-personaje/technique', children: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
       { title: 'SwordFlight', route: '/sistemas-del-personaje/swordflight', children: ['Funcionamiento general', 'Vermilion Bird', 'Azure Dragon', 'Azure Bird', 'Black Tortoise', 'White Tiger', 'Soaring Snake'] },
-      { title: 'Zodiac Transformations', route: '/sistemas-del-personaje/zodiac', children: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] }
+      { title: 'Zodiac Transformations', route: '/sistemas-del-personaje/zodiac', children: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] },
+      { title: 'Wisp', route: '/sistemas-del-personaje/wisp', children: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] }
     ] },
     { title: 'Equipamiento y mejoras', route: '/equipamiento-y-mejoras', children: ['Equipamiento', 'Rarezas', 'Tiers', 'Estrellas', 'Craft', 'Mejoras', 'Bonificaciones', 'Materiales'] },
     { title: 'Clases', route: '/clases', children: [
@@ -25,7 +26,7 @@
       { title: 'Spiritfox', route: '/clases/spiritfox', children: classSections },
       { title: 'Swordsage', route: '/clases/swordsage', children: classSections }
     ] },
-    { title: 'Proyecto', route: '/proyecto', children: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Aviso sobre contenido no oficial'] }
+    { title: 'Proyecto', route: '/proyecto', children: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Investigación web', 'Aviso sobre contenido no oficial'] }
   ];
 
   // Nombres transcritos de las capturas del juego aportadas para la guía.
@@ -78,7 +79,8 @@
       '/sistemas-del-personaje/technique': { title: 'Technique', type: 'technique', sections: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
       '/sistemas-del-personaje/swordflight': { title: 'SwordFlight', type: 'swordflight', sections: ['Funcionamiento general', 'Vermilion Bird', 'Azure Dragon', 'Azure Bird', 'Black Tortoise', 'White Tiger', 'Soaring Snake'] },
       '/sistemas-del-personaje/zodiac': { title: 'Zodiac Transformations', type: 'zodiac', sections: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] },
-      '/proyecto': { title: 'Proyecto', type: 'project', sections: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Aviso sobre contenido no oficial'] }
+      '/sistemas-del-personaje/wisp': { title: 'Wisp', type: 'wisp', sections: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] },
+      '/proyecto': { title: 'Proyecto', type: 'project', sections: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Investigación web', 'Aviso sobre contenido no oficial'] }
     };
     if (customPages[route]) {
       var customPage = customPages[route];

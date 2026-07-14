@@ -54,6 +54,29 @@
     },
     zodiac: {
       names: ['Gonggong', 'Hou Yi', 'Western Queen']
+    },
+    wisp: {
+      captureDate: '14 de julio de 2026',
+      arrayLevel: 7,
+      power: '22.601.915',
+      experience: '403/435',
+      occupiedSlots: 12,
+      emptySlots: 4,
+      aptitudeValues: [330, 386, 373, 441, 445, 225, 470, 500, 600, 591, 514, 450],
+      tabs: ['Sprite', 'Sacrifice'],
+      actions: ['Quick Summon', 'Summon'],
+      relatedAccess: ['Spirit Beast Bag', 'Resonance', 'Stats Overview', 'Northern Abyss Order'],
+      summonText: 'When opened, Wisp Array Level EXP +1',
+      observedCountdown: '9d 06h32m',
+      pendingScreens: [
+        'Ayuda del sistema (?)',
+        'Detalle de un Wisp',
+        'Spirit Beast Bag',
+        'Resonance',
+        'Stats Overview',
+        'Sacrifice',
+        'Northern Abyss Order'
+      ]
     }
   };
 }());

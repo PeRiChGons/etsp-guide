@@ -10,7 +10,7 @@
       'Primeros pasos', 'Interfaz principal', 'Progresión', 'Estadísticas', 'Recursos y monedas', 'Consejos para nuevos jugadores', 'Contenido gratuito y P2W'
     ] },
     { title: 'Sistemas del personaje', route: '/sistemas-del-personaje', children: [
-      { title: 'Stats', children: ['Basic Stats', 'Special Stats'] },
+      { title: 'Stats', route: '/sistemas-del-personaje/stats', children: ['Basic Stats', 'Special Stats'] },
       'Skill',
       { title: 'Spirit Root', children: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root'] },
       { title: 'Technique', children: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
@@ -27,6 +27,25 @@
     ] },
     { title: 'Proyecto', route: '/proyecto', children: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Aviso sobre contenido no oficial'] }
   ];
+
+  // Nombres transcritos de las capturas del juego aportadas para la guía.
+  // No se añaden interpretaciones hasta disponer de una descripción verificada.
+  window.STATS_CONTENT = {
+    basic: [
+      'HP', 'ATK', 'S.A', 'DEF', 'CRIT', 'TEN', 'PEN', 'BLOCK',
+      'DMG Absorption', 'DMG Boost', 'DMG RED', 'Focus Strike',
+      'Focus Resistance', 'Bash', 'Bash Resistance', 'Skill Bonus',
+      'Skill Reduction', 'Spirit Bonus', 'Spirit Reduction',
+      'Transformation Bonus', 'Transformation Reduction',
+      'Technique Bonus', 'Technique Reduction'
+    ],
+    special: [
+      'HP Bonus', 'ATK Bonus', 'S.A Bonus', 'DEF Bonus', 'CRIT Bonus',
+      'TEN Bonus', 'PEN Bonus', 'CRIT DMG Bonus', 'BLOCK Bonus', 'Stun',
+      'Stun RES', 'Suppression', 'Suppression RES', 'EXP Boost',
+      'Stamina Points Bonus'
+    ]
+  };
 
   // Convierte títulos en identificadores legibles y estables para enlaces internos.
   window.slugify = function (text) {
@@ -52,6 +71,15 @@
   window.getPage = function (route) {
     var classMatch = route.match(/^\/clases\/(dragon-lancer|lunarborn|spiritfox|swordsage)$/);
     var top = findTopLevel(route);
+    if (route === '/sistemas-del-personaje/stats') {
+      return {
+        title: 'Stats',
+        parent: 'Sistemas del personaje',
+        parentRoute: '/sistemas-del-personaje',
+        type: 'stats',
+        sections: ['Basic Stats', 'Special Stats', 'Criterio de verificación']
+      };
+    }
     if (classMatch) {
       var names = { 'dragon-lancer': 'Dragon Lancer', lunarborn: 'Lunarborn', spiritfox: 'Spiritfox', swordsage: 'Swordsage' };
       return { title: names[classMatch[1]], parent: 'Clases', sections: classSections };

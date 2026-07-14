@@ -10,7 +10,9 @@
     var entry = typeof item === 'string' ? { title: item } : item;
     var id = 'grupo-' + window.slugify(trail.concat(entry.title).join('-'));
     var route = entry.route || null;
-    var label = route ? '<a class="nav-link" href="#' + route + '" data-route="' + route + '">' + entry.title + '</a>' : '<a class="nav-link" href="#' + trail[0].route + '?apartado=' + window.slugify(entry.title) + '" data-anchor="' + window.slugify(entry.title) + '">' + entry.title + '</a>';
+    var nearestRoute = trail.slice().reverse().find(function (ancestor) { return ancestor.route; });
+    var anchorRoute = nearestRoute ? nearestRoute.route : '/inicio';
+    var label = route ? '<a class="nav-link" href="#' + route + '" data-route="' + route + '">' + entry.title + '</a>' : '<a class="nav-link" href="#' + anchorRoute + '?apartado=' + window.slugify(entry.title) + '" data-anchor="' + window.slugify(entry.title) + '">' + entry.title + '</a>';
     var expand = entry.children ? '<button class="expand-button" type="button" aria-expanded="' + (depth === 0 ? 'true' : 'false') + '" aria-controls="' + id + '" aria-label="Desplegar ' + entry.title + '"><span aria-hidden="true">›</span></button>' : '';
     var children = entry.children ? '<ul class="submenu" id="' + id + '"' + (depth === 0 ? '' : ' hidden') + '>' + entry.children.map(function (child) { return itemMarkup(child, trail.concat(entry), depth + 1); }).join('') + '</ul>' : '';
     return '<li class="nav-group"><div class="nav-row">' + label + expand + '</div>' + children + '</li>';

@@ -63,6 +63,23 @@ h1 { max-width: 18ch; margin: 0; color: #fff; font-size: clamp(2rem, 5vw, 4rem);
 .content-card { min-height: 11rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: .55rem; background: linear-gradient(145deg, #0e1c2e, #080f19); box-shadow: inset 0 1px #ffffff0d; }
 .content-card h2 { margin-top: 0; color: var(--gold-light); font-size: 1.25rem; }
 .pending { display: inline-block; padding: .2rem .55rem; border: 1px dashed #7a8ba0; border-radius: .2rem; color: var(--muted); font-size: .82rem; }
+.verification-note { max-width: 70rem; margin: 1.5rem 0; padding: 1rem 1.15rem; border-left: 4px solid var(--blue); border-radius: .35rem; background: #0c1a2a; color: #cbd6e3; }
+.verification-note strong { color: #fff; }
+.stats-section { margin-top: 2.5rem; scroll-margin-top: calc(var(--header-height) + 1.5rem); }
+.stats-section h2 { margin-bottom: .35rem; color: var(--gold-light); font-size: clamp(1.55rem, 3vw, 2.1rem); }
+.stats-section > p { margin-top: 0; color: var(--muted); }
+.table-scroll { max-width: 100%; overflow-x: auto; border: 1px solid var(--border); border-radius: .55rem; background: #07111d; }
+.table-scroll:focus-visible { outline-offset: 4px; }
+.stats-table { width: 100%; min-width: 44rem; border-collapse: collapse; text-align: left; }
+.stats-table th, .stats-table td { padding: .8rem 1rem; border-bottom: 1px solid #223247; vertical-align: top; }
+.stats-table thead th { position: sticky; top: 0; background: #101f32; color: var(--gold-light); font-family: system-ui, sans-serif; font-size: .85rem; letter-spacing: .04em; text-transform: uppercase; }
+.stats-table tbody th { width: 24%; color: #fff; font-family: system-ui, sans-serif; font-weight: 700; }
+.stats-table tbody td { color: var(--muted); }
+.stats-table tbody tr:last-child > * { border-bottom: 0; }
+.stats-table tbody tr:hover { background: #13243a80; }
+.confirmed { display: inline-block; white-space: nowrap; padding: .15rem .5rem; border: 1px solid #3b7c68; border-radius: 999px; background: #143a30; color: #b8f2dc; font-size: .78rem; }
+.verification-method { padding: 1.25rem 1.4rem; border: 1px solid var(--border); border-radius: .55rem; background: #0a1523; }
+.verification-method ul { margin-bottom: 0; }
 .future-zone { margin-top: 3rem; padding: 1.5rem; border: 1px dashed #51657e; border-radius: .55rem; background: #09111c; }
 .future-zone h2 { margin-top: 0; font-size: 1.15rem; }
 .future-zone p { margin-bottom: 0; color: var(--muted); }

@@ -12,10 +12,10 @@
     { title: 'Sistemas del personaje', route: '/sistemas-del-personaje', children: [
       { title: 'Stats', route: '/sistemas-del-personaje/stats', children: ['Basic Stats', 'Special Stats'] },
       'Skill',
-      { title: 'Spirit Root', children: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root'] },
-      { title: 'Technique', children: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
-      { title: 'SwordFlight', children: ['Funcionamiento general', 'Vermilion Bird', 'Azure Dragon', 'Azure Bird', 'Black Tortoise', 'White Tiger', 'Soaring Snake'] },
-      { title: 'Zodiac Transformations', children: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] }
+      { title: 'Spirit Root', route: '/sistemas-del-personaje/spirit-root', children: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root', 'Obtención y materiales'] },
+      { title: 'Technique', route: '/sistemas-del-personaje/technique', children: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
+      { title: 'SwordFlight', route: '/sistemas-del-personaje/swordflight', children: ['Funcionamiento general', 'Vermilion Bird', 'Azure Dragon', 'Azure Bird', 'Black Tortoise', 'White Tiger', 'Soaring Snake'] },
+      { title: 'Zodiac Transformations', route: '/sistemas-del-personaje/zodiac', children: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] }
     ] },
     { title: 'Equipamiento y mejoras', route: '/equipamiento-y-mejoras', children: ['Equipamiento', 'Rarezas', 'Tiers', 'Estrellas', 'Craft', 'Mejoras', 'Bonificaciones', 'Materiales'] },
     { title: 'Clases', route: '/clases', children: [
@@ -71,14 +71,23 @@
   window.getPage = function (route) {
     var classMatch = route.match(/^\/clases\/(dragon-lancer|lunarborn|spiritfox|swordsage)$/);
     var top = findTopLevel(route);
-    if (route === '/sistemas-del-personaje/stats') {
-      return {
-        title: 'Stats',
-        parent: 'Sistemas del personaje',
-        parentRoute: '/sistemas-del-personaje',
-        type: 'stats',
-        sections: ['Basic Stats', 'Special Stats', 'Criterio de verificación']
-      };
+    var customPages = {
+      '/inicio': { title: 'Inicio', type: 'home', sections: ['Estado de la guía', 'Accesos rápidos', 'Método de trabajo'] },
+      '/sistemas-del-personaje/stats': { title: 'Stats', type: 'stats', sections: ['Basic Stats', 'Special Stats', 'Criterio de verificación'] },
+      '/sistemas-del-personaje/spirit-root': { title: 'Spirit Root', type: 'spirit-root', sections: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root', 'Obtención y materiales'] },
+      '/sistemas-del-personaje/technique': { title: 'Technique', type: 'technique', sections: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
+      '/sistemas-del-personaje/swordflight': { title: 'SwordFlight', type: 'swordflight', sections: ['Funcionamiento general', 'Vermilion Bird', 'Azure Dragon', 'Azure Bird', 'Black Tortoise', 'White Tiger', 'Soaring Snake'] },
+      '/sistemas-del-personaje/zodiac': { title: 'Zodiac Transformations', type: 'zodiac', sections: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] },
+      '/proyecto': { title: 'Proyecto', type: 'project', sections: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Aviso sobre contenido no oficial'] }
+    };
+    if (customPages[route]) {
+      var customPage = customPages[route];
+      customPage.route = route;
+      if (route.indexOf('/sistemas-del-personaje/') === 0) {
+        customPage.parent = 'Sistemas del personaje';
+        customPage.parentRoute = '/sistemas-del-personaje';
+      }
+      return customPage;
     }
     if (classMatch) {
       var names = { 'dragon-lancer': 'Dragon Lancer', lunarborn: 'Lunarborn', spiritfox: 'Spiritfox', swordsage: 'Swordsage' };

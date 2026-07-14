@@ -6,6 +6,8 @@ La web es una aplicación de una sola página compatible con GitHub Pages. `inde
 
 - `assets/css/styles.css`: tema oscuro responsive y estados accesibles.
 - `assets/js/content.js`: mapa del menú, rutas y apartados.
+- `assets/js/reference-data.js`: datos confirmados transcritos del material del proyecto.
+- `assets/js/pages.js`: plantillas de las páginas maestras que ya tienen contenido contrastado.
 - `assets/js/router.js`: lectura de rutas hash y creación de cada vista.
 - `assets/js/app.js`: menú desplegable, estado activo y comportamiento móvil.
 - `404.html`: devuelve rutas desconocidas a la aplicación mediante hash.
@@ -19,12 +21,15 @@ El menú se divide en Inicio, Guía general, Sistemas del personaje, Equipamient
 
 Las clases Dragon Lancer, Lunarborn, Spiritfox y Swordsage cuentan con rutas independientes y apartados preparados para descripción, habilidades, estadísticas recomendadas, SwordFlight, Technique, Spirit Root, Zodiac, PvE y PvP.
 
+Las páginas maestras de Stats, Spirit Root y Technique ya distinguen entre datos confirmados y datos pendientes. SwordFlight y Zodiac disponen de catálogos iniciales para incorporar la información sin duplicarla dentro de cada clase.
+
 ## Cómo añadir una nueva página
 
 1. Añade un objeto al array `GUIDE_MENU` de `assets/js/content.js`.
 2. Indica un `title`, una `route` que empiece por `/` y, si corresponde, un array `children`.
 3. Amplía `getPage()` si la página necesita un conjunto de apartados o una presentación distinta.
-4. Comprueba el resultado en pantalla grande, tableta y móvil.
+4. Si dispone de contenido contrastado, añade su plantilla a `assets/js/pages.js` y sus datos a `assets/js/reference-data.js`.
+5. Comprueba el resultado en pantalla grande, tableta y móvil.
 
 ## Cómo añadir una nueva ruta
 
@@ -58,15 +63,16 @@ Al abrirlo, el enrutador desplaza el foco al apartado correspondiente. Para nuev
 
 ## Contenido pendiente
 
-Todo el contenido editorial sobre el juego está pendiente. Los bloques visibles están marcados como **Contenido pendiente**. También están pendientes:
+Ya se ha incorporado la estructura contrastada de Stats, Spirit Root y Technique. Los nombres conocidos de SwordFlight y Zodiac también están organizados, pero sus detalles continúan marcados como **Contenido pendiente**. Además, están pendientes:
 
-- textos introductorios y explicaciones de sistemas;
-- datos de clases, habilidades, estadísticas y recomendaciones;
+- descripciones y fórmulas completas de las estadísticas;
+- habilidades y recomendaciones verificadas de cada clase;
+- costes, probabilidades, materiales y métodos de obtención que todavía no se hayan capturado;
+- explicaciones detalladas de SwordFlight y Zodiac;
 - imágenes, capturas y recursos gráficos definitivos;
-- autores, fuentes y metodología detallada;
 - traducción automática;
 - comentarios o integración con Discord;
-- decisión y configuración final de publicación en GitHub Pages.
+- revisión final antes de publicar cambios en `main`.
 
 ## Información que debe verificarse
 

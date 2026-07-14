@@ -2,7 +2,18 @@
 
 Aplicación web responsive y comunitaria para organizar una futura guía de **Eternal Sword Pact**. Funciona como una SPA sin dependencias ni proceso de compilación, preparada para publicarse en GitHub Pages.
 
-> **Estado:** en desarrollo. El contenido editorial está pendiente y debe verificarse antes de publicarse.
+> **Estado:** en desarrollo. La estructura y varias páginas maestras están disponibles; el contenido se incorpora únicamente cuando puede verificarse.
+
+## Contenido disponible en desarrollo
+
+- portada con accesos rápidos y método de trabajo;
+- listado de Basic Stats y Special Stats;
+- estructura documentada de Spirit Root;
+- plantas, nombres, fichas y materiales observados de Technique;
+- catálogos iniciales de SwordFlight y Zodiac Transformations;
+- información de autoría, fuentes y carácter no oficial del proyecto.
+
+Las páginas todavía incompletas muestran claramente **Contenido pendiente** y no presentan suposiciones como datos del juego.
 
 ## Ramas
 

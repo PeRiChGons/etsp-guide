@@ -46,7 +46,9 @@
   document.addEventListener('route:changed', function (event) {
     navigation.querySelectorAll('[data-route]').forEach(function (link) {
       var route = link.getAttribute('data-route');
-      var active = route === event.detail.route || (route === '/clases' && event.detail.route.indexOf('/clases/') === 0);
+      var active = route === event.detail.route ||
+        (route === '/clases' && event.detail.route.indexOf('/clases/') === 0) ||
+        (route === '/sistemas-del-personaje' && event.detail.route.indexOf('/sistemas-del-personaje/') === 0);
       link.classList.toggle('active', active);
       if (active) { link.setAttribute('aria-current', 'page'); } else { link.removeAttribute('aria-current'); }
     });

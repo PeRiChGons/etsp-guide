@@ -1,0 +1,180 @@
+/* Renderiza las páginas que ya contienen información contrastada del proyecto. */
+(function () {
+  'use strict';
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, function (character) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+    });
+  }
+
+  function breadcrumbs(page) {
+    var result = '<div class="breadcrumbs" aria-label="Migas de pan"><a href="#/inicio">Inicio</a>';
+    if (page.parent) {
+      result += '<span aria-hidden="true">/</span><a href="#' + page.parentRoute + '">' + escapeHtml(page.parent) + '</a>';
+    }
+    if (page.title !== 'Inicio') {
+      result += '<span aria-hidden="true">/</span><span aria-current="page">' + escapeHtml(page.title) + '</span>';
+    }
+    return result + '</div>';
+  }
+
+  function anchorNavigation(page) {
+    var links = page.sections.map(function (title) {
+      return '<li><a href="#' + page.route + '?apartado=' + window.slugify(title) + '">' + escapeHtml(title) + '</a></li>';
+    }).join('');
+    return '<nav class="anchor-nav" aria-label="Apartados de esta página"><strong>En esta página</strong><ul>' + links + '</ul></nav>';
+  }
+
+  function pageHeader(page, kicker, lead, status) {
+    return breadcrumbs(page) + '<p class="page-kicker">' + kicker + '</p><h1>' + escapeHtml(page.title) + '</h1>' +
+      '<p class="lead">' + lead + '</p>' +
+      (status ? '<aside class="verification-note" aria-label="Estado de verificación"><strong>Estado actual:</strong> ' + status + '</aside>' : '') +
+      anchorNavigation(page);
+  }
+
+  function badge(text, pending) {
+    return '<span class="' + (pending ? 'pending' : 'confirmed') + '">' + escapeHtml(text) + '</span>';
+  }
+
+  function tags(items, pending) {
+    return '<ul class="tag-list">' + items.map(function (item) {
+      return '<li class="tag' + (pending ? ' tag-pending' : '') + '">' + escapeHtml(item) + '</li>';
+    }).join('') + '</ul>';
+  }
+
+  function facts(items) {
+    return '<ul class="data-list">' + items.map(function (item) { return '<li>' + escapeHtml(item) + '</li>'; }).join('') + '</ul>';
+  }
+
+  function futureZone() {
+    return '<section class="future-zone" aria-labelledby="participacion"><h2 id="participacion">Participación de la comunidad</h2>' +
+      badge('Contenido pendiente', true) + '<p>Espacio reservado para comentarios o Discord. Todavía no está conectado a ningún servicio.</p></section>';
+  }
+
+  function statsRows(items) {
+    return items.map(function (name) {
+      return '<tr><th scope="row">' + escapeHtml(name) + '</th><td>' + badge('Nombre confirmado', false) + '</td><td>Descripción detallada pendiente de verificación.</td></tr>';
+    }).join('');
+  }
+
+  function renderStats(page) {
+    return pageHeader(
+      page,
+      'Información transcrita del juego',
+      'Esta página reúne los nombres observados en las pantallas de estadísticas. No se atribuye ningún efecto que todavía no haya sido contrastado.',
+      'Clasificación y nombres confirmados mediante capturas. Las descripciones y fórmulas se incorporarán después de verificarlas.'
+    ) +
+      '<section class="system-section" id="basic-stats"><h2>Basic Stats</h2><p>Nombres mostrados dentro de la categoría <span lang="en">Basic Stats</span> del juego.</p>' +
+      '<div class="table-scroll" tabindex="0"><table class="stats-table"><thead><tr><th scope="col">Nombre</th><th scope="col">Verificación</th><th scope="col">Descripción</th></tr></thead><tbody>' + statsRows(window.STATS_CONTENT.basic) + '</tbody></table></div></section>' +
+      '<section class="system-section" id="special-stats"><h2>Special Stats</h2><p>Nombres mostrados dentro de la categoría <span lang="en">Special Stats</span> del juego.</p>' +
+      '<div class="table-scroll" tabindex="0"><table class="stats-table"><thead><tr><th scope="col">Nombre</th><th scope="col">Verificación</th><th scope="col">Descripción</th></tr></thead><tbody>' + statsRows(window.STATS_CONTENT.special) + '</tbody></table></div></section>' +
+      '<section class="system-section verification-method" id="criterio-de-verificacion"><h2>Criterio de verificación</h2><p>Antes de completar cada estadística se comprobarán estos datos:</p>' +
+      facts(['Nombre exacto mostrado por el juego.', 'Descripción accesible desde el icono de información.', 'Valores o fórmulas visibles, sin extrapolaciones.', 'Versión o fecha de la captura utilizada.']) + '</section>' + futureZone();
+  }
+
+  function renderSpiritRoot(page) {
+    var data = window.REFERENCE_DATA.spiritRoot;
+    var coreCards = data.coreRoots.map(function (root) {
+      return '<article class="fact-card"><h3>' + escapeHtml(root.name) + '</h3>' + badge('Captura confirmada', false) +
+        '<p>' + escapeHtml(root.observed) + '</p><strong>Obtención mostrada</strong>' + tags(root.sources, false) + '</article>';
+    }).join('');
+
+    return pageHeader(
+      page,
+      'Sistema documentado mediante capturas',
+      'Resumen organizado de las pantallas de Spirit Root. Los nombres y estados visibles se conservan en inglés para que coincidan con el juego.',
+      'Estructura general, controles y varios elementos confirmados. Costes, probabilidades y recomendaciones siguen pendientes.'
+    ) +
+      '<section class="system-section" id="tipos-de-spirit-root"><h2>Tipos de Spirit Root</h2><p>Tipos observados en las capturas aportadas. La lista completa todavía debe revisarse dentro del juego.</p>' + tags(data.observedTypes, false) + '</section>' +
+      '<section class="system-section" id="mejoras"><h2>Mejoras</h2><div class="fact-grid"><article class="fact-card"><h3>Controles observados</h3>' + tags(data.actions, false) + '</article>' +
+      '<article class="fact-card"><h3>Comparación de piezas</h3>' + facts(data.comparisonFields) + '<p>Las flechas verdes y rojas indican diferencias al comparar una pieza equipada con otra de la bolsa.</p></article></div></section>' +
+      '<section class="system-section split-section" id="fuse"><div><h2>Fuse</h2>' + badge('Función confirmada', false) + '<p>El botón aparece en <span lang="en">Spirit Root Bag</span>. Requisitos, costes y resultado exacto pendientes de documentar.</p></div></section>' +
+      '<section class="system-section split-section" id="decompose"><div><h2>Decompose</h2>' + badge('Función confirmada', false) + '<p>La opción aparece en la bolsa. Materiales recuperados y reglas de selección pendientes de verificar.</p></div></section>' +
+      '<section class="system-section" id="resonance"><h2>Resonance</h2><div class="fact-grid"><article class="fact-card"><h3>Categorías observadas</h3>' + tags(data.resonanceCategories, false) + '</article>' +
+      '<article class="fact-card"><h3>Niveles observados</h3>' + tags(data.resonanceLevels, false) + '<p>Las pantallas distinguen entre <span lang="en">Activated</span> y <span lang="en">Not Activated</span>.</p></article>' +
+      '<article class="fact-card"><h3>Stats mostradas</h3>' + tags(data.resonanceStats, false) + '</article></div></section>' +
+      '<section class="system-section" id="sacrifice"><h2>Sacrifice</h2><div class="fact-grid"><article class="fact-card"><h3>Distribución capturada</h3>' + facts(['Ocho posiciones exteriores.', 'Dos huecos centrales cerrados en la captura.', 'Nivel individual por posición.']) + '</article>' +
+      '<article class="fact-card"><h3>Efecto mostrado</h3><p>El primer desbloqueo indica un aumento del <strong>10 %</strong> de las estadísticas del Spirit Root equipado en esa posición.</p><p>La aportación exacta de cada rareza y estrella sigue pendiente de tabla.</p></article></div></section>' +
+      '<section class="system-section" id="core-spirit-root"><h2>Core Spirit Root</h2><div class="fact-grid">' + coreCards + '</div></section>' +
+      '<section class="system-section" id="obtencion-y-materiales"><h2>Obtención y materiales</h2><div class="fact-grid"><article class="fact-card"><h3>Fragmentos observados</h3>' + tags(data.fragments, false) + '</article>' +
+      '<article class="fact-card"><h3>Actividad relacionada</h3><p><span lang="en">Ancient Ruins</span> aparece como método de obtención para Spirit Root.</p>' + badge('Recompensas exactas pendientes', true) + '</article></div></section>' + futureZone();
+  }
+
+  function techniqueDetailCards(items) {
+    return items.map(function (item) {
+      return '<article class="fact-card"><h3>' + escapeHtml(item.name) + '</h3><p class="item-tier">' + escapeHtml(item.tier) + '</p>' + facts(item.stats) + '</article>';
+    }).join('');
+  }
+
+  function renderTechnique(page) {
+    var data = window.REFERENCE_DATA.technique;
+    var specialCards = data.special.map(function (item) {
+      return '<article class="fact-card"><h3>' + escapeHtml(item.name) + '</h3>' + badge(item.status, item.status.indexOf('pendiente') !== -1) + facts(item.facts) + '</article>';
+    }).join('');
+
+    return pageHeader(
+      page,
+      'Sistema documentado mediante capturas',
+      'Las Techniques se organizan por plantas y rangos. Esta página diferencia los datos visibles de las conclusiones que aún necesitan pruebas.',
+      'Plantas, nombres, varios rangos y seis fichas de estadísticas transcritos. La lista completa de costes y obtención sigue pendiente.'
+    ) +
+      '<section class="system-section" id="funcionamiento-general"><h2>Funcionamiento general</h2><div class="fact-grid"><article class="fact-card"><h3>Estructura observada</h3>' + facts(['Cinco plantas visibles: 1F–5F.', 'Cuatro Techniques por planta.', 'Mejora individual mediante Advance.', 'Rangos observados: T7, T10 y T13.']) + '</article>' +
+      '<article class="fact-card"><h3>Bonificación de finalización</h3><p>Varias capturas muestran <strong>Technique Stats +50 %</strong> al completar el rango indicado.</p><p>No se generaliza este valor a todas las Techniques hasta revisar cada ficha.</p></article></div></section>' +
+      '<section class="system-section" id="plantas"><h2>Plantas</h2><p>Plantas visibles en la interfaz:</p>' + tags(data.floors, false) + '</section>' +
+      '<section class="system-section" id="techniques-normales"><h2>Techniques normales</h2><p>Fichas con estadísticas completas transcritas:</p><div class="fact-grid">' + techniqueDetailCards(data.detailed) + '</div>' +
+      '<details class="name-catalog"><summary>Ver los 20 nombres observados</summary>' + tags(data.names, false) + '</details></section>' +
+      '<section class="system-section" id="techniques-especiales"><h2>Techniques especiales</h2><p>Los libros rojos observados pueden desbloquear o mejorar habilidades. Solo se marca como P2W aquello confirmado expresamente.</p><div class="fact-grid">' + specialCards + '</div></section>' +
+      '<section class="system-section" id="materiales-de-mejora"><h2>Materiales de mejora</h2><div class="fact-grid"><article class="fact-card"><h3>' + escapeHtml(data.material) + '</h3>' + badge('Material confirmado', false) + '<p>Se utiliza en la acción <span lang="en">Advance</span>.</p></article>' +
+      '<article class="fact-card"><h3>Obtención observada</h3><p><span lang="en">' + escapeHtml(data.observedSource) + '</span> aparece relacionado con la obtención del material.</p>' + badge('Recompensas exactas pendientes', true) + '</article></div></section>' + futureZone();
+  }
+
+  function renderCatalog(page, data, description) {
+    var cards = data.names.map(function (name) {
+      return '<article class="catalog-card" id="' + window.slugify(name) + '"><h2>' + escapeHtml(name) + '</h2>' + badge('Detalles pendientes', true) + '<p>Nombre documentado en el material del proyecto. Falta transcribir su pantalla dentro del juego.</p></article>';
+    }).join('');
+    return pageHeader(page, 'Catálogo en preparación', description, 'Nombres disponibles para organizar la página; funcionamiento, mejoras y recomendaciones pendientes de capturas verificables.') +
+      '<section class="system-section verification-method" id="funcionamiento-general"><h2>Funcionamiento general</h2><p>La estructura de esta página ya está preparada. La explicación se añadirá cuando se transcriban las pantallas del sistema y se comprueben sus materiales, mejoras y efectos.</p></section>' +
+      '<section class="catalog-grid" aria-label="Elementos documentados">' + cards + '</section>' + futureZone();
+  }
+
+  function renderHome(page) {
+    var links = [
+      ['/sistemas-del-personaje/stats', 'Stats', '38 nombres clasificados'],
+      ['/sistemas-del-personaje/spirit-root', 'Spirit Root', 'Estructura y elementos observados'],
+      ['/sistemas-del-personaje/technique', 'Technique', 'Plantas, fichas y materiales'],
+      ['/sistemas-del-personaje/swordflight', 'SwordFlight', 'Catálogo preparado'],
+      ['/sistemas-del-personaje/zodiac', 'Zodiac Transformations', 'Transformaciones documentadas']
+    ].map(function (item) {
+      return '<a class="quick-link" href="#' + item[0] + '"><strong>' + item[1] + '</strong><span>' + item[2] + '</span></a>';
+    }).join('');
+
+    return breadcrumbs(page) + '<section class="home-hero"><p class="page-kicker">Guía comunitaria no oficial</p><h1>Eternal Sword Pact Guía</h1>' +
+      '<p class="lead">Una base organizada para documentar sistemas, clases y progresión usando capturas, pruebas directas y fuentes identificables.</p></section>' +
+      '<section class="system-section" id="estado-de-la-guia"><h2>Estado de la guía</h2><div class="fact-grid"><article class="fact-card"><h3>Estructura</h3>' + badge('Disponible', false) + '<p>Navegación responsive, rutas directas y páginas maestras.</p></article>' +
+      '<article class="fact-card"><h3>Contenido</h3>' + badge('En verificación', true) + '<p>Se publica por fases para evitar datos inventados o conclusiones sin pruebas.</p></article></div></section>' +
+      '<section class="system-section" id="accesos-rapidos"><h2>Accesos rápidos</h2><div class="quick-grid">' + links + '</div></section>' +
+      '<section class="system-section verification-method" id="metodo-de-trabajo"><h2>Método de trabajo</h2>' + facts(['Registrar el nombre exacto mostrado en el juego.', 'Transcribir la descripción y los valores visibles.', 'Separar experiencia directa, fuente externa y deducción.', 'Marcar claramente la información todavía pendiente.']) + '</section>' + futureZone();
+  }
+
+  function renderProject(page) {
+    return pageHeader(page, 'Información del proyecto', 'Cómo se crea, revisa y mantiene Eternal Sword Pact Guía.', null) +
+      '<section class="system-section project-block" id="sobre-la-guia"><h2>Sobre la guía</h2><p>Proyecto comunitario para organizar información sobre Eternal Sword Pact en una web accesible desde ordenador, tableta y móvil.</p></section>' +
+      '<section class="system-section project-block" id="objetivo"><h2>Objetivo</h2><p>Explicar los sistemas del juego de forma clara, enlazar los temas relacionados y mantener separadas las explicaciones generales de las recomendaciones específicas de cada clase.</p></section>' +
+      '<section class="system-section project-block" id="autores"><h2>Autores</h2><p><strong>PeRiChGons</strong>: autor, editor, responsable de las pruebas y aprobación final del contenido.</p><p><strong>ChatGPT de OpenAI</strong>: asistencia en organización, redacción, diseño y programación.</p></section>' +
+      '<section class="system-section project-block" id="verificacion-de-la-informacion"><h2>Verificación de la información</h2>' + facts(['Capturas y datos obtenidos dentro del juego.', 'Experiencia directa y pruebas realizadas por el autor.', 'Comparación con fuentes públicas cuando estén disponibles.', 'Información dudosa señalada como pendiente, sin presentarla como un hecho.']) + '</section>' +
+      '<section class="system-section project-block" id="fuentes"><h2>Fuentes</h2><p>Las páginas indicarán la procedencia concreta de la información cuando se utilice una fuente externa. “La web” no se considera una referencia suficiente sin identificar la página o publicación.</p></section>' +
+      '<section class="system-section project-block" id="aviso-sobre-contenido-no-oficial"><h2>Aviso sobre contenido no oficial</h2><p>Esta es una guía creada por aficionados y no está afiliada con los desarrolladores o distribuidores de Eternal Sword Pact. Los nombres, marcas e imágenes del juego pertenecen a sus respectivos titulares. El contenido puede requerir cambios después de actualizaciones del juego.</p></section>' + futureZone();
+  }
+
+  window.renderGuidePage = function (page) {
+    if (page.type === 'home') { return renderHome(page); }
+    if (page.type === 'stats') { return renderStats(page); }
+    if (page.type === 'spirit-root') { return renderSpiritRoot(page); }
+    if (page.type === 'technique') { return renderTechnique(page); }
+    if (page.type === 'swordflight') { return renderCatalog(page, window.REFERENCE_DATA.swordFlight, 'Página maestra preparada para documentar el funcionamiento y cada SwordFlight sin duplicar información entre clases.'); }
+    if (page.type === 'zodiac') { return renderCatalog(page, window.REFERENCE_DATA.zodiac, 'Página maestra para las Zodiac Transformations observadas en el material recopilado.'); }
+    if (page.type === 'project') { return renderProject(page); }
+    return null;
+  };
+}());

@@ -65,43 +65,43 @@
   function renderStats(page) {
     return pageHeader(
       page,
-      'Información transcrita del juego',
-      'Esta página reúne los nombres observados en las pantallas de estadísticas. No se atribuye ningún efecto que todavía no haya sido contrastado.',
-      'Clasificación y nombres confirmados mediante capturas. Las descripciones y fórmulas se incorporarán después de verificarlas.'
+      'Estadísticas del personaje',
+      'Esta página organiza las estadísticas del personaje y separa sus nombres confirmados de las descripciones que todavía necesitan verificación.',
+      'Nombres confirmados. Efectos, valores y fórmulas pendientes de completar.'
     ) +
       '<section class="system-section" id="basic-stats"><h2>Basic Stats</h2><p>Nombres mostrados dentro de la categoría <span lang="en">Basic Stats</span> del juego.</p>' +
       '<div class="table-scroll" tabindex="0"><table class="stats-table"><thead><tr><th scope="col">Nombre</th><th scope="col">Verificación</th><th scope="col">Descripción</th></tr></thead><tbody>' + statsRows(window.STATS_CONTENT.basic) + '</tbody></table></div></section>' +
       '<section class="system-section" id="special-stats"><h2>Special Stats</h2><p>Nombres mostrados dentro de la categoría <span lang="en">Special Stats</span> del juego.</p>' +
       '<div class="table-scroll" tabindex="0"><table class="stats-table"><thead><tr><th scope="col">Nombre</th><th scope="col">Verificación</th><th scope="col">Descripción</th></tr></thead><tbody>' + statsRows(window.STATS_CONTENT.special) + '</tbody></table></div></section>' +
       '<section class="system-section verification-method" id="criterio-de-verificacion"><h2>Criterio de verificación</h2><p>Antes de completar cada estadística se comprobarán estos datos:</p>' +
-      facts(['Nombre exacto mostrado por el juego.', 'Descripción accesible desde el icono de información.', 'Valores o fórmulas visibles, sin extrapolaciones.', 'Versión o fecha de la captura utilizada.']) + '</section>' + futureZone();
+      facts(['Nombre exacto mostrado por el juego.', 'Descripción accesible desde el icono de información.', 'Valores o fórmulas visibles, sin extrapolaciones.', 'Versión o fecha de la fuente utilizada.']) + '</section>' + futureZone();
   }
 
   function renderSpiritRoot(page) {
     var data = window.REFERENCE_DATA.spiritRoot;
     var coreCards = data.coreRoots.map(function (root) {
-      return '<article class="fact-card"><h3>' + escapeHtml(root.name) + '</h3>' + badge('Captura confirmada', false) +
+      return '<article class="fact-card"><h3>' + escapeHtml(root.name) + '</h3>' + badge('Elemento confirmado', false) +
         '<p>' + escapeHtml(root.observed) + '</p><strong>Obtención mostrada</strong>' + tags(root.sources, false) + '</article>';
     }).join('');
 
     return pageHeader(
       page,
-      'Sistema documentado mediante capturas',
-      'Resumen organizado de las pantallas de Spirit Root. Los nombres y estados visibles se conservan en inglés para que coincidan con el juego.',
-      'Estructura general, controles y varios elementos confirmados. Costes, probabilidades y recomendaciones siguen pendientes.'
+      'Sistema Spirit Root',
+      'Spirit Root organiza raíces elementales, mejoras, resonancias, sacrificios y núcleos. Los nombres de la interfaz se conservan en inglés para que coincidan con el juego.',
+      'Estructura y acciones principales confirmadas. Costes, probabilidades y recomendaciones siguen pendientes.'
     ) +
-      '<section class="system-section" id="tipos-de-spirit-root"><h2>Tipos de Spirit Root</h2><p>Tipos observados en las capturas aportadas. La lista completa todavía debe revisarse dentro del juego.</p>' + tags(data.observedTypes, false) + '</section>' +
-      '<section class="system-section" id="mejoras"><h2>Mejoras</h2><div class="fact-grid"><article class="fact-card"><h3>Controles observados</h3>' + tags(data.actions, false) + '</article>' +
+      '<section class="system-section" id="tipos-de-spirit-root"><h2>Tipos de Spirit Root</h2><p>Tipos documentados dentro del sistema. La lista completa todavía debe revisarse dentro del juego.</p>' + tags(data.observedTypes, false) + '</section>' +
+      '<section class="system-section" id="mejoras"><h2>Mejoras</h2><div class="fact-grid"><article class="fact-card"><h3>Acciones principales</h3>' + tags(data.actions, false) + '</article>' +
       '<article class="fact-card"><h3>Comparación de piezas</h3>' + facts(data.comparisonFields) + '<p>Las flechas verdes y rojas indican diferencias al comparar una pieza equipada con otra de la bolsa.</p></article></div></section>' +
       '<section class="system-section split-section" id="fuse"><div><h2>Fuse</h2>' + badge('Función confirmada', false) + '<p>El botón aparece en <span lang="en">Spirit Root Bag</span>. Requisitos, costes y resultado exacto pendientes de documentar.</p></div></section>' +
       '<section class="system-section split-section" id="decompose"><div><h2>Decompose</h2>' + badge('Función confirmada', false) + '<p>La opción aparece en la bolsa. Materiales recuperados y reglas de selección pendientes de verificar.</p></div></section>' +
-      '<section class="system-section" id="resonance"><h2>Resonance</h2><div class="fact-grid"><article class="fact-card"><h3>Categorías observadas</h3>' + tags(data.resonanceCategories, false) + '</article>' +
-      '<article class="fact-card"><h3>Niveles observados</h3>' + tags(data.resonanceLevels, false) + '<p>Las pantallas distinguen entre <span lang="en">Activated</span> y <span lang="en">Not Activated</span>.</p></article>' +
+      '<section class="system-section" id="resonance"><h2>Resonance</h2><div class="fact-grid"><article class="fact-card"><h3>Categorías</h3>' + tags(data.resonanceCategories, false) + '</article>' +
+      '<article class="fact-card"><h3>Niveles</h3>' + tags(data.resonanceLevels, false) + '<p>El sistema distingue entre <span lang="en">Activated</span> y <span lang="en">Not Activated</span>.</p></article>' +
       '<article class="fact-card"><h3>Stats mostradas</h3>' + tags(data.resonanceStats, false) + '</article></div></section>' +
-      '<section class="system-section" id="sacrifice"><h2>Sacrifice</h2><div class="fact-grid"><article class="fact-card"><h3>Distribución capturada</h3>' + facts(['Ocho posiciones exteriores.', 'Dos huecos centrales cerrados en la captura.', 'Nivel individual por posición.']) + '</article>' +
+      '<section class="system-section" id="sacrifice"><h2>Sacrifice</h2><div class="fact-grid"><article class="fact-card"><h3>Distribución del sistema</h3>' + facts(['Ocho posiciones exteriores.', 'Dos huecos centrales pendientes de documentar.', 'Nivel individual por posición.']) + '</article>' +
       '<article class="fact-card"><h3>Efecto mostrado</h3><p>El primer desbloqueo indica un aumento del <strong>10 %</strong> de las estadísticas del Spirit Root equipado en esa posición.</p><p>La aportación exacta de cada rareza y estrella sigue pendiente de tabla.</p></article></div></section>' +
       '<section class="system-section" id="core-spirit-root"><h2>Core Spirit Root</h2><div class="fact-grid">' + coreCards + '</div></section>' +
-      '<section class="system-section" id="obtencion-y-materiales"><h2>Obtención y materiales</h2><div class="fact-grid"><article class="fact-card"><h3>Fragmentos observados</h3>' + tags(data.fragments, false) + '</article>' +
+      '<section class="system-section" id="obtencion-y-materiales"><h2>Obtención y materiales</h2><div class="fact-grid"><article class="fact-card"><h3>Fragmentos documentados</h3>' + tags(data.fragments, false) + '</article>' +
       '<article class="fact-card"><h3>Actividad relacionada</h3><p><span lang="en">Ancient Ruins</span> aparece como método de obtención para Spirit Root.</p>' + badge('Recompensas exactas pendientes', true) + '</article></div></section>' + futureZone();
   }
 
@@ -119,18 +119,18 @@
 
     return pageHeader(
       page,
-      'Sistema documentado mediante capturas',
-      'Las Techniques se organizan por plantas y rangos. Esta página diferencia los datos visibles de las conclusiones que aún necesitan pruebas.',
-      'Plantas, nombres, varios rangos y seis fichas de estadísticas transcritos. La lista completa de costes y obtención sigue pendiente.'
+      'Sistema Technique',
+      'Technique organiza libros por plantas y rangos. Cada libro puede aportar estadísticas o desbloquear habilidades especiales, según la ficha correspondiente.',
+      'Plantas, nombres, varios rangos y seis fichas de estadísticas confirmados. Costes y obtención completa pendientes.'
     ) +
-      '<section class="system-section" id="funcionamiento-general"><h2>Funcionamiento general</h2><div class="fact-grid"><article class="fact-card"><h3>Estructura observada</h3>' + facts(['Cinco plantas visibles: 1F–5F.', 'Cuatro Techniques por planta.', 'Mejora individual mediante Advance.', 'Rangos observados: T7, T10 y T13.']) + '</article>' +
-      '<article class="fact-card"><h3>Bonificación de finalización</h3><p>Varias capturas muestran <strong>Technique Stats +50 %</strong> al completar el rango indicado.</p><p>No se generaliza este valor a todas las Techniques hasta revisar cada ficha.</p></article></div></section>' +
+      '<section class="system-section" id="funcionamiento-general"><h2>Funcionamiento general</h2><div class="fact-grid"><article class="fact-card"><h3>Estructura del sistema</h3>' + facts(['Cinco plantas documentadas: 1F–5F.', 'Cuatro Techniques por planta.', 'Mejora individual mediante Advance.', 'Rangos documentados: T7, T10 y T13.']) + '</article>' +
+      '<article class="fact-card"><h3>Bonificación de finalización</h3><p>Al completar algunos rangos se concede <strong>Technique Stats +50 %</strong>.</p><p>No se generaliza este valor a todas las Techniques hasta revisar cada ficha.</p></article></div></section>' +
       '<section class="system-section" id="plantas"><h2>Plantas</h2><p>Plantas visibles en la interfaz:</p>' + tags(data.floors, false) + '</section>' +
       '<section class="system-section" id="techniques-normales"><h2>Techniques normales</h2><p>Fichas con estadísticas completas transcritas:</p><div class="fact-grid">' + techniqueDetailCards(data.detailed) + '</div>' +
-      '<details class="name-catalog"><summary>Ver los 20 nombres observados</summary>' + tags(data.names, false) + '</details></section>' +
-      '<section class="system-section" id="techniques-especiales"><h2>Techniques especiales</h2><p>Los libros rojos observados pueden desbloquear o mejorar habilidades. Solo se marca como P2W aquello confirmado expresamente.</p><div class="fact-grid">' + specialCards + '</div></section>' +
+      '<details class="name-catalog"><summary>Ver los 20 nombres documentados</summary>' + tags(data.names, false) + '</details></section>' +
+      '<section class="system-section" id="techniques-especiales"><h2>Techniques especiales</h2><p>Los libros rojos pueden desbloquear o mejorar habilidades. Solo se marca como P2W aquello confirmado expresamente.</p><div class="fact-grid">' + specialCards + '</div></section>' +
       '<section class="system-section" id="materiales-de-mejora"><h2>Materiales de mejora</h2><div class="fact-grid"><article class="fact-card"><h3>' + escapeHtml(data.material) + '</h3>' + badge('Material confirmado', false) + '<p>Se utiliza en la acción <span lang="en">Advance</span>.</p></article>' +
-      '<article class="fact-card"><h3>Obtención observada</h3><p><span lang="en">' + escapeHtml(data.observedSource) + '</span> aparece relacionado con la obtención del material.</p>' + badge('Recompensas exactas pendientes', true) + '</article></div></section>' + futureZone();
+      '<article class="fact-card"><h3>Obtención documentada</h3><p><span lang="en">' + escapeHtml(data.observedSource) + '</span> es la actividad relacionada con la obtención del material.</p>' + badge('Recompensas exactas pendientes', true) + '</article></div></section>' + futureZone();
   }
 
   function renderWisp(page) {
@@ -138,20 +138,20 @@
 
     return pageHeader(
       page,
-      'Sistema nuevo documentado mediante captura',
-      'La primera pantalla de Wisp se ha transcrito sin completar con suposiciones los botones o mecánicas que todavía no se han abierto.',
-      'Interfaz general confirmada en una captura del ' + data.captureDate + '. Funcionamiento, costes, probabilidades y efectos detallados pendientes.'
+      'Sistema Wisp',
+      'Wisp organiza un Array de criaturas o entidades invocables mediante las opciones Sprite y Sacrifice. El funcionamiento detallado de cada apartado sigue pendiente.',
+      'Interfaz general confirmada. Funcionamiento, costes, probabilidades y efectos detallados pendientes.'
     ) +
       '<section class="system-section" id="vista-general"><h2>Vista general</h2><div class="fact-grid"><article class="fact-card"><h3>Datos visibles</h3>' + facts([
         'Wisp Array Level: ' + data.arrayLevel + '.',
         'Power mostrado: ' + data.power + '.',
         'Progreso de nivel: ' + data.experience + '.',
-        data.occupiedSlots + ' posiciones ocupadas y ' + data.emptySlots + ' posiciones vacías en la captura.'
-      ]) + '</article><article class="fact-card"><h3>Secciones visibles</h3>' + tags(data.tabs, false) + '<p>La pestaña <span lang="en">Sprite</span> está seleccionada en la captura.</p></article></div></section>' +
-      '<section class="system-section" id="wisp-array"><h2>Wisp Array</h2><p>Los retratos colocados alrededor del Array muestran un valor de <span lang="en">Aptitude</span>. Estos son los valores legibles en la captura:</p>' + tags(data.aptitudeValues.map(String), false) + '<aside class="verification-note"><strong>Límite de la evidencia:</strong> todavía no se conoce cómo se calcula Aptitude, qué estadísticas aporta cada Wisp ni si todas las posiciones tienen el mismo efecto.</aside></section>' +
-      '<section class="system-section" id="sprite-y-summon"><h2>Sprite y Summon</h2><div class="fact-grid"><article class="fact-card"><h3>Acciones disponibles</h3>' + tags(data.actions, false) + '<p>Se observan tres objetos de invocación, todos con cantidad <strong>0/1</strong> en la captura.</p></article><article class="fact-card"><h3>Texto mostrado</h3><p lang="en">' + escapeHtml(data.summonText) + '</p><p>La interfaz indica que abrir el objeto añade un punto de EXP al nivel del Wisp Array. No se documentan todavía recompensas ni probabilidades.</p></article></div></section>' +
-      '<section class="system-section" id="sacrifice"><h2>Sacrifice</h2>' + badge('Pestaña confirmada', false) + '<p>La pestaña existe, pero su contenido no aparece abierto en la captura disponible.</p>' + badge('Funcionamiento pendiente', true) + '</section>' +
-      '<section class="system-section" id="accesos-relacionados"><h2>Accesos relacionados</h2><p>Botones visibles junto al panel de Wisp:</p>' + tags(data.relatedAccess, false) + '<p><span lang="en">Northern Abyss Order</span> muestra el contador <strong>' + escapeHtml(data.observedCountdown) + '</strong> en el momento de la captura. No se presupone si es un evento, una temporada o un desbloqueo hasta abrir su pantalla.</p></section>' +
+        data.occupiedSlots + ' posiciones ocupadas y ' + data.emptySlots + ' posiciones vacías en el estado documentado.'
+      ]) + '</article><article class="fact-card"><h3>Secciones del sistema</h3>' + tags(data.tabs, false) + '<p>La pestaña <span lang="en">Sprite</span> es la vista inicial documentada.</p></article></div></section>' +
+      '<section class="system-section" id="wisp-array"><h2>Wisp Array</h2><p>Cada posición del Array tiene un valor de <span lang="en">Aptitude</span>. Los valores documentados son:</p>' + tags(data.aptitudeValues.map(String), false) + '<aside class="verification-note"><strong>Contenido pendiente:</strong> todavía no se conoce cómo se calcula Aptitude, qué estadísticas aporta cada Wisp ni si todas las posiciones tienen el mismo efecto.</aside></section>' +
+      '<section class="system-section" id="sprite-y-summon"><h2>Sprite y Summon</h2><div class="fact-grid"><article class="fact-card"><h3>Acciones disponibles</h3>' + tags(data.actions, false) + '<p>La pantalla de invocación utiliza objetos con cantidad <strong>0/1</strong> en el estado documentado.</p></article><article class="fact-card"><h3>Efecto de apertura</h3><p lang="en">' + escapeHtml(data.summonText) + '</p><p>Abrir el objeto añade un punto de EXP al nivel del Wisp Array. Recompensas y probabilidades siguen pendientes.</p></article></div></section>' +
+      '<section class="system-section" id="sacrifice"><h2>Sacrifice</h2>' + badge('Pestaña confirmada', false) + '<p>La pestaña existe, pero su funcionamiento todavía está pendiente de documentar.</p>' + badge('Funcionamiento pendiente', true) + '</section>' +
+      '<section class="system-section" id="accesos-relacionados"><h2>Accesos relacionados</h2><p>El sistema enlaza con:</p>' + tags(data.relatedAccess, false) + '<p><span lang="en">Northern Abyss Order</span> mantiene el contador <strong>' + escapeHtml(data.observedCountdown) + '</strong> en el estado documentado. Su finalidad sigue pendiente de confirmar.</p></section>' +
       '<section class="system-section verification-method" id="datos-pendientes"><h2>Datos pendientes</h2><p>Para explicar el sistema con precisión todavía hacen falta estas pantallas:</p>' + tags(data.pendingScreens, true) + '<p>También quedan pendientes los materiales, las formas de obtención, las mejoras, los efectos de cada posición y cualquier parte gratuita o de pago.</p></section>' + futureZone();
   }
 
@@ -169,43 +169,42 @@
 
     return pageHeader(
       page,
-      'Sistema independiente documentado mediante 104 capturas',
+      'Sistema Spirit',
       'La interfaz del juego denomina Spirit a este sistema de personajes coleccionables. No es Wisp: ambos conservan páginas y mecánicas separadas.',
-      'Quince Spirits, sus pantallas principales y cinco áreas de progresión confirmadas en capturas del ' + data.captureDate + '. Bond y varias reglas detalladas siguen pendientes.'
+      'Quince Spirits, sus pantallas principales y cinco áreas de progresión documentadas. Bond y varias reglas detalladas siguen pendientes.'
     ) +
-      '<section class="system-section" id="vista-general"><h2>Vista general</h2><div class="fact-grid"><article class="fact-card"><h3>Pestañas observadas</h3>' + tags(data.tabs, false) + '</article>' +
+      '<section class="system-section" id="vista-general"><h2>Vista general</h2><div class="fact-grid"><article class="fact-card"><h3>Áreas del sistema</h3>' + tags(data.tabs, false) + '</article>' +
       '<article class="fact-card"><h3>Estados del Array</h3>' + tags(data.arrayStates, false) + '<p><span lang="en">Battle</span> y <span lang="en">Aid</span> aparecen asociados a las posiciones de despliegue del Array. No se presentan como rarezas ni como categorías del Spirit; su efecto exacto sigue pendiente de confirmación.</p></article>' +
       '<article class="fact-card"><h3>Estadísticas visibles</h3>' + tags(data.visibleStats, false) + '<p>La combinación mostrada cambia entre Spirits.</p></article></div></section>' +
-      '<section class="system-section" id="spirits-documentados"><h2>Spirits documentados</h2><p>La clasificación observada se expresa mediante rareza o grade (<span lang="en">SR</span>, <span lang="en">SSR</span>, <span lang="en">UR</span>), color y estrellas. Estos nombres y rarezas se leen en las capturas y no constituyen todavía una lista completa del juego.</p><div class="fact-grid">' + rarityCards + '</div></section>' +
+      '<section class="system-section" id="spirits-documentados"><h2>Spirits documentados</h2><p>La clasificación de los Spirits combina rareza o grade (<span lang="en">SR</span>, <span lang="en">SSR</span>, <span lang="en">UR</span>), color y estrellas. La lista no se considera completa hasta revisar todas las variantes disponibles.</p><div class="fact-grid">' + rarityCards + '</div></section>' +
       '<section class="system-section" id="basic-y-upgrade"><h2>Basic y Upgrade</h2><div class="fact-grid"><article class="fact-card"><h3>Basic</h3>' + facts(['Spirit Rating y estadísticas del Spirit.', 'Bonificaciones porcentuales asociadas a sus estadísticas.', 'Spirit Basic Attack y Spirit Skill o Awakening Skill.', 'Role, School, alcance y Evolution Effect visibles al abrir una habilidad.']) + '</article>' +
       '<article class="fact-card"><h3>Upgrade</h3>' + tags(data.upgradeActions, false) + '<p>La pantalla compara los valores actuales con los posteriores a la mejora y avisa de que el progreso se conserva al cambiar el Spirit desplegado.</p></article></div></section>' +
-      '<section class="system-section" id="array-y-arraycore"><h2>Array y Arraycore</h2><div class="fact-grid"><article class="fact-card"><h3>Funcionamiento observado</h3>' + facts(data.arrayFacts) + '</article>' +
-      '<article class="fact-card"><h3>Acciones observadas</h3>' + tags(data.arrayActions, false) + '<p>La pestaña <span lang="en">Arraycore</span> muestra piezas con tier y estadísticas, pero todavía falta documentar sus reglas completas.</p></article></div></section>' +
+      '<section class="system-section" id="array-y-arraycore"><h2>Array y Arraycore</h2><div class="fact-grid"><article class="fact-card"><h3>Estructura del sistema</h3>' + facts(data.arrayFacts) + '</article>' +
+      '<article class="fact-card"><h3>Acciones disponibles</h3>' + tags(data.arrayActions, false) + '<p>La pestaña <span lang="en">Arraycore</span> gestiona piezas con tier y estadísticas, pero todavía falta documentar sus reglas completas.</p></article></div></section>' +
       '<section class="system-section" id="kismet-spirit-treasure"><h2>Kismet / Spirit Treasure</h2><div class="fact-grid"><article class="fact-card"><h3>Pantallas y acciones visibles</h3>' + tags(treasure.tabs, false) + tags(treasure.drawActions, false) + '<p>La pantalla muestra un contador de suerte y registros de premios. No se presenta como un sistema permanente hasta verificar su duración.</p></article>' +
-      '<article class="fact-card"><h3>Garantías mostradas</h3>' + tags(treasure.guarantees, false) + '<p>Son textos observados en el vídeo y deben comprobarse en la ayuda del juego antes de publicarse como regla general.</p></article>' +
+      '<article class="fact-card"><h3>Garantías del sistema</h3>' + tags(treasure.guarantees, false) + '<p>Estas garantías deben comprobarse en la ayuda del juego antes de publicarse como regla general.</p></article>' +
       '<article class="fact-card"><h3>Wisp Voucher</h3>' + badge('Texto visible; relación pendiente', true) + '<p><span lang="en">' + escapeHtml(treasure.voucher) + '</span> aparece en una ventana que pregunta si se quieren gastar 110 para completar el <span lang="en">Treasure Hunt</span>.</p></article></div>' +
-      '<h3>Arraycore y evolución mostrados en la misma grabación</h3>' + tags(treasure.arraycore, false) + facts(treasure.arrayFacts) + '<aside class="verification-note"><strong>Contenido pendiente:</strong> costes, monedas, recompensas completas y relación exacta entre Kismet, Spirit Treasure y Wisp Voucher.</aside></section>' +
+      '<h3>Arraycore y evolución</h3>' + tags(treasure.arraycore, false) + facts(treasure.arrayFacts) + '<aside class="verification-note"><strong>Contenido pendiente:</strong> costes, monedas, recompensas completas y relación exacta entre Kismet, Spirit Treasure y Wisp Voucher.</aside></section>' +
       '<section class="system-section" id="evolution"><h2>Evolution</h2>' + facts(data.evolutionFacts) + '<aside class="verification-note"><strong>Límite de la evidencia:</strong> los requisitos cambian según rareza, estrellas y estado del Spirit; no se publica todavía una tabla de costes.</aside></section>' +
-      '<section class="system-section" id="bond"><h2>Bond</h2>' + badge('Flujo confirmado en vídeos', false) + '<p>Bond es la pantalla de afinidad de cada Spirit. Los vídeos muestran las pestañas <span lang="en">Present</span> y <span lang="en">Biography</span>, varios rangos de relación y capítulos de historia.</p>' +
-      '<div class="fact-grid"><article class="fact-card"><h3>Present</h3>' + tags(bond.actions, false) + tags(bond.intimacyObserved, false) + '<p>La pantalla también muestra estadísticas de referencia y los botones <span lang="en">Quick Upgrade</span> y <span lang="en">Upgrade</span>. Las cifras observadas dependen del Spirit y de la cuenta mostrada.</p></article>' +
+      '<section class="system-section" id="bond"><h2>Bond</h2>' + badge('Sistema de afinidad documentado', false) + '<p>Bond es el sistema de afinidad de cada Spirit. Incluye las pestañas <span lang="en">Present</span> y <span lang="en">Biography</span>, rangos de relación y capítulos de historia.</p>' +
+      '<div class="fact-grid"><article class="fact-card"><h3>Present</h3>' + tags(bond.actions, false) + tags(bond.intimacyObserved, false) + '<p>La pantalla también muestra estadísticas de referencia y los botones <span lang="en">Quick Upgrade</span> y <span lang="en">Upgrade</span>. Las cifras dependen del Spirit y de la cuenta utilizada.</p></article>' +
       '<article class="fact-card"><h3>Biography</h3>' + tags(bond.biographyFields, false) + tags(bond.chapters, false) + '<p>Los capítulos se despliegan uno a uno y pueden incluir requisitos de <span lang="en">Affinity</span>. No se traduce el texto narrativo ni se presenta como una bonificación jugable.</p></article>' +
-      '<article class="fact-card"><h3>Rangos observados</h3>' + tags(bond.ranks, false) + '<p>Los vídeos muestran <span lang="en">Stranger</span>, <span lang="en">Familiar</span>, <span lang="en">Confidant</span> y <span lang="en">Admired</span>. No se afirma que sean todos los rangos disponibles.</p></article></div>' +
+      '<article class="fact-card"><h3>Rangos documentados</h3>' + tags(bond.ranks, false) + '<p>Estos rangos forman parte de la progresión de afinidad documentada. No se afirma que sean todos los rangos disponibles.</p></article></div>' +
       '<h3>Ejemplos transcritos</h3><div class="fact-grid">' + bondExamples + '</div>' +
       '<h3>Datos confirmados</h3>' + facts(bond.confirmed) + '<aside class="verification-note"><strong>Contenido pendiente:</strong> faltan los costes, los umbrales completos, los efectos exactos y la forma de conseguir afinidad.</aside></section>' +
-      '<section class="system-section" id="cleanse-y-tier-up"><h2>Cleanse y Tier Up</h2><div class="fact-grid"><article class="fact-card"><h3>Aptitudes observadas</h3>' + tags(data.cleanseStats, false) + '</article>' +
-      '<article class="fact-card"><h3>Acciones y materiales</h3>' + tags(data.cleanseActions, false) + tags(data.cleanseMaterials, false) + '<p>Las capturas muestran un límite de Cleanse relacionado con estrellas, categoría y tier, pero la regla completa todavía debe verificarse.</p></article>' +
-      '<article class="fact-card"><h3>Prueba grabada</h3>' + badge('Flujo confirmado en vídeo', false) + facts([
+      '<section class="system-section" id="cleanse-y-tier-up"><h2>Cleanse y Tier Up</h2><div class="fact-grid"><article class="fact-card"><h3>Aptitudes</h3>' + tags(data.cleanseStats, false) + '</article>' +
+      '<article class="fact-card"><h3>Acciones y materiales</h3>' + tags(data.cleanseActions, false) + tags(data.cleanseMaterials, false) + '<p>Cleanse aplica un límite relacionado con estrellas, categoría y tier; la regla completa todavía debe verificarse.</p></article>' +
+      '<article class="fact-card"><h3>Ejemplo de funcionamiento</h3>' + badge('Flujo documentado', false) + facts([
         cleanseVideo.spirit + ' · ' + cleanseVideo.rarity + ' · ' + cleanseVideo.tier + '.',
-        'Duración revisada: ' + cleanseVideo.duration + '.',
-        'Límite mostrado: ' + cleanseVideo.displayedCap + '.',
-        'Spirit Aptitude mostrado: ' + cleanseVideo.startingTotal + ' → ' + cleanseVideo.observedTotal + '.',
-        'Power mostrado: ' + cleanseVideo.startingPower + ' → ' + cleanseVideo.observedPower + '.'
+        'Límite utilizado en el ejemplo: ' + cleanseVideo.displayedCap + '.',
+        'Spirit Aptitude del ejemplo: ' + cleanseVideo.startingTotal + ' → ' + cleanseVideo.observedTotal + '.',
+        'Power del ejemplo: ' + cleanseVideo.startingPower + ' → ' + cleanseVideo.observedPower + '.'
       ]) + '</article></div>' +
       '<h3>Cleanse manual</h3><p>Valores iniciales del ejemplo:</p>' + tags(cleanseVideo.startingAptitudes, false) + facts(cleanseVideo.manualFlow) +
-      '<p>En el estado inicial estable, la suma de las cinco aptitudes coincide con <strong>Spirit Aptitude ' + cleanseVideo.startingTotal + '</strong>. El material seleccionado pasa de <strong>' + escapeHtml(cleanseVideo.basicPillCounter) + '</strong> durante toda la grabación.</p>' +
-      '<h3>Auto Refine y Smart Refinement</h3>' + facts(cleanseVideo.automaticFlow) + '<aside class="verification-note"><strong>Pendiente:</strong> el vídeo no abre Tier Up ni la ayuda del sistema, por lo que todavía no se explica cómo aumenta el máximo de cada aptitud ni qué condición exacta utiliza Smart Refinement.</aside></section>' +
-      '<section class="system-section" id="demoncore-y-pill-array"><h2>Demoncore y Pill Array</h2><div class="fact-grid"><article class="fact-card"><h3>Grupos observados</h3>' + tags(data.pillArrayGroups, false) + '<p>Un Pill Array se activa al equipar la cantidad, color y estrellas de Demoncores indicados. Al activarse muestra estadísticas de conjunto.</p></article>' +
-      '<article class="fact-card"><h3>Pill Arrays observados</h3>' + tags(data.pillArrays, false) + '</article>' +
+      '<p>En el estado inicial estable, la suma de las cinco aptitudes coincide con <strong>Spirit Aptitude ' + cleanseVideo.startingTotal + '</strong>. El material seleccionado pasa de <strong>' + escapeHtml(cleanseVideo.basicPillCounter) + '</strong> en el ejemplo documentado.</p>' +
+      '<h3>Auto Refine y Smart Refinement</h3>' + facts(cleanseVideo.automaticFlow) + '<aside class="verification-note"><strong>Pendiente:</strong> todavía no se explica cómo aumenta el máximo de cada aptitud ni qué condición exacta utiliza Smart Refinement.</aside></section>' +
+      '<section class="system-section" id="demoncore-y-pill-array"><h2>Demoncore y Pill Array</h2><div class="fact-grid"><article class="fact-card"><h3>Grupos del sistema</h3>' + tags(data.pillArrayGroups, false) + '<p>Un Pill Array se activa al equipar la cantidad, color y estrellas de Demoncores indicados. Al activarse muestra estadísticas de conjunto.</p></article>' +
+      '<article class="fact-card"><h3>Pill Arrays documentados</h3>' + tags(data.pillArrays, false) + '</article>' +
       '<article class="fact-card"><h3>Gestión de Demoncores</h3>' + tags(data.demoncoreActions, false) + '<p>Las piezas abiertas figuran como <span lang="en">Universal</span> y muestran estrellas, estadísticas y Power.</p></article></div></section>' +
       '<section class="system-section verification-method" id="datos-pendientes"><h2>Datos pendientes</h2><p>El material disponible permite documentar la estructura, pero no demuestra todavía estos detalles:</p>' + tags(data.pending.concat(bond.pending), true) + '</section>' + futureZone();
   }
@@ -214,7 +213,7 @@
     var cards = data.names.map(function (name) {
       return '<article class="catalog-card" id="' + window.slugify(name) + '"><h2>' + escapeHtml(name) + '</h2>' + badge('Detalles pendientes', true) + '<p>Nombre documentado en el material del proyecto. Falta transcribir su pantalla dentro del juego.</p></article>';
     }).join('');
-    return pageHeader(page, 'Catálogo en preparación', description, 'Nombres disponibles para organizar la página; funcionamiento, mejoras y recomendaciones pendientes de capturas verificables.') +
+    return pageHeader(page, 'Catálogo en preparación', description, 'Nombres disponibles para organizar la página; funcionamiento, mejoras y recomendaciones pendientes de información verificable.') +
       '<section class="system-section verification-method" id="funcionamiento-general"><h2>Funcionamiento general</h2><p>La estructura de esta página ya está preparada. La explicación se añadirá cuando se transcriban las pantallas del sistema y se comprueben sus materiales, mejoras y efectos.</p></section>' +
       '<section class="catalog-grid" aria-label="Elementos documentados">' + cards + '</section>' + futureZone();
   }
@@ -233,7 +232,7 @@
     }).join('');
 
     return breadcrumbs(page) + '<section class="home-hero"><p class="page-kicker">Guía comunitaria no oficial</p><h1>Eternal Sword Pact Guía</h1>' +
-      '<p class="lead">Una base organizada para documentar sistemas, clases y progresión usando capturas, pruebas directas y fuentes identificables.</p></section>' +
+      '<p class="lead">Una base organizada para explicar sistemas, clases y progresión usando datos del juego, pruebas directas y fuentes identificables.</p></section>' +
       '<section class="system-section" id="estado-de-la-guia"><h2>Estado de la guía</h2><div class="fact-grid"><article class="fact-card"><h3>Estructura</h3>' + badge('Disponible', false) + '<p>Navegación responsive, rutas directas y páginas maestras.</p></article>' +
       '<article class="fact-card"><h3>Contenido</h3>' + badge('En verificación', true) + '<p>Se publica por fases para evitar datos inventados o conclusiones sin pruebas.</p></article></div></section>' +
       '<section class="system-section" id="accesos-rapidos"><h2>Accesos rápidos</h2><div class="quick-grid">' + links + '</div></section>' +
@@ -249,7 +248,7 @@
       '<section class="system-section project-block" id="fuentes"><h2>Fuentes</h2><p>Las páginas indicarán la procedencia concreta de la información cuando se utilice una fuente externa. “La web” no se considera una referencia suficiente sin identificar la página o publicación.</p></section>' +
       '<section class="system-section project-block" id="investigacion-web"><h2>Investigación web</h2><p><strong>Última revisión:</strong> 14 de julio de 2026.</p><div class="fact-grid"><article class="fact-card"><h3>Fuentes oficiales</h3><p>' + externalLink('https://play.google.com/store/apps/details?id=com.mten.tgp', 'Eternal Sword Pact en Google Play') + '</p><p>' + externalLink('https://apps.apple.com/ph/app/eternal-sword-pact/id6754371626', 'Eternal Sword Pact en App Store') + '</p><p>Confirman el desarrollador, la temática general, las plataformas y las notas públicas de la aplicación. Las notas disponibles no detallan Wisp ni los sistemas internos.</p></article>' +
       '<article class="fact-card"><h3>Fuentes secundarias</h3><p>' + externalLink('https://www.bluestacks.com/blog/game-guides/eternal-sword-pact/esp-beginners-guide-en.html', 'Guía para principiantes de BlueStacks') + '</p><p>' + externalLink('https://www.bluestacks.com/blog/game-guides/eternal-sword-pact/esp-classes-guide-en.html', 'Guía de clases de BlueStacks') + '</p><p>' + externalLink('https://www.bluestacks.com/blog/game-guides/eternal-sword-pact/esp-combat-strategy-guide.html', 'Guía de combate de BlueStacks') + '</p><p>Se utilizan solo para localizar temas que después deben contrastarse dentro del juego.</p></article></div>' +
-      '<aside class="verification-note"><strong>Resultado del contraste:</strong> las guías secundarias se contradicen en el tipo de daño y el papel de algunas clases. Por ello, la web no publicará esas afirmaciones como hechos hasta disponer de capturas o pruebas directas.</aside><p>Consulta el <a href="docs/INVESTIGACION-WEB.md">registro detallado de búsquedas y decisiones</a>.</p></section>' +
+      '<aside class="verification-note"><strong>Resultado del contraste:</strong> las guías secundarias se contradicen en el tipo de daño y el papel de algunas clases. Por ello, la web no publicará esas afirmaciones como hechos hasta disponer de pruebas directas.</aside><p>Consulta el <a href="docs/INVESTIGACION-WEB.md">registro detallado de búsquedas y decisiones</a>.</p></section>' +
       '<section class="system-section project-block" id="aviso-sobre-contenido-no-oficial"><h2>Aviso sobre contenido no oficial</h2><p>Esta es una guía creada por aficionados y no está afiliada con los desarrolladores o distribuidores de Eternal Sword Pact. Los nombres, marcas e imágenes del juego pertenecen a sus respectivos titulares. El contenido puede requerir cambios después de actualizaciones del juego.</p></section>' + futureZone();
   }
 
@@ -259,7 +258,7 @@
     if (page.type === 'spirit-root') { return renderSpiritRoot(page); }
     if (page.type === 'technique') { return renderTechnique(page); }
     if (page.type === 'swordflight') { return renderCatalog(page, window.REFERENCE_DATA.swordFlight, 'Página maestra preparada para documentar el funcionamiento y cada SwordFlight sin duplicar información entre clases.'); }
-    if (page.type === 'zodiac') { return renderCatalog(page, window.REFERENCE_DATA.zodiac, 'Página maestra para las Zodiac Transformations observadas en el material recopilado.'); }
+    if (page.type === 'zodiac') { return renderCatalog(page, window.REFERENCE_DATA.zodiac, 'Página maestra para las Zodiac Transformations documentadas hasta ahora.'); }
     if (page.type === 'spirit') { return renderSpirit(page); }
     if (page.type === 'wisp') { return renderWisp(page); }
     if (page.type === 'project') { return renderProject(page); }

@@ -38,12 +38,12 @@
         {
           name: 'Golden Sword Spell',
           status: 'P2W confirmado por el autor',
-          facts: ['Sky Piercer hasta Lv.3 en la captura', 'Genera Five-Element Force', 'Con cinco acumulaciones invoca Divine Dragon', 'Technique Stats +50 % al completar T7']
+          facts: ['Golden Sword Spell desbloquea Sky Piercer hasta Lv.3', 'Genera Five-Element Force', 'Con cinco acumulaciones invoca Divine Dragon', 'Technique Stats +50 % al completar T7']
         },
         {
           name: 'Earth Spirit Spell',
           status: 'Método de obtención pendiente de verificar',
-          facts: ['Rock Shield Lv.3 en la captura', 'DMG RED +7,5 % durante 8 segundos', 'Genera una acumulación de Five-Element Force', 'Technique Stats +50 % al completar T10']
+          facts: ['Earth Spirit Spell desbloquea Rock Shield Lv.3', 'DMG RED +7,5 % durante 8 segundos', 'Genera una acumulación de Five-Element Force', 'Technique Stats +50 % al completar T10']
         }
       ],
       material: 'Aura Crystalline',
@@ -68,8 +68,8 @@
       visibleStats: ['HP', 'ATK', 'DEF', 'S.A', 'PEN', 'CRIT', 'BLOCK', 'TEN'],
       upgradeActions: ['Quick Upgrade', 'Upgrade', 'Roll Back', 'Talent'],
       arrayFacts: [
-        'La captura muestra tres posiciones en Main Array.',
-        'La captura muestra nueve posiciones ocupadas en Assistance Array.',
+        'Main Array consta de tres posiciones.',
+        'Assistance Array consta de nueve posiciones ocupadas en la pantalla documentada.',
         'Las estadísticas de los Spirits desplegados se añaden a las del personaje.',
         'El Assistance Array aumenta el daño de Awakening Skill del Main Spirit según sus estrellas.'
       ],
@@ -97,7 +97,7 @@
           'El texto visible indica que los Spirits del Assistance Array aumentan el daño de Awakening Skill según sus estrellas.',
           'Fast Evolution permite mejorar rápidamente Spirits inferiores a 5 estrellas que puedan evolucionar.',
           'Los Spirits de 5 estrellas o superiores aparecen seleccionados por defecto en Fast Evolution.',
-          'Put in spirits solicita dos Spirits de 5 estrellas en la pantalla observada.'
+          'Put in spirits solicita dos Spirits de 5 estrellas en el estado documentado.'
         ],
         pending: [
           'Coste real de cada tipo de draw y moneda utilizada.',
@@ -132,7 +132,7 @@
           'Present muestra Intimacy Points, una barra de progreso, estadísticas de referencia y los botones Quick Upgrade y Upgrade.',
           'Biography muestra el rango de Bond, los campos descriptivos y capítulos desplegables.',
           'En Nezha se observan capítulos bloqueados con requisitos de Affinity Lv.1 y Affinity Lv.11.',
-          'Los vídeos recorren fichas de rareza UR, SSR, SR y LR y muestran que los valores de Intimacy Points dependen del Spirit.'
+          'Las fichas documentadas incluyen rarezas UR, SSR, SR y LR; los valores de Intimacy Points dependen del Spirit.'
         ],
         pending: [
           'Materiales y métodos para obtener Intimacy Points.',
@@ -163,13 +163,13 @@
           'Cleanse genera una propuesta para las cinco aptitudes.',
           'Las flechas verdes y rojas comparan la propuesta con los valores aceptados.',
           'Do not replace descarta la propuesta y Replace la aplica.',
-          'El contador de Basic Cleansing Pill disminuye una unidad por intento observado.'
+          'El contador de Basic Cleansing Pill disminuye una unidad por intento.'
         ],
         automaticFlow: [
           'Auto Refine repite los intentos sin nuevas pulsaciones.',
           'Mientras está activo, el botón cambia a Stop Refining.',
           'Smart Refinement estaba activado durante la ejecución automática.',
-          'El criterio exacto usado por Smart Refinement no se muestra en el vídeo.'
+          'El criterio exacto usado por Smart Refinement está pendiente de confirmar.'
         ]
       },
       pillArrayGroups: ['Trace Pill Array', 'Spirit Pill Array'],

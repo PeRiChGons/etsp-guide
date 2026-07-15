@@ -15,6 +15,20 @@ La web es una aplicación de una sola página compatible con GitHub Pages. `inde
 - `docs/INVESTIGACION-WEB.md`: fuentes públicas consultadas, contradicciones y datos pendientes de comprobar.
 - `docs/REGISTRO-VIDEOS.md`: observaciones provisionales de vídeos del juego y criterios de verificación.
 
+## Criterio editorial para transformar material en guía
+
+Los vídeos, capturas y documentos son material de investigación, no el texto final de la web. El contenido público debe interpretar la interfaz y explicar el sistema con lenguaje de guía:
+
+- qué es el sistema y para qué sirve;
+- de qué elementos consta y cómo se relacionan;
+- dónde se consigue cada objeto, moneda o material, cuando esté confirmado;
+- cómo se usa, mejora, crea, fusiona, equipa o desbloquea;
+- qué efecto tiene dentro del juego y en qué condiciones;
+- qué diferencias existen entre opciones gratuitas, de pago o pendientes;
+- qué datos siguen sin verificarse.
+
+En las páginas públicas se evitará redactar frases como «en el vídeo se ve» o «la captura muestra». La procedencia y las limitaciones se conservarán en los registros de investigación (`docs/REGISTRO-VIDEOS.md`, `docs/REGISTRO-SPIRIT.md`), mientras que la guía presentará únicamente la explicación interpretada y sus avisos de **Contenido pendiente**.
+
 No se utilizan frameworks, iframes externos, traductor automático ni integraciones reales de comentarios o Discord.
 
 En ordenador se muestran tres zonas: menú principal a la izquierda, información en el centro y subcategorías/accesos rápidos a la derecha. En pantallas pequeñas el menú principal se convierte en panel desplegable y el panel contextual pasa debajo del contenido para conservar la legibilidad.

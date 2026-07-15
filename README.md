@@ -44,6 +44,8 @@ La publicación todavía debe configurarse o activarse desde la rama que se deci
 
 Consulta [docs/PLANO-DE-LA-GUIA.md](docs/PLANO-DE-LA-GUIA.md) para conocer la arquitectura, el mapa de contenidos y la forma de ampliar la guía.
 
+Consulta [docs/PLAN-DE-RECURSOS-VISUALES.md](docs/PLAN-DE-RECURSOS-VISUALES.md) para preparar iconos, retratos, fichas, fondos y decoraciones de forma coherente.
+
 El archivo [docs/INVESTIGACION-WEB.md](docs/INVESTIGACION-WEB.md) registra las fuentes consultadas, los límites de cada una y la información que todavía debe verificarse dentro del juego.
 
 El archivo [docs/REGISTRO-SPIRIT.md](docs/REGISTRO-SPIRIT.md) clasifica las 104 capturas aportadas para el sistema Spirit y separa los datos confirmados de los pendientes.

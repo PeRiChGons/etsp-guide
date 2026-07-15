@@ -14,6 +14,7 @@ La web es una aplicación de una sola página compatible con GitHub Pages. `inde
 - `assets/images/`: carpetas preparadas para imágenes futuras.
 - `docs/INVESTIGACION-WEB.md`: fuentes públicas consultadas, contradicciones y datos pendientes de comprobar.
 - `docs/REGISTRO-VIDEOS.md`: observaciones provisionales de vídeos del juego y criterios de verificación.
+- `docs/PLAN-DE-RECURSOS-VISUALES.md`: modelos, tamaños, carpetas, nombres y flujo de revisión de imágenes.
 
 ## Criterio editorial para transformar material en guía
 

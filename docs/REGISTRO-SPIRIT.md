@@ -44,7 +44,7 @@ La pestaña **Bond** aparece en la navegación lateral del PDF. Su contenido se 
 - Dreamsnake
 - Martial Lord
 
-**Battle** y **Aid** aparecen como estados de colocación/despliegue dentro del **Array**. No se tratarán como rarezas, clases ni categorías propias del Spirit. Su efecto exacto sobre la posición y el funcionamiento de cada estado todavía debe confirmarse con la ayuda del juego o con pruebas específicas.
+La clasificación del Spirit se expresa mediante su rareza o grade —por ejemplo, **SR**, **SSR** y **UR**— junto con el color y las estrellas que muestra la ficha. **Battle** y **Aid** aparecen aparte, como estados de colocación/despliegue dentro del **Array**. No se tratarán como rarezas, clases ni categorías propias del Spirit. Su efecto exacto sobre la posición y el funcionamiento de cada estado todavía debe confirmarse con la ayuda del juego o con pruebas específicas.
 
 ## Datos confirmados por bloque
 

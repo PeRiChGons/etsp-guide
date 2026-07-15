@@ -13,6 +13,8 @@ La web es una aplicación de una sola página compatible con GitHub Pages. `inde
 - `404.html`: devuelve rutas desconocidas a la aplicación mediante hash.
 - `assets/images/`: carpetas preparadas para imágenes futuras.
 - `docs/INVESTIGACION-WEB.md`: fuentes públicas consultadas, contradicciones y datos pendientes de comprobar.
+- `docs/LISTA-DE-PENDIENTES.md`: inventario vivo de datos publicados, evidencia utilizada y tareas que faltan.
+- `docs/PLAN-CAPTURAS.md`: inventario local de vídeos y orden recomendado para nuevas capturas.
 - `docs/REGISTRO-VIDEOS.md`: observaciones provisionales de vídeos del juego y criterios de verificación.
 - `docs/PLAN-DE-RECURSOS-VISUALES.md`: modelos, tamaños, carpetas, nombres y flujo de revisión de imágenes.
 
@@ -28,7 +30,7 @@ Los vídeos, capturas y documentos son material de investigación, no el texto f
 - qué diferencias existen entre opciones gratuitas, de pago o pendientes;
 - qué datos siguen sin verificarse.
 
-En las páginas públicas se evitará redactar frases como «en el vídeo se ve» o «la captura muestra». La procedencia y las limitaciones se conservarán en los registros de investigación (`docs/REGISTRO-VIDEOS.md`, `docs/REGISTRO-SPIRIT.md`), mientras que la guía presentará únicamente la explicación interpretada y sus avisos de **Contenido pendiente**.
+En las páginas públicas se evitará redactar frases como «en el vídeo se ve» o «la captura muestra». La procedencia y las limitaciones se conservarán en los registros de investigación (`docs/REGISTRO-VIDEOS.md`, `docs/REGISTRO-SPIRIT.md`), mientras que la guía presentará la explicación interpretada. El aviso de **Contenido pendiente** se aplicará únicamente al dato que falte, no a una página completa que ya tenga apartados documentados.
 
 No se utilizan frameworks, iframes externos, traductor automático ni integraciones reales de comentarios o Discord.
 
@@ -88,7 +90,7 @@ Al abrirlo, el enrutador desplaza el foco al apartado correspondiente. Para nuev
 
 ## Contenido pendiente
 
-Ya se ha incorporado la estructura contrastada de Stats, Spirit Root, Technique, Spirit y la primera pantalla de Wisp. Los nombres conocidos de SwordFlight y Zodiac también están organizados, pero sus detalles continúan marcados como **Contenido pendiente**. Además, están pendientes:
+Ya se ha incorporado y publicado la estructura contrastada de Stats, Spirit Root, Technique, Spirit y la primera pantalla de Wisp. También se han publicado los nombres conocidos de SwordFlight y Zodiac como catálogos iniciales, sin atribuirles efectos no comprobados. La lista detallada y actualizada de lo que falta se mantiene en [docs/LISTA-DE-PENDIENTES.md](LISTA-DE-PENDIENTES.md). De forma resumida, siguen pendientes:
 
 - descripciones y fórmulas completas de las estadísticas;
 - habilidades y recomendaciones verificadas de cada clase;

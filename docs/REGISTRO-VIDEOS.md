@@ -38,7 +38,9 @@ Este documento reúne observaciones tomadas de vídeos del 14 de julio de 2026. 
 
 ## Criterio de publicación
 
-No se publicarán como definitivos los costes, probabilidades, recompensas, fechas, duración de eventos ni relaciones entre sistemas hasta verificarlos dentro del juego.
+Un vídeo es fiable para documentar lo que se ve en una cuenta, fecha y versión concretas: nombres, botones, pantallas, secuencias y valores que aparecen claramente. No es por sí solo una prueba 100 % fiable de una regla universal. Puede corresponder a otra versión, una cuenta con progreso distinto, un evento temporal o una grabación editada.
+
+Por eso se publican como observaciones los elementos visibles, mientras que costes, probabilidades, recompensas, reinicios, duración de eventos, clasificación gratuita/P2W y relaciones entre sistemas se mantienen pendientes hasta verificarlos dentro del juego, con una segunda captura o con una fuente oficial.
 
 ## Vídeos recibidos el 15 de julio de 2026
 

@@ -18,7 +18,11 @@ Aplicación web responsive y comunitaria para organizar una futura guía de **Et
 - registro de fuentes oficiales, guías externas y contradicciones detectadas;
 - información de autoría, fuentes y carácter no oficial del proyecto.
 
-Las páginas todavía incompletas muestran claramente **Contenido pendiente** y no presentan suposiciones como datos del juego.
+La lista viva de lo publicado y lo que todavía falta está en [docs/LISTA-DE-PENDIENTES.md](docs/LISTA-DE-PENDIENTES.md). Allí se explica también el nivel de evidencia de cada dato.
+
+Las páginas todavía incompletas muestran claramente **Contenido pendiente** y no presentan suposiciones como datos del juego. La web publica los nombres, botones, pantallas y valores que se pueden observar; mantiene pendientes las reglas, costes, fórmulas y recomendaciones que todavía no tienen pruebas suficientes.
+
+Los vídeos no se consideran automáticamente una fuente 100 % fiable. Sirven para documentar lo que se ve en una cuenta, fecha y versión concretas. Los costes, recompensas, reinicios, probabilidades y reglas universales se publican como confirmados solo después de contrastarlos con capturas repetidas, ayuda del juego o fuentes oficiales.
 
 ## Ramas
 
@@ -49,3 +53,7 @@ Consulta [docs/PLAN-DE-RECURSOS-VISUALES.md](docs/PLAN-DE-RECURSOS-VISUALES.md) 
 El archivo [docs/INVESTIGACION-WEB.md](docs/INVESTIGACION-WEB.md) registra las fuentes consultadas, los límites de cada una y la información que todavía debe verificarse dentro del juego.
 
 El archivo [docs/REGISTRO-SPIRIT.md](docs/REGISTRO-SPIRIT.md) clasifica las 104 capturas aportadas para el sistema Spirit y separa los datos confirmados de los pendientes.
+
+La lista de tareas y la política de fiabilidad se mantiene en [docs/LISTA-DE-PENDIENTES.md](docs/LISTA-DE-PENDIENTES.md).
+
+El orden recomendado para nuevas capturas y vídeos está en [docs/PLAN-CAPTURAS.md](docs/PLAN-CAPTURAS.md).

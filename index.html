@@ -22,6 +22,26 @@
       <span class="brand-mark" aria-hidden="true">✦</span>
       <span>Eternal Sword Pact <strong>Guía</strong></span>
     </a>
+    <label class="language-control" for="language-selector">
+      <span aria-hidden="true">🌐</span>
+      <span class="sr-only">Traducir la página</span>
+      <select id="language-selector" aria-label="Traducir la página">
+        <option value="">Idioma</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="pt">Português</option>
+        <option value="it">Italiano</option>
+        <option value="ca">Català</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="zh-CN">中文</option>
+        <option value="ru">Русский</option>
+        <option value="ar">العربية</option>
+        <option value="hi">हिन्दी</option>
+        <option value="more">Más idiomas…</option>
+      </select>
+    </label>
     <span class="status-badge">En desarrollo</span>
   </header>
 
@@ -38,7 +58,7 @@
 
   <footer class="site-footer">
     <span>Eternal Sword Pact Guía</span>
-    <span>Proyecto comunitario no oficial · Contenido en preparación</span>
+    <span>Proyecto comunitario no oficial · Publicado por niveles de evidencia</span>
   </footer>
 
   <noscript>Esta guía necesita JavaScript para mostrar sus secciones.</noscript>
@@ -47,5 +67,17 @@
   <script src="assets/js/pages.js"></script>
   <script src="assets/js/router.js"></script>
   <script src="assets/js/app.js"></script>
+  <script>
+    // Abre la sección actual en el traductor web de Google sin usar iframes.
+    document.getElementById('language-selector').addEventListener('change', function () {
+      var language = this.value;
+      if (!language) { return; }
+      var target = language === 'more' ? 'en' : language;
+      var currentPage = window.location.href;
+      var translateUrl = 'https://translate.google.com/translate?sl=es&tl=' + encodeURIComponent(target) + '&u=' + encodeURIComponent(currentPage);
+      window.open(translateUrl, '_blank', 'noopener,noreferrer');
+      this.value = '';
+    });
+  </script>
 </body>
 </html>

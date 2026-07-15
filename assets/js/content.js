@@ -1,4 +1,4 @@
-/* Catálogo central de rutas. Todo el contenido editorial pendiente queda señalado. */
+/* Catálogo central de rutas y apartados. Cada dato pendiente se marca en su propia página. */
 (function () {
   'use strict';
 
@@ -27,7 +27,7 @@
       { title: 'Spiritfox', route: '/clases/spiritfox', children: classSections },
       { title: 'Swordsage', route: '/clases/swordsage', children: classSections }
     ] },
-    { title: 'Proyecto', route: '/proyecto', children: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Investigación web', 'Aviso sobre contenido no oficial'] }
+    { title: 'Proyecto', route: '/proyecto', children: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Investigación web', 'Lista de pendientes', 'Aviso sobre contenido no oficial'] }
   ];
 
   // Nombres transcritos de las capturas del juego aportadas para la guía.
@@ -82,7 +82,7 @@
       '/sistemas-del-personaje/zodiac': { title: 'Zodiac Transformations', type: 'zodiac', sections: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] },
       '/sistemas-del-personaje/spirit': { title: 'Spirit', type: 'spirit', sections: ['Vista general', 'Spirits documentados', 'Basic y Upgrade', 'Array y Arraycore', 'Kismet / Spirit Treasure', 'Evolution', 'Bond', 'Cleanse y Tier Up', 'Demoncore y Pill Array', 'Datos pendientes'] },
       '/sistemas-del-personaje/wisp': { title: 'Wisp', type: 'wisp', sections: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] },
-      '/proyecto': { title: 'Proyecto', type: 'project', sections: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Investigación web', 'Aviso sobre contenido no oficial'] }
+      '/proyecto': { title: 'Proyecto', type: 'project', sections: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Investigación web', 'Lista de pendientes', 'Aviso sobre contenido no oficial'] }
     };
     if (customPages[route]) {
       var customPage = customPages[route];

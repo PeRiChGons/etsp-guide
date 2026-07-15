@@ -58,7 +58,7 @@
 
   function statsRows(items) {
     return items.map(function (name) {
-      return '<tr><th scope="row">' + escapeHtml(name) + '</th><td>' + badge('Nombre confirmado', false) + '</td><td>Descripción detallada pendiente de verificación.</td></tr>';
+      return '<tr><th scope="row">' + escapeHtml(name) + '</th><td>' + badge('Nombre confirmado', false) + '</td><td>Nombre publicado desde la categoría correspondiente. Descripción, fórmula y efecto exacto pendientes.</td></tr>';
     }).join('');
   }
 
@@ -66,8 +66,8 @@
     return pageHeader(
       page,
       'Estadísticas del personaje',
-      'Esta página organiza las estadísticas del personaje y separa sus nombres confirmados de las descripciones que todavía necesitan verificación.',
-      'Nombres confirmados. Efectos, valores y fórmulas pendientes de completar.'
+      'Esta página publica los nombres de las estadísticas observados en Basic Stats y Special Stats y separa esos datos de las descripciones que todavía necesitan verificación.',
+      'Nombres y categorías publicados. Efectos, valores y fórmulas pendientes de completar.'
     ) +
       '<section class="system-section" id="basic-stats"><h2>Basic Stats</h2><p>Nombres mostrados dentro de la categoría <span lang="en">Basic Stats</span> del juego.</p>' +
       '<div class="table-scroll" tabindex="0"><table class="stats-table"><thead><tr><th scope="col">Nombre</th><th scope="col">Verificación</th><th scope="col">Descripción</th></tr></thead><tbody>' + statsRows(window.STATS_CONTENT.basic) + '</tbody></table></div></section>' +
@@ -88,7 +88,7 @@
       page,
       'Sistema Spirit Root',
       'Spirit Root organiza raíces elementales, mejoras, resonancias, sacrificios y núcleos. Los nombres de la interfaz se conservan en inglés para que coincidan con el juego.',
-      'Estructura y acciones principales confirmadas. Costes, probabilidades y recomendaciones siguen pendientes.'
+      'Estructura, nombres y acciones visibles publicados. Costes, probabilidades y recomendaciones siguen pendientes.'
     ) +
       '<section class="system-section" id="tipos-de-spirit-root"><h2>Tipos de Spirit Root</h2><p>Tipos documentados dentro del sistema. La lista completa todavía debe revisarse dentro del juego.</p>' + tags(data.observedTypes, false) + '</section>' +
       '<section class="system-section" id="mejoras"><h2>Mejoras</h2><div class="fact-grid"><article class="fact-card"><h3>Acciones principales</h3>' + tags(data.actions, false) + '</article>' +
@@ -121,7 +121,7 @@
       page,
       'Sistema Technique',
       'Technique organiza libros por plantas y rangos. Cada libro puede aportar estadísticas o desbloquear habilidades especiales, según la ficha correspondiente.',
-      'Plantas, nombres, varios rangos y seis fichas de estadísticas confirmados. Costes y obtención completa pendientes.'
+      'Plantas, nombres, rangos y seis fichas de estadísticas publicados. Costes y obtención completa pendientes.'
     ) +
       '<section class="system-section" id="funcionamiento-general"><h2>Funcionamiento general</h2><div class="fact-grid"><article class="fact-card"><h3>Estructura del sistema</h3>' + facts(['Cinco plantas documentadas: 1F–5F.', 'Cuatro Techniques por planta.', 'Mejora individual mediante Advance.', 'Rangos documentados: T7, T10 y T13.']) + '</article>' +
       '<article class="fact-card"><h3>Bonificación de finalización</h3><p>Al completar algunos rangos se concede <strong>Technique Stats +50 %</strong>.</p><p>No se generaliza este valor a todas las Techniques hasta revisar cada ficha.</p></article></div></section>' +
@@ -139,8 +139,8 @@
     return pageHeader(
       page,
       'Sistema Wisp',
-      'Wisp organiza un Array de criaturas o entidades invocables mediante las opciones Sprite y Sacrifice. El funcionamiento detallado de cada apartado sigue pendiente.',
-      'Interfaz general confirmada. Funcionamiento, costes, probabilidades y efectos detallados pendientes.'
+      'Wisp organiza un Array de criaturas o entidades invocables mediante las opciones Sprite y Sacrifice. La primera pantalla y sus acciones visibles ya están documentadas.',
+      'Primera pantalla, valores visibles y acciones publicadas. Funcionamiento completo, costes, probabilidades y efectos detallados pendientes.'
     ) +
       '<section class="system-section" id="vista-general"><h2>Vista general</h2><div class="fact-grid"><article class="fact-card"><h3>Datos visibles</h3>' + facts([
         'Wisp Array Level: ' + data.arrayLevel + '.',
@@ -172,7 +172,7 @@
       page,
       'Sistema Spirit',
       'La interfaz del juego denomina Spirit a este sistema de personajes coleccionables. No es Wisp: ambos conservan páginas y mecánicas separadas.',
-      'Quince Spirits, sus pantallas principales y cinco áreas de progresión documentadas. Bond y varias reglas detalladas siguen pendientes.'
+      'Quince Spirits, sus pantallas principales y cinco áreas de progresión documentadas. Bond y varias reglas detalladas siguen pendientes por dato, no por página completa.'
     ) +
       '<section class="system-section" id="vista-general"><h2>Vista general</h2><div class="fact-grid"><article class="fact-card"><h3>Áreas del sistema</h3>' + tags(data.tabs, false) + '</article>' +
       '<article class="fact-card"><h3>Estados del Array</h3>' + tags(data.arrayStates, false) + '<p><span lang="en">Battle</span> y <span lang="en">Aid</span> aparecen asociados a las posiciones de despliegue del Array. No se presentan como rarezas ni como categorías del Spirit; su efecto exacto sigue pendiente de confirmación.</p></article>' +
@@ -212,15 +212,17 @@
 
   function renderCatalog(page, data, description) {
     var cards = data.names.map(function (name) {
-      return '<article class="catalog-card" id="' + window.slugify(name) + '"><h2>' + escapeHtml(name) + '</h2>' + badge('Detalles pendientes', true) + '<p>Nombre documentado en el material del proyecto. Falta transcribir su pantalla dentro del juego.</p></article>';
+      return '<article class="catalog-card" id="' + window.slugify(name) + '"><h2>' + escapeHtml(name) + '</h2>' + badge('Nombre publicado', false) + '<p>Nombre documentado en el material del proyecto. La ficha de efectos, mejoras y materiales sigue pendiente.</p></article>';
     }).join('');
-    return pageHeader(page, 'Catálogo en preparación', description, 'Nombres disponibles para organizar la página; funcionamiento, mejoras y recomendaciones pendientes de información verificable.') +
-      '<section class="system-section verification-method" id="funcionamiento-general"><h2>Funcionamiento general</h2><p>La estructura de esta página ya está preparada. La explicación se añadirá cuando se transcriban las pantallas del sistema y se comprueben sus materiales, mejoras y efectos.</p></section>' +
+    return pageHeader(page, 'Catálogo documentado', description, 'Nombres publicados desde el material disponible. Funcionamiento, mejoras y recomendaciones pendientes de información verificable.') +
+      '<section class="system-section verification-method" id="funcionamiento-general"><h2>Funcionamiento general</h2><p>La estructura y el catálogo inicial ya están publicados. La explicación detallada se añadirá cuando se transcriban las pantallas del sistema y se comprueben sus materiales, mejoras y efectos.</p></section>' +
       '<section class="catalog-grid" aria-label="Elementos documentados">' + cards + '</section>' + futureZone();
   }
 
   function renderHome(page) {
+    var classGallery = '<a class="class-gallery" href="#/clases" aria-label="Abrir la comparativa de clases"><span class="class-gallery-copy"><span class="page-kicker">Recurso visual provisional</span><h2>Clases y estilos de juego</h2><p>Una presentación visual para reconocer cada clase. Las recomendaciones y estadísticas se mantienen en las fichas verificadas.</p></span></a>';
     var links = [
+      ['/clases', 'Clases y estilos de juego', 'Comparativa visual provisional'],
       ['/sistemas-del-personaje/stats', 'Stats', '38 nombres clasificados'],
       ['/sistemas-del-personaje/spirit-root', 'Spirit Root', 'Estructura y elementos observados'],
       ['/sistemas-del-personaje/technique', 'Technique', 'Plantas, fichas y materiales'],
@@ -235,7 +237,7 @@
     return breadcrumbs(page) + '<section class="home-hero"><p class="page-kicker">Guía comunitaria no oficial</p><h1>Eternal Sword Pact Guía</h1>' +
       '<p class="lead">Una base organizada para explicar sistemas, clases y progresión usando datos del juego, pruebas directas y fuentes identificables.</p></section>' +
       '<section class="system-section" id="estado-de-la-guia"><h2>Estado de la guía</h2><div class="fact-grid"><article class="fact-card"><h3>Estructura</h3>' + badge('Disponible', false) + '<p>Navegación responsive, rutas directas y páginas maestras.</p></article>' +
-      '<article class="fact-card"><h3>Contenido</h3>' + badge('En verificación', true) + '<p>Se publica por fases para evitar datos inventados o conclusiones sin pruebas.</p></article></div></section>' +
+      '<article class="fact-card"><h3>Contenido</h3>' + badge('Publicado por evidencia', false) + '<p>Los datos observables ya están disponibles. Las reglas, costes, fórmulas y recomendaciones sin pruebas suficientes quedan señaladas como pendientes.</p></article></div></section>' +
       '<section class="system-section" id="accesos-rapidos"><h2>Accesos rápidos</h2><div class="quick-grid">' + links + '</div></section>' +
       '<section class="system-section verification-method" id="metodo-de-trabajo"><h2>Método de trabajo</h2>' + facts(['Registrar el nombre exacto mostrado en el juego.', 'Transcribir la descripción y los valores visibles.', 'Separar experiencia directa, fuente externa y deducción.', 'Marcar claramente la información todavía pendiente.']) + '</section>' + futureZone();
   }
@@ -250,6 +252,7 @@
       '<section class="system-section project-block" id="investigacion-web"><h2>Investigación web</h2><p><strong>Última revisión:</strong> 14 de julio de 2026.</p><div class="fact-grid"><article class="fact-card"><h3>Fuentes oficiales</h3><p>' + externalLink('https://play.google.com/store/apps/details?id=com.mten.tgp', 'Eternal Sword Pact en Google Play') + '</p><p>' + externalLink('https://apps.apple.com/ph/app/eternal-sword-pact/id6754371626', 'Eternal Sword Pact en App Store') + '</p><p>Confirman el desarrollador, la temática general, las plataformas y las notas públicas de la aplicación. Las notas disponibles no detallan Wisp ni los sistemas internos.</p></article>' +
       '<article class="fact-card"><h3>Fuentes secundarias</h3><p>' + externalLink('https://www.bluestacks.com/blog/game-guides/eternal-sword-pact/esp-beginners-guide-en.html', 'Guía para principiantes de BlueStacks') + '</p><p>' + externalLink('https://www.bluestacks.com/blog/game-guides/eternal-sword-pact/esp-classes-guide-en.html', 'Guía de clases de BlueStacks') + '</p><p>' + externalLink('https://www.bluestacks.com/blog/game-guides/eternal-sword-pact/esp-combat-strategy-guide.html', 'Guía de combate de BlueStacks') + '</p><p>Se utilizan solo para localizar temas que después deben contrastarse dentro del juego.</p></article></div>' +
       '<aside class="verification-note"><strong>Resultado del contraste:</strong> las guías secundarias se contradicen en el tipo de daño y el papel de algunas clases. Por ello, la web no publicará esas afirmaciones como hechos hasta disponer de pruebas directas.</aside><p>Consulta el <a href="docs/INVESTIGACION-WEB.md">registro detallado de búsquedas y decisiones</a>.</p></section>' +
+      '<section class="system-section project-block" id="lista-de-pendientes"><h2>Lista de pendientes</h2><p>La guía ya publica nombres, pantallas, acciones y valores observables. Costes, fórmulas, recompensas, reinicios, probabilidades y recomendaciones se mantienen pendientes cuando no hay pruebas suficientes.</p>' + facts(['Estadísticas: descripciones y fórmulas.', 'Spirit Root y Technique: costes, requisitos y recompensas completas.', 'SwordFlight y Zodiac: fichas, mejoras y recomendaciones por clase.', 'Spirit y Wisp: reglas completas de Bond, Cleanse, Tier Up, Arraycore, Sacrifice y pantallas restantes.', 'Clases: habilidades iniciales, escalado y configuraciones PvE/PvP.', 'Equipamiento, Craft, actividades y economía: recetas, costes, recompensas y reinicios.']) + '<p><a href="docs/LISTA-DE-PENDIENTES.md">Abrir la lista completa de pendientes y niveles de evidencia</a>.</p></section>' +
       '<section class="system-section project-block" id="aviso-sobre-contenido-no-oficial"><h2>Aviso sobre contenido no oficial</h2><p>Esta es una guía creada por aficionados y no está afiliada con los desarrolladores o distribuidores de Eternal Sword Pact. Los nombres, marcas e imágenes del juego pertenecen a sus respectivos titulares. El contenido puede requerir cambios después de actualizaciones del juego.</p></section>' + futureZone();
   }
 

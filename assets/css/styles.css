@@ -115,6 +115,12 @@ h1 { max-width: 18ch; margin: 0; color: #fff; font-size: clamp(2rem, 5vw, 4rem);
 .catalog-card p { color: var(--muted); }
 .home-hero { padding: clamp(1rem, 4vw, 3rem) 0 1rem; }
 .home-hero h1 { max-width: 20ch; }
+.spirit-hero { position: relative; display: grid; grid-template-columns: minmax(14rem, 1fr) minmax(18rem, 1.25fr); align-items: center; gap: 1rem; min-height: 20rem; margin: 1rem 0 2.5rem; overflow: hidden; border: 1px solid #315170; background: linear-gradient(90deg, rgba(5, 12, 22, .94), rgba(5, 12, 22, .55)), url('../images/backgrounds/spirit-section-bg.png') center/cover; }
+.spirit-hero-copy { position: relative; z-index: 1; padding: clamp(1.25rem, 4vw, 2.5rem); }
+.spirit-hero-copy h2 { margin: 0 0 .6rem; color: var(--gold-light); font-size: clamp(1.6rem, 4vw, 2.6rem); }
+.spirit-hero-copy p:not(.page-kicker) { max-width: 38rem; color: #d2dce8; }
+.spirit-hero-image { width: 100%; max-height: 30rem; object-fit: cover; object-position: 68% center; align-self: stretch; mix-blend-mode: screen; animation: spirit-float 6s ease-in-out infinite; transform-origin: 68% 50%; }
+@keyframes spirit-float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-.35rem) scale(1.012); } }
 .quick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: .8rem; margin-top: 1rem; }
 .quick-link { display: flex; min-height: 7rem; padding: 1rem; flex-direction: column; justify-content: center; border: 1px solid var(--border); border-radius: .5rem; background: #0a1625; color: #fff; text-decoration: none; }
 .quick-link:hover { border-color: var(--gold); background: #102239; }
@@ -273,6 +279,8 @@ body {
 @media (max-width: 48rem) {
   .app-shell { display: block; }
   .context-sidebar { position: relative; top: auto; max-height: none; margin: 0 1rem 5rem; border-top: 1px solid var(--border); border-left: 0; }
+  .spirit-hero { grid-template-columns: 1fr; }
+  .spirit-hero-image { max-height: 22rem; }
 }
 
 @media (max-width: 38rem) {
@@ -290,5 +298,5 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }

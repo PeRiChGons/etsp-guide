@@ -30,3 +30,9 @@ decoracion-marco-dorado-v01.png
 ```
 
 No se deben introducir estadísticas, nombres o efectos dentro de una imagen si el dato debe poder editarse o traducirse.
+## Primer lote visual
+
+- `backgrounds/spirit-section-bg.png`: fondo decorativo original para la seccion de espiritus. No contiene datos del juego.
+- `spirits/zhuyuan-hero-render.png`: render conceptual generado a partir de una captura de referencia de Zhuyuan. Se usara como ilustracion de detalle y no sustituye a la captura real del juego.
+
+Los renders generados deben mostrarse como apoyo visual. Los nombres, estadisticas, rarezas, habilidades y efectos seguiran estando en HTML para poder verificarlos, editarlos y traducirlos.

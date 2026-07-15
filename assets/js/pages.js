@@ -160,6 +160,7 @@
     var cleanseVideo = data.cleanseVideo;
     var bond = data.bond;
     var treasure = data.treasure;
+    var spiritHero = '<section class="spirit-hero" aria-labelledby="spirit-hero-title"><div class="spirit-hero-copy"><p class="page-kicker">Recurso visual del proyecto</p><h2 id="spirit-hero-title">Spirit: Zhuyuan</h2><p>Ilustracion conceptual basada en una captura de referencia. Los nombres, rarezas, estadisticas y efectos confirmados se mantienen como texto editable en esta pagina.</p><span class="pending">Render visual no oficial</span></div><img class="spirit-hero-image" src="assets/images/spirits/zhuyuan-hero-render.png" alt="Render conceptual de Zhuyuan, Spirit de pelo blanco con un gran arma envuelta en fuego"></section>';
     var rarityCards = data.rarities.map(function (group) {
       return '<article class="fact-card"><h3>' + escapeHtml(group.label) + '</h3>' + tags(group.names, false) + '</article>';
     }).join('');
@@ -167,7 +168,7 @@
       return '<article class="fact-card"><h3>' + escapeHtml(example.spirit) + '</h3>' + badge('Bond: ' + example.bond, false) + facts(example.details) + '</article>';
     }).join('');
 
-    return pageHeader(
+    return spiritHero + pageHeader(
       page,
       'Sistema Spirit',
       'La interfaz del juego denomina Spirit a este sistema de personajes coleccionables. No es Wisp: ambos conservan páginas y mecánicas separadas.',

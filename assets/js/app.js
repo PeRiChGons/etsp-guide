@@ -3,6 +3,7 @@
   'use strict';
 
   var navigation = document.getElementById('navigation');
+  var contextNavigation = document.getElementById('context-navigation');
   var toggle = document.getElementById('menu-toggle');
   var backdrop = document.getElementById('menu-backdrop');
 
@@ -19,6 +20,47 @@
   }
 
   navigation.innerHTML = '<ul class="nav-list">' + window.GUIDE_MENU.map(function (item) { return itemMarkup(item, [item], 0); }).join('') + '</ul>';
+
+  // Busca la entrada del menú que corresponde a la ruta activa.
+  function findMenuEntry(items, route) {
+    for (var i = 0; i < items.length; i += 1) {
+      var entry = typeof items[i] === 'string' ? { title: items[i] } : items[i];
+      if (entry.route === route) { return entry; }
+      if (entry.children) {
+        var nested = findMenuEntry(entry.children, route);
+        if (nested) { return nested; }
+      }
+    }
+    return null;
+  }
+
+  // Genera un enlace de subcategoría o de apartado interno.
+  function contextualLink(item, parentRoute) {
+    var entry = typeof item === 'string' ? { title: item } : item;
+    var href = entry.route ? '#' + entry.route : '#' + parentRoute + '?apartado=' + window.slugify(entry.title);
+    return '<li><a class="context-link" href="' + href + '">' + entry.title + '</a></li>';
+  }
+
+  // Actualiza el panel derecho sin duplicar el contenido de la página central.
+  function renderContextPanel(route) {
+    var page = window.getPage(route);
+    var entry = findMenuEntry(window.GUIDE_MENU, route);
+    var title = entry ? entry.title : (page ? page.title : 'Sección');
+    var parentRoute = entry && entry.route ? entry.route : route;
+    var categoryItems = entry && entry.children ? entry.children : [];
+    var pageSections = page && page.sections ? page.sections : [];
+    var categoryMarkup = categoryItems.length ? '<section class="context-block"><h2>Subcategorías</h2><ul class="context-list">' + categoryItems.map(function (item) { return contextualLink(item, parentRoute); }).join('') + '</ul></section>' : '';
+    var sectionMarkup = pageSections.length ? '<section class="context-block"><h2>Acceso directo</h2><ul class="context-list">' + pageSections.map(function (section) { return contextualLink(section, route); }).join('') + '</ul></section>' : '';
+    var quickMarkup = '<section class="context-block"><h2>Enlaces rápidos</h2><ul class="context-list quick-context-list">' + [
+      { title: 'Inicio', route: '/inicio' },
+      { title: 'Guía general', route: '/guia-general' },
+      { title: 'Sistemas del personaje', route: '/sistemas-del-personaje' },
+      { title: 'Clases', route: '/clases' },
+      { title: 'Proyecto', route: '/proyecto' }
+    ].map(function (item) { return contextualLink(item, '/inicio'); }).join('') + '</ul></section>';
+
+    contextNavigation.innerHTML = '<div class="context-heading"><p class="context-kicker">Sección actual</p><h1>' + title + '</h1><p>Explora sus apartados sin perder de vista el contenido central.</p></div>' + categoryMarkup + sectionMarkup + quickMarkup;
+  }
 
   function setMenu(open) {
     document.body.classList.toggle('menu-open', open);
@@ -52,6 +94,7 @@
       link.classList.toggle('active', active);
       if (active) { link.setAttribute('aria-current', 'page'); } else { link.removeAttribute('aria-current'); }
     });
+    renderContextPanel(event.detail.route);
   });
 
   window.GuideRouter.start();

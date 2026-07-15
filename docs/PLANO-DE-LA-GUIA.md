@@ -2,7 +2,7 @@
 
 ## Estructura de la web
 
-La web es una aplicación de una sola página compatible con GitHub Pages. `index.html` contiene la estructura permanente: cabecera, navegación, área central y pie. El enrutador de `assets/js/router.js` escucha los cambios de la ruta hash y sustituye únicamente el contenido central.
+La web es una aplicación de una sola página compatible con GitHub Pages. `index.html` contiene la estructura permanente: cabecera, menú principal izquierdo, panel contextual derecho, área central y pie. El enrutador de `assets/js/router.js` escucha los cambios de la ruta hash y sustituye únicamente el contenido central. El panel contextual se actualiza con las subcategorías y accesos directos de la ruta activa.
 
 - `assets/css/styles.css`: tema oscuro responsive y estados accesibles.
 - `assets/js/content.js`: mapa del menú, rutas y apartados.
@@ -16,6 +16,8 @@ La web es una aplicación de una sola página compatible con GitHub Pages. `inde
 - `docs/REGISTRO-VIDEOS.md`: observaciones provisionales de vídeos del juego y criterios de verificación.
 
 No se utilizan frameworks, iframes externos, traductor automático ni integraciones reales de comentarios o Discord.
+
+En ordenador se muestran tres zonas: menú principal a la izquierda, información en el centro y subcategorías/accesos rápidos a la derecha. En pantallas pequeñas el menú principal se convierte en panel desplegable y el panel contextual pasa debajo del contenido para conservar la legibilidad.
 
 ## Secciones y subsecciones
 

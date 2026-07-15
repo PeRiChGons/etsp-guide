@@ -29,6 +29,8 @@ Spirit dispone de la ruta `#/sistemas-del-personaje/spirit`. Es un sistema indep
 
 Wisp dispone de la ruta `#/sistemas-del-personaje/wisp`. Registra únicamente la primera pantalla observada y mantiene como pendientes Sacrifice, Spirit Beast Bag, Resonance, Stats Overview y Northern Abyss Order.
 
+La revisión de los vídeos del 15 de julio añade sistemas que se incorporarán al plano solo como contenido pendiente hasta reunir pantallas y reglas suficientes: Craft, Alliance Quest, Celestial Realm, Trinket Packs, Mirage Arcadia, Talisman Dungeon, Chaotic Realm, Titles, Prefixes, Mystic Jade, Starmark, Spirit Awakening, Dimensional Trace y Spirit Codex. Spirit Codex, Bond y Spirit Awakening se mantienen separados de Wisp; no deben agruparse por compartir la palabra «Spirit».
+
 ## Cómo añadir una nueva página
 
 1. Añade un objeto al array `GUIDE_MENU` de `assets/js/content.js`.
@@ -77,6 +79,7 @@ Ya se ha incorporado la estructura contrastada de Stats, Spirit Root, Technique,
 - explicaciones detalladas de SwordFlight y Zodiac;
 - materiales, umbrales y efectos completos de Bond, reglas completas de Arraycore, costes de Evolution y límites de Cleanse del sistema Spirit;
 - funcionamiento de Wisp, Sacrifice, Resonance, Stats Overview, Spirit Beast Bag y Northern Abyss Order;
+- reglas y nomenclatura de Craft, Alliance Quest, Celestial Realm, Trinket Packs, Mirage Arcadia, Talisman Dungeon, Chaotic Realm, Titles, Prefixes, Mystic Jade, Starmark, Spirit Awakening, Dimensional Trace y Spirit Codex;
 - imágenes, capturas y recursos gráficos definitivos;
 - traducción automática;
 - comentarios o integración con Discord;

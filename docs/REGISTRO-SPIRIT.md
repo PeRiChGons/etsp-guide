@@ -44,7 +44,7 @@ La pestaña **Bond** aparece en la navegación lateral del PDF. Su contenido se 
 - Dreamsnake
 - Martial Lord
 
-Las etiquetas **Battle** y **Aid** se observan en las fichas y en los arrays. Su efecto exacto todavía no se explica hasta disponer de la ayuda del juego o de pruebas específicas.
+**Battle** y **Aid** aparecen como estados de colocación/despliegue dentro del **Array**. No se tratarán como rarezas, clases ni categorías propias del Spirit. Su efecto exacto sobre la posición y el funcionamiento de cada estado todavía debe confirmarse con la ayuda del juego o con pruebas específicas.
 
 ## Datos confirmados por bloque
 

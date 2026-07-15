@@ -64,7 +64,7 @@
         { label: 'SSR', names: ['Huodou', 'Azure Ox', 'Sleek Rat', 'Jade Rabbit', 'Goddess Luo', 'White Tiger'] },
         { label: 'SR', names: ['Vermilion Bird', 'Dreamsnake', 'Martial Lord'] }
       ],
-      deploymentLabels: ['Battle', 'Aid'],
+      arrayStates: ['Battle', 'Aid'],
       visibleStats: ['HP', 'ATK', 'DEF', 'S.A', 'PEN', 'CRIT', 'BLOCK', 'TEN'],
       upgradeActions: ['Quick Upgrade', 'Upgrade', 'Roll Back', 'Talent'],
       arrayFacts: [

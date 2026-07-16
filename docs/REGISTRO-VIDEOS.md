@@ -152,6 +152,18 @@ Este lote justifica reservar páginas o apartados provisionales para:
 - Spirit Awakening y Dimensional Trace.
 - Spirit Codex, Fuse y Bond Overview.
 
+### juego AFK xD.mp4
+
+- Duración aproximada: 60 min 03 s. Resolución: 1600 × 900, 30 fps.
+- El vídeo contiene largos tramos sin cambios; se han separado de la revisión los momentos donde cambia la interfaz.
+- `Time Realm` muestra un mapa de etapas con nodos `Cleared`, `Challenge` y rutas alternativas.
+- La ayuda visible indica `Boss Time Boost`, un poder de jefe y un reinicio los lunes y jueves.
+- `Smart Idling` permite priorizar `Time Lock Clears` o `Elite Stage Clears`, generar una ruta y comenzar el modo inactivo.
+- Se observan accesos `Progress Overview`, `Ranking`, `Daily Chest`, `Time Heart` y `Smart Idling`.
+- En una pantalla de resultado se obtiene `Time Stone +48`.
+- `Road to Immortal` y `Ancient Ruins` aparecen como zonas relacionadas dentro del panel lateral.
+- Estas observaciones ya se incorporan a la ruta `Actividades y mazmorras` y al catálogo de objetos mediante `Time Stone`.
+
 ## Datos que siguen pendientes de verificación
 
 - Nombres completos de algunas actividades y jefes cuya interfaz queda parcialmente tapada.

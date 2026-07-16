@@ -188,6 +188,40 @@
         'Lista completa de Demoncores y requisitos de cada Pill Array.'
       ]
     },
+    activities: {
+      captureDate: '16 de julio de 2026',
+      confirmed: [
+        { name: 'Time Realm', image: 'assets/images/activities/time-realm.jpg', facts: ['Mapa de etapas con rutas alternativas y nodos bloqueados.', 'La pantalla muestra Progress, Ranking, Daily Chest, Time Heart y Smart Idling.', 'La configuración de inactividad permite priorizar Time Lock Cleers o Elite Stage Clears.', 'La recompensa observada fue Time Stone +48.'] },
+        { name: 'Rage Boss', image: 'assets/images/items/northern-abyss-talisman.jpg', facts: ['La actividad muestra Verdure Shrine y Northern Abyss.', 'La pantalla de recompensas incluye Primordial Talisman y el acceso Northern Abyss Order.', 'El nombre Northen/Northern debe conservarse según la etiqueta concreta de cada pantalla.'] },
+        { name: 'Ancient Ruins', facts: ['Aparece como actividad accesible desde la pestaña de mazmorras.', 'También figura como método observado para obtener Spirit Root.'] },
+        { name: 'Spirit Spring', facts: ['Aparece como actividad relacionada con Aura Crystalline.', 'La recompensa exacta por etapa queda pendiente de transcribir.'] }
+      ],
+      observed: ['Daily Quest', 'Dungeons', 'PvP', 'Alliance War', 'Kunlun'],
+      pending: ['Costes y reinicios exactos de cada actividad.', 'Tabla completa de recompensas por dificultad y etapa.', 'Reglas de Ranking, Daily Chest y Time Heart.', 'Rutas óptimas de Smart Idling.']
+    },
+    objectCatalog: {
+      categories: ['Talisman', 'Spirit Root', 'Technique', 'Material', 'Recompensa', 'Title', 'Outfit'],
+      entries: [
+        { name: 'Sun Spirit Root', category: 'Spirit Root', source: 'Divine Compass; Dragon Treasure', status: 'confirmado', notes: 'Core Spirit Root observado como Glossy 2-Star, Universal, Lv.100.' },
+        { name: 'Moon Spirit Root', category: 'Spirit Root', source: 'Divine Compass; Dragon Treasure', status: 'confirmado', notes: 'Core Spirit Root observado como Glossy 2-Star, Universal, Lv.100.' },
+        { name: 'Glossy Core Spirit Root', category: 'Material', source: 'Ancient Ruins', status: 'observado', notes: 'Fragmento/material mostrado en Spirit Root.' },
+        { name: 'Golden Spirit Root Shard', category: 'Material', source: 'Ancient Ruins', status: 'observado', notes: 'Fragmento mostrado en Spirit Root.' },
+        { name: 'Pink Spirit Root Shard', category: 'Material', source: 'Ancient Ruins', status: 'observado', notes: 'Fragmento mostrado en Spirit Root.' },
+        { name: 'Aura Crystalline', category: 'Material', source: 'Spirit Spring', status: 'confirmado', notes: 'Material visible para avanzar Techniques.' },
+        { name: 'Golden Sword Spell', category: 'Technique', source: 'Compra; contenido P2W confirmado por el autor', status: 'confirmado', notes: 'Desbloquea Sky Piercer hasta Lv.3.' },
+        { name: 'Earth Spirit Spell', category: 'Technique', source: 'Método pendiente de confirmar', status: 'observado', notes: 'Desbloquea Rock Shield Lv.3.' },
+        { name: 'Basic Cleansing Pill', category: 'Material', source: 'Cleanse', status: 'observado', notes: 'Se consume durante los intentos de Cleanse.' },
+        { name: 'Advanced Cleansing Pill', category: 'Material', source: 'Cleanse', status: 'observado', notes: 'Material mostrado en la interfaz de Cleanse.' },
+        { name: 'Wisp Voucher', category: 'Talisman', source: 'Kismet / Spirit Treasure', status: 'observado', notes: 'La ventana documentada pregunta si se gastan 110 para completar Treasure Hunt.' },
+        { name: 'Primordial Talisman', category: 'Talisman', source: 'Rage Boss: Verdure Shrine; Northen Abyss', status: 'confirmado', image: 'assets/images/items/northern-abyss-talisman.jpg', notes: 'La obtención desde Rage Boss fue confirmada por el autor.' },
+        { name: 'Immortal Talisman', category: 'Talisman', source: 'Rage Boss: Verdure Shrine; Northen Abyss', status: 'confirmado', image: 'assets/images/items/northern-abyss-talisman.jpg', notes: 'La obtención desde Rage Boss fue confirmada por el autor.' },
+        { name: 'Northen Abyss Order', category: 'Recompensa', source: 'Rage Boss: Northen Abyss', status: 'confirmado', image: 'assets/images/items/northern-abyss-talisman.jpg', notes: 'Tres niveles observados/confirmados: Basic gratuito, Advanced 4,99 $ y Precious 9,99 $.' },
+        { name: 'Friendship Point', category: 'Recompensa', source: 'Kunlun Mirage; Guild Realm; Multiplayer Dungeon; Mirage Arcadia; Peak Duel', status: 'observado', notes: 'La descripción indica que se intercambia por objetos.' },
+        { name: 'Golden Gear Stone', category: 'Material', source: 'Shop / Exchange; origen exacto por pantalla pendiente', status: 'observado', notes: 'Objeto visible en tienda/material audiovisual.' },
+        { name: 'Heavenly Stone - Helm', category: 'Material', source: 'Shop / Exchange; origen exacto por pantalla pendiente', status: 'observado', notes: 'Objeto visible en tienda/material audiovisual.' },
+        { name: 'Time Stone', category: 'Recompensa', source: 'Time Realm', status: 'confirmado', image: 'assets/images/activities/time-realm.jpg', notes: 'Recompensa observada: Time Stone +48 al superar una etapa.' }
+      ]
+    },
     wisp: {
       captureDate: '14 de julio de 2026',
       arrayLevel: 7,

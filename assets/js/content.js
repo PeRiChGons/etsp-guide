@@ -20,6 +20,8 @@
       { title: 'Wisp', route: '/sistemas-del-personaje/wisp', children: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] }
     ] },
     { title: 'Equipamiento y mejoras', route: '/equipamiento-y-mejoras', children: ['Equipamiento', 'Rarezas', 'Tiers', 'Estrellas', 'Craft', 'Mejoras', 'Bonificaciones', 'Materiales'] },
+    { title: 'Objetos y obtención', route: '/objetos', children: ['Buscador de objetos', 'Talisman', 'Spirit Root', 'Technique', 'Materiales', 'Recompensas', 'Titles', 'Outfits'] },
+    { title: 'Actividades y mazmorras', route: '/actividades-y-mazmorras', children: ['Daily Quest', 'Rage Boss', 'Time Realm', 'Ancient Ruins', 'Spirit Spring', 'Dungeons', 'PvP', 'Alliance War', 'Kunlun'] },
     { title: 'Clases', route: '/clases', children: [
       'Comparación de clases',
       { title: 'Dragon Lancer', route: '/clases/dragon-lancer', children: classSections },
@@ -82,6 +84,8 @@
       '/sistemas-del-personaje/zodiac': { title: 'Zodiac Transformations', type: 'zodiac', sections: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] },
       '/sistemas-del-personaje/spirit': { title: 'Spirit', type: 'spirit', sections: ['Vista general', 'Spirits documentados', 'Basic y Upgrade', 'Array y Arraycore', 'Kismet / Spirit Treasure', 'Evolution', 'Bond', 'Cleanse y Tier Up', 'Demoncore y Pill Array', 'Datos pendientes'] },
       '/sistemas-del-personaje/wisp': { title: 'Wisp', type: 'wisp', sections: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] },
+      '/objetos': { title: 'Objetos y obtención', type: 'objects', sections: ['Buscador de objetos', 'Talisman', 'Spirit Root', 'Technique', 'Materiales', 'Recompensas', 'Titles', 'Outfits'] },
+      '/actividades-y-mazmorras': { title: 'Actividades y mazmorras', type: 'activities', sections: ['Vista general', 'Daily Quest', 'Rage Boss', 'Time Realm', 'Ancient Ruins', 'Spirit Spring', 'Dungeons', 'PvP', 'Alliance War', 'Kunlun'] },
       '/proyecto': { title: 'Proyecto', type: 'project', sections: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Investigación web', 'Lista de pendientes', 'Aviso sobre contenido no oficial'] }
     };
     if (customPages[route]) {

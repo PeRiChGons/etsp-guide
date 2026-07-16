@@ -55,12 +55,44 @@
       { title: 'Inicio', route: '/inicio' },
       { title: 'Guía general', route: '/guia-general' },
       { title: 'Sistemas del personaje', route: '/sistemas-del-personaje' },
+      { title: 'Objetos y obtención', route: '/objetos' },
+      { title: 'Actividades y mazmorras', route: '/actividades-y-mazmorras' },
       { title: 'Clases', route: '/clases' },
       { title: 'Proyecto', route: '/proyecto' }
     ].map(function (item) { return contextualLink(item, '/inicio'); }).join('') + '</ul></section>';
 
     contextNavigation.innerHTML = '<div class="context-heading"><p class="context-kicker">Sección actual</p><h1>' + title + '</h1><p>Explora sus apartados sin perder de vista el contenido central.</p></div>' + categoryMarkup + sectionMarkup + quickMarkup;
   }
+
+  // Filtra en tiempo real el catálogo de objetos sin recargar la página.
+  function actualizarCatalogoObjetos() {
+    var search = document.getElementById('object-search');
+    var category = document.getElementById('object-category');
+    var cards = document.querySelectorAll('[data-object-card]');
+    var count = document.getElementById('object-search-count');
+    var empty = document.getElementById('object-search-empty');
+    if (!search || !category || !cards.length) { return; }
+
+    var query = search.value.trim().toLowerCase();
+    var selectedCategory = category.value;
+    var visible = 0;
+    cards.forEach(function (card) {
+      var matchesText = !query || card.getAttribute('data-search').indexOf(query) !== -1;
+      var matchesCategory = selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory;
+      var show = matchesText && matchesCategory;
+      card.hidden = !show;
+      if (show) { visible += 1; }
+    });
+    count.textContent = visible + (visible === 1 ? ' objeto encontrado' : ' objetos encontrados');
+    empty.hidden = visible !== 0;
+  }
+
+  document.addEventListener('input', function (event) {
+    if (event.target && event.target.id === 'object-search') { actualizarCatalogoObjetos(); }
+  });
+  document.addEventListener('change', function (event) {
+    if (event.target && event.target.id === 'object-category') { actualizarCatalogoObjetos(); }
+  });
 
   function setMenu(open) {
     document.body.classList.toggle('menu-open', open);
@@ -86,6 +118,19 @@
   document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && document.body.classList.contains('menu-open')) { setMenu(false); toggle.focus(); } });
 
   document.addEventListener('route:changed', function (event) {
+    // Cambia los acentos visuales para que cada clase y sistema tenga identidad propia.
+    document.body.classList.remove('theme-dragon-lancer', 'theme-lunarborn', 'theme-spiritfox', 'theme-swordsage', 'theme-spirit', 'theme-wisp', 'theme-activities', 'theme-system');
+    var route = event.detail.route;
+    var theme = 'theme-system';
+    if (route.indexOf('/clases/dragon-lancer') === 0) { theme = 'theme-dragon-lancer'; }
+    if (route.indexOf('/clases/lunarborn') === 0) { theme = 'theme-lunarborn'; }
+    if (route.indexOf('/clases/spiritfox') === 0) { theme = 'theme-spiritfox'; }
+    if (route.indexOf('/clases/swordsage') === 0) { theme = 'theme-swordsage'; }
+    if (route.indexOf('/sistemas-del-personaje/spirit') === 0) { theme = 'theme-spirit'; }
+    if (route.indexOf('/sistemas-del-personaje/wisp') === 0) { theme = 'theme-wisp'; }
+    if (route.indexOf('/actividades-y-mazmorras') === 0) { theme = 'theme-activities'; }
+    document.body.classList.add(theme);
+
     navigation.querySelectorAll('[data-route]').forEach(function (link) {
       var route = link.getAttribute('data-route');
       var active = route === event.detail.route ||
@@ -95,6 +140,7 @@
       if (active) { link.setAttribute('aria-current', 'page'); } else { link.removeAttribute('aria-current'); }
     });
     renderContextPanel(event.detail.route);
+    actualizarCatalogoObjetos();
   });
 
   window.GuideRouter.start();

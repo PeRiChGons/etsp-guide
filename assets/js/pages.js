@@ -219,6 +219,41 @@
       '<section class="catalog-grid" aria-label="Elementos documentados">' + cards + '</section>' + futureZone();
   }
 
+  function renderActivities(page) {
+    var data = window.REFERENCE_DATA.activities;
+    var confirmed = data.confirmed.map(function (activity) {
+      var media = activity.image
+        ? '<img src="' + escapeHtml(activity.image) + '" alt="" loading="lazy">'
+        : '<span aria-hidden="true">✦</span>';
+      return '<article class="activity-card"><div class="activity-card-media">' + media + '</div><div class="activity-card-body"><h3>' + escapeHtml(activity.name) + '</h3>' + facts(activity.facts) + '</div></article>';
+    }).join('');
+
+    return pageHeader(page, 'Actividades del juego', 'Mazmorras, jefes y actividades documentadas a partir de las grabaciones disponibles.', 'Se publica únicamente lo que aparece en una pantalla identificable. Costes, reinicios y tablas completas quedan separados como pendientes.') +
+      '<section class="system-section activity-overview" id="vista-general"><h2>Vista general</h2><p>Estas actividades se incorporan al plano porque aparecen en los vídeos de juego. Cada una tendrá después su ficha de recompensas, requisitos y rutas.</p><div class="fact-grid"><article class="fact-card"><h3>Actividades observadas</h3>' + tags(data.observed, false) + '</article><article class="fact-card"><h3>Revisión pendiente</h3>' + tags(data.pending, true) + '</article></div></section>' +
+      '<section class="system-section" id="actividades-confirmadas"><h2>Fichas con evidencia visual</h2><div class="activity-grid">' + confirmed + '</div></section>' +
+      '<section class="system-section verification-method" id="time-realm-notas"><h2>Cómo se documentará cada actividad</h2>' + facts(['Qué es y qué objetivo tiene.', 'Dónde se entra desde el menú del juego.', 'Qué requisitos, límites y reinicios muestra.', 'Qué recompensas se observan y qué parte sigue pendiente.', 'Qué objetos del catálogo se obtienen en esa actividad.']) + '</section>' + futureZone();
+  }
+
+  function renderObjects(page) {
+    var data = window.REFERENCE_DATA.objectCatalog;
+    var cards = data.entries.map(function (item) {
+      var searchable = [item.name, item.category, item.source, item.notes].join(' ').toLowerCase();
+      var statusClass = item.status === 'confirmado' ? 'confirmed' : 'pending';
+      var media = item.image
+        ? '<img src="' + escapeHtml(item.image) + '" alt="" loading="lazy">'
+        : '<span aria-hidden="true">✦</span>';
+      return '<article class="object-card" data-object-card data-category="' + escapeHtml(item.category) + '" data-search="' + escapeHtml(searchable) + '">' +
+        '<div class="object-card-media"' + (item.image ? '' : ' aria-hidden="true"') + '>' + media + '</div>' +
+        '<div class="object-card-body"><p class="object-card-category">' + escapeHtml(item.category) + '</p><h2>' + escapeHtml(item.name) + '</h2>' +
+        '<span class="' + statusClass + '">' + escapeHtml(item.status === 'confirmado' ? 'Confirmado por evidencia' : 'Observado; falta detalle') + '</span>' +
+        '<p><strong>Obtención:</strong> ' + escapeHtml(item.source) + '</p><p>' + escapeHtml(item.notes) + '</p></div></article>';
+    }).join('');
+
+    return pageHeader(page, 'Buscador de objetos', 'Localiza objetos, materiales, recompensas y, cuando se incorporen, Titles y Outfits. Cada ficha enlaza el nombre con su método de obtención observado.', 'Catálogo inicial creado con nombres visibles en capturas y vídeos. Las fichas nuevas se añadirán cuando se extraigan sus imágenes y pantallas completas.') +
+      '<section class="system-section object-search-section" id="buscador-de-objetos"><div class="object-search-controls"><label for="object-search">Buscar por nombre, categoría u obtención</label><input id="object-search" class="object-search-input" type="search" placeholder="Ej.: Talisman, Ancient Ruins, Title…" autocomplete="off"><label for="object-category">Filtrar categoría</label><select id="object-category" class="object-category-select"><option value="all">Todas</option>' + data.categories.map(function (category) { return '<option value="' + escapeHtml(category) + '">' + escapeHtml(category) + '</option>'; }).join('') + '</select></div><p id="object-search-count" class="object-search-count"></p><div id="object-catalog-grid" class="object-catalog-grid">' + cards + '</div><p id="object-search-empty" class="verification-note" hidden>No hay objetos que coincidan. Prueba otro nombre o categoría.</p></section>' +
+      '<section class="system-section verification-method" id="criterio-del-catalogo"><h2>Criterio del catálogo</h2>' + facts(['Se incluye el nombre solo cuando aparece en una pantalla, captura o vídeo identificado.', 'La obtención se separa entre confirmada, observada o pendiente.', 'Titles y Outfits tendrán fichas propias cuando se graben sus menús y se extraigan sus imágenes.', 'El catálogo crecerá sin duplicar la explicación maestra del sistema al que pertenece cada objeto.']) + '</section>' + futureZone();
+  }
+
   function renderHome(page) {
     var classGallery = '<a class="class-gallery" href="#/clases" aria-label="Abrir la comparativa de clases"><span class="class-gallery-copy"><span class="page-kicker">Recurso visual provisional</span><h2>Clases y estilos de juego</h2><p>Una presentación visual para reconocer cada clase. Las recomendaciones y estadísticas se mantienen en las fichas verificadas.</p></span></a>';
     var links = [
@@ -229,7 +264,9 @@
       ['/sistemas-del-personaje/swordflight', 'SwordFlight', 'Catálogo preparado'],
       ['/sistemas-del-personaje/zodiac', 'Zodiac Transformations', 'Transformaciones documentadas'],
       ['/sistemas-del-personaje/spirit', 'Spirit', '15 Spirits y sistemas asociados'],
-      ['/sistemas-del-personaje/wisp', 'Wisp', 'Primera pantalla documentada']
+      ['/sistemas-del-personaje/wisp', 'Wisp', 'Primera pantalla documentada'],
+      ['/objetos', 'Objetos y obtención', 'Buscador de objetos, materiales y recompensas'],
+      ['/actividades-y-mazmorras', 'Actividades y mazmorras', 'Time Realm, Rage Boss y más']
     ].map(function (item) {
       return '<a class="quick-link" href="#' + item[0] + '"><strong>' + item[1] + '</strong><span>' + item[2] + '</span></a>';
     }).join('');
@@ -265,6 +302,8 @@
     if (page.type === 'zodiac') { return renderCatalog(page, window.REFERENCE_DATA.zodiac, 'Página maestra para las Zodiac Transformations documentadas hasta ahora.'); }
     if (page.type === 'spirit') { return renderSpirit(page); }
     if (page.type === 'wisp') { return renderWisp(page); }
+    if (page.type === 'objects') { return renderObjects(page); }
+    if (page.type === 'activities') { return renderActivities(page); }
     if (page.type === 'project') { return renderProject(page); }
     return null;
   };

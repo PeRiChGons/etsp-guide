@@ -73,7 +73,9 @@
       var language = this.value;
       if (!language) { return; }
       var target = language === 'more' ? 'en' : language;
-      var currentPage = window.location.href;
+      var localPreview = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+      var publicPage = 'https://perichgons.github.io/etsp-guide/' + window.location.hash;
+      var currentPage = localPreview ? publicPage : window.location.href;
       var translateUrl = 'https://translate.google.com/translate?sl=es&tl=' + encodeURIComponent(target) + '&u=' + encodeURIComponent(currentPage);
       window.open(translateUrl, '_blank', 'noopener,noreferrer');
       this.value = '';

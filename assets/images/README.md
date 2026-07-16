@@ -43,3 +43,9 @@ Los renders generados deben mostrarse como apoyo visual. Los nombres, estadistic
 - `backgrounds/class-gallery.png`: composicion panoramica provisional para destacar las cuatro clases en la portada y en los accesos directos. Los colores son una guia visual, no una afirmacion sobre estadisticas o roles.
 
 Estos recursos se usan para dar identidad a la web. La informacion jugable se mantiene siempre en texto, tablas y capturas verificables.
+
+## Iconos de objetos extraídos
+
+Los iconos de `items/` se han recortado de ventanas donde el nombre del objeto aparece en el mismo fotograma. Si una ficha todavía no tiene un recorte inequívoco, la web muestra `Icono pendiente` en lugar de reutilizar una captura de otra actividad.
+
+Primer lote revisado: Primordial Talisman, True Immortal Talisman, Qiongqi Spear, Qiongqi Bracers, Qiongqi Chestplate, Qiongqi Heavy Helmet, Trinket Pack - Earth Tier, Trinket Pack - Mystic Tier, Earth - Ruined Lantern, Resonance Lostsoul, Sky-Mending Stone e Immortal Gear Holyst.

@@ -237,19 +237,16 @@
   function renderObjects(page) {
     var data = window.REFERENCE_DATA.objectCatalog;
     var cards = data.entries.map(function (item) {
-      var searchable = [item.name, item.category, item.source, item.notes].join(' ').toLowerCase();
-      var statusClass = item.status === 'confirmado' ? 'confirmed' : 'pending';
+      var searchable = [item.name, item.category, item.source, item.notes, item.sourceVideo, item.timestamp].join(' ').toLowerCase();
       var media = item.image
-        ? '<img src="' + escapeHtml(item.image) + '" alt="" loading="lazy">'
-        : '<span aria-hidden="true">✦</span>';
-      return '<article class="object-card" data-object-card data-category="' + escapeHtml(item.category) + '" data-search="' + escapeHtml(searchable) + '">' +
+        ? '<img src="' + escapeHtml(item.image) + '" alt="Icono de ' + escapeHtml(item.name) + '" loading="lazy">'
+        : '<span class="object-card-pending-icon"><span aria-hidden="true">✦</span><small>Icono pendiente</small></span>';
+      return '<article class="object-card" data-object-card tabindex="0" role="button" aria-label="Ver ficha de ' + escapeHtml(item.name) + '" data-object-name="' + escapeHtml(item.name) + '" data-object-image="' + escapeHtml(item.image || '') + '" data-object-detail-image="' + escapeHtml(item.detailImage || '') + '" data-object-category="' + escapeHtml(item.category) + '" data-object-source="' + escapeHtml(item.source || '') + '" data-object-notes="' + escapeHtml(item.notes || '') + '" data-object-status="' + escapeHtml(item.status || '') + '" data-object-video="' + escapeHtml(item.sourceVideo || '') + '" data-object-timestamp="' + escapeHtml(item.timestamp || '') + '" data-category="' + escapeHtml(item.category) + '" data-search="' + escapeHtml(searchable) + '">' +
         '<div class="object-card-media"' + (item.image ? '' : ' aria-hidden="true"') + '>' + media + '</div>' +
-        '<div class="object-card-body"><p class="object-card-category">' + escapeHtml(item.category) + '</p><h2>' + escapeHtml(item.name) + '</h2>' +
-        '<span class="' + statusClass + '">' + escapeHtml(item.status === 'confirmado' ? 'Confirmado por evidencia' : 'Observado; falta detalle') + '</span>' +
-        '<p><strong>Obtención:</strong> ' + escapeHtml(item.source) + '</p><p>' + escapeHtml(item.notes) + '</p></div></article>';
+        '<div class="object-card-body"><h2>' + escapeHtml(item.name) + '</h2></div></article>';
     }).join('');
 
-    return pageHeader(page, 'Buscador de objetos', 'Localiza objetos, materiales, recompensas y, cuando se incorporen, Titles y Outfits. Cada ficha enlaza el nombre con su método de obtención observado.', 'Catálogo inicial creado con nombres visibles en capturas y vídeos. Las fichas nuevas se añadirán cuando se extraigan sus imágenes y pantallas completas.') +
+    return pageHeader(page, 'Buscador de objetos', 'Localiza objetos, materiales, recompensas y, cuando se incorporen, Titles y Outfits. Cada ficha enlaza el nombre con su método de obtención observado.', 'Catálogo de 184 fichas extraídas de capturas y vídeos; 27 tienen icono propio verificado y 29 incluyen además una ficha descriptiva ampliada. Solo se muestra un icono cuando el nombre y el objeto aparecen juntos en una ventana inequívoca; las demás fichas indican «Icono pendiente».') +
       '<section class="system-section object-search-section" id="buscador-de-objetos"><div class="object-search-controls"><label for="object-search">Buscar por nombre, categoría u obtención</label><input id="object-search" class="object-search-input" type="search" placeholder="Ej.: Talisman, Ancient Ruins, Title…" autocomplete="off"><label for="object-category">Filtrar categoría</label><select id="object-category" class="object-category-select"><option value="all">Todas</option>' + data.categories.map(function (category) { return '<option value="' + escapeHtml(category) + '">' + escapeHtml(category) + '</option>'; }).join('') + '</select></div><p id="object-search-count" class="object-search-count"></p><div id="object-catalog-grid" class="object-catalog-grid">' + cards + '</div><p id="object-search-empty" class="verification-note" hidden>No hay objetos que coincidan. Prueba otro nombre o categoría.</p></section>' +
       '<section class="system-section verification-method" id="criterio-del-catalogo"><h2>Criterio del catálogo</h2>' + facts(['Se incluye el nombre solo cuando aparece en una pantalla, captura o vídeo identificado.', 'La obtención se separa entre confirmada, observada o pendiente.', 'Titles y Outfits tendrán fichas propias cuando se graben sus menús y se extraigan sus imágenes.', 'El catálogo crecerá sin duplicar la explicación maestra del sistema al que pertenece cada objeto.']) + '</section>' + futureZone();
   }

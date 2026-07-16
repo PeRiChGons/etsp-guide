@@ -94,6 +94,83 @@
     if (event.target && event.target.id === 'object-category') { actualizarCatalogoObjetos(); }
   });
 
+  // Abre una ficha ampliada al pulsar un objeto, como en la ventana descriptiva del juego.
+  function obtenerModalObjetos() {
+    var modal = document.getElementById('object-detail-modal');
+    if (modal) { return modal; }
+    document.body.insertAdjacentHTML('beforeend', '<div id="object-detail-modal" class="object-detail-modal" hidden aria-hidden="true"><div class="object-detail-backdrop" data-object-modal-close></div><section class="object-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="object-detail-title"><button class="object-detail-close" type="button" aria-label="Cerrar ficha" data-object-modal-close>×</button><div class="object-detail-media" id="object-detail-media"></div><div class="object-detail-copy"><p class="object-card-category" id="object-detail-category"></p><h2 id="object-detail-title"></h2><p class="object-detail-status" id="object-detail-status"></p><p><strong>Obtención:</strong> <span id="object-detail-source"></span></p><p id="object-detail-notes"></p><p class="object-card-evidence" id="object-detail-evidence" hidden></p></div></section></div>');
+    return document.getElementById('object-detail-modal');
+  }
+
+  function cerrarFichaObjeto() {
+    var modal = document.getElementById('object-detail-modal');
+    if (!modal) { return; }
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('object-detail-open');
+  }
+
+  function abrirFichaObjeto(card) {
+    var modal = obtenerModalObjetos();
+    var image = card.getAttribute('data-object-image');
+    var detailImage = card.getAttribute('data-object-detail-image');
+    var media = document.getElementById('object-detail-media');
+    media.innerHTML = '';
+    if (detailImage) {
+      var detailElement = document.createElement('img');
+      detailElement.className = 'object-detail-screenshot';
+      detailElement.src = detailImage;
+      detailElement.alt = 'Ficha descriptiva de ' + card.getAttribute('data-object-name');
+      media.appendChild(detailElement);
+      if (image) {
+        var iconElement = document.createElement('img');
+        iconElement.className = 'object-detail-icon';
+        iconElement.src = image;
+        iconElement.alt = 'Icono de ' + card.getAttribute('data-object-name');
+        media.appendChild(iconElement);
+      }
+    } else if (image) {
+      var imageElement = document.createElement('img');
+      imageElement.className = 'object-detail-icon';
+      imageElement.src = image;
+      imageElement.alt = 'Icono de ' + card.getAttribute('data-object-name');
+      media.appendChild(imageElement);
+    } else {
+      var pending = document.createElement('span');
+      pending.className = 'object-detail-pending';
+      pending.textContent = 'Icono pendiente';
+      media.appendChild(pending);
+    }
+    document.getElementById('object-detail-category').textContent = card.getAttribute('data-object-category') || '';
+    document.getElementById('object-detail-title').textContent = card.getAttribute('data-object-name') || '';
+    document.getElementById('object-detail-status').textContent = card.getAttribute('data-object-status') === 'confirmado' ? 'Confirmado por evidencia visual' : 'Observado; falta completar la evidencia';
+    document.getElementById('object-detail-source').textContent = card.getAttribute('data-object-source') || 'Pendiente';
+    document.getElementById('object-detail-notes').textContent = card.getAttribute('data-object-notes') || '';
+    var video = card.getAttribute('data-object-video') || '';
+    var timestamp = card.getAttribute('data-object-timestamp') || '';
+    document.getElementById('object-detail-evidence').textContent = video ? 'Vídeo: ' + video + (timestamp ? ' · ' + timestamp : '') : '';
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('object-detail-open');
+    modal.querySelector('.object-detail-close').focus();
+  }
+
+  document.addEventListener('click', function (event) {
+    var card = event.target.closest ? event.target.closest('[data-object-card]') : null;
+    if (card) { abrirFichaObjeto(card); return; }
+    if (event.target.closest && event.target.closest('[data-object-modal-close]')) { cerrarFichaObjeto(); }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    var card = event.target.closest ? event.target.closest('[data-object-card]') : null;
+    if (card && (event.key === 'Enter' || event.key === ' ')) {
+      event.preventDefault();
+      abrirFichaObjeto(card);
+      return;
+    }
+    if (event.key === 'Escape') { cerrarFichaObjeto(); }
+  });
+
   function setMenu(open) {
     document.body.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));

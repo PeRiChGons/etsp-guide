@@ -730,6 +730,7 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
 .object-card-body p { margin: .55rem 0 0; color: var(--muted); font-size: .9rem; }
 .object-card-body strong { color: #d9e9f2; }
 .object-card-evidence { color: #8ccde3 !important; font-size: .78rem !important; }
+.object-detail-dialog #object-detail-evidence { display: none !important; }
 .object-card:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
 .object-detail-open { overflow: hidden; }
 .object-detail-modal { position: fixed; inset: 0; z-index: 500; display: grid; place-items: center; padding: 1rem; }

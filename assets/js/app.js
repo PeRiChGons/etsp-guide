@@ -146,9 +146,8 @@
     document.getElementById('object-detail-status').textContent = card.getAttribute('data-object-status') === 'confirmado' ? 'Confirmado por evidencia visual' : 'Observado; falta completar la evidencia';
     document.getElementById('object-detail-source').textContent = card.getAttribute('data-object-source') || 'Pendiente';
     document.getElementById('object-detail-notes').textContent = card.getAttribute('data-object-notes') || '';
-    var video = card.getAttribute('data-object-video') || '';
-    var timestamp = card.getAttribute('data-object-timestamp') || '';
-    document.getElementById('object-detail-evidence').textContent = video ? 'Vídeo: ' + video + (timestamp ? ' · ' + timestamp : '') : '';
+    // La ficha muestra la información del objeto, no el nombre técnico del vídeo de investigación.
+    document.getElementById('object-detail-evidence').textContent = '';
     modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('object-detail-open');

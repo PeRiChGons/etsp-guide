@@ -2,6 +2,12 @@
 
 La ruta `#/objetos` centraliza objetos, materiales y recompensas sin duplicar sus explicaciones dentro de Spirit, Wisp, Technique, dungeons o tiendas.
 
+## Prioridad de la ficha
+
+La ficha se construye en este orden: nombre exacto del juego, descripción, método de obtención y palabras alternativas de búsqueda. La imagen y el modelo 3D son complementarios y no bloquean la publicación de esos datos.
+
+El visor 3D no tiene una sección independiente en el menú. Cuando una ficha tenga un modelo asociado, mostrará una casilla **Ver modelo 3D**. En prendas se mostrarán las variantes de género o clase únicamente cuando estén relacionadas en los datos del cliente; las armas se visualizarán sin personaje.
+
 ## Qué permite
 
 - Buscar por nombre, categoría o método de obtención.

@@ -8,6 +8,28 @@
     });
   }
 
+  // Modelos 3D extraídos del cliente. Se muestran únicamente cuando una
+  // ficha de objeto está vinculada a un archivo real.
+  var MODEL_CATALOG = [
+    { key: 'shenlong', names: ['Shenlong'], type: 'Montura', file: 'assets/models/3d/mounts/mount-302131-shenlong.glb' },
+    { key: 'fugu', names: ['Fugu'], type: 'Montura', file: 'assets/models/3d/mounts/mount-302220-fugu.glb' },
+    { key: 'feijian', names: ['Feijian'], type: 'Montura', file: 'assets/models/3d/mounts/mount-302168-feijian.glb' },
+    { key: 'bawanglong', names: ['Bawanglong'], type: 'Montura', file: 'assets/models/3d/mounts/mount-302171-bawanglong.glb' },
+    { key: 'shengshi-zijia', names: ['Shengshi Zijia'], type: 'Armadura', file: 'assets/models/3d/armor/waist-210001-shengshizijia.glb' },
+    { key: 'shengdun', names: ['Shengdun'], type: 'Armadura', file: 'assets/models/3d/armor/waist-210005-shengdun.glb' },
+    { key: 'weapon-1221033', names: ['Weapon 1221033'], type: 'Arma', file: 'assets/models/3d/weapons/weapon-1221033.glb' },
+    { key: 'weapon-123149', names: ['Weapon 123149'], type: 'Arma', file: 'assets/models/3d/weapons/weapon-123149.glb', genders: ['Mujer'] },
+    { key: 'weapon-124140', names: ['Weapon 124140'], type: 'Arma', file: 'assets/models/3d/weapons/weapon-124140.glb' },
+    { key: 'weapon-161101', names: ['Weapon 161101'], type: 'Arma', file: 'assets/models/3d/weapons/weapon-161101.glb' }
+  ];
+
+  function modelForItem(item) {
+    var names = [item.name, item.id, item.modelKey].filter(Boolean).map(function (value) { return String(value).toLowerCase(); });
+    return MODEL_CATALOG.find(function (model) {
+      return model.names.some(function (name) { return names.indexOf(name.toLowerCase()) !== -1; });
+    }) || null;
+  }
+
   function breadcrumbs(page) {
     var result = '<div class="breadcrumbs" aria-label="Migas de pan"><a href="#/inicio">Inicio</a>';
     if (page.parent) {
@@ -237,16 +259,19 @@
   function renderObjects(page) {
     var data = window.REFERENCE_DATA.objectCatalog;
     var cards = data.entries.map(function (item) {
-      var searchable = [item.name, item.aliases || [], item.category, item.source, item.notes, item.sourceVideo, item.timestamp].join(' ').toLowerCase();
+      var model = modelForItem(item);
+      var clientDescription = window.CLIENT_ITEM_TEXT && window.CLIENT_ITEM_TEXT[item.name] ? window.CLIENT_ITEM_TEXT[item.name] : '';
+      var description = item.description || clientDescription || item.notes || '';
+      var searchable = [item.name, item.aliases || [], item.category, item.source, description].join(' ').toLowerCase();
       var media = item.image
         ? '<img src="' + escapeHtml(item.image) + '" alt="Icono de ' + escapeHtml(item.name) + '" loading="lazy">'
         : '<span class="object-card-pending-icon"><span aria-hidden="true">✦</span><small>Icono pendiente</small></span>';
-      return '<article class="object-card" data-object-card tabindex="0" role="button" aria-label="Ver ficha de ' + escapeHtml(item.name) + '" data-object-name="' + escapeHtml(item.name) + '" data-object-image="' + escapeHtml(item.image || '') + '" data-object-detail-image="' + escapeHtml(item.detailImage || '') + '" data-object-category="' + escapeHtml(item.category) + '" data-object-source="' + escapeHtml(item.source || '') + '" data-object-notes="' + escapeHtml(item.notes || '') + '" data-object-status="' + escapeHtml(item.status || '') + '" data-object-video="' + escapeHtml(item.sourceVideo || '') + '" data-object-timestamp="' + escapeHtml(item.timestamp || '') + '" data-category="' + escapeHtml(item.category) + '" data-search="' + escapeHtml(searchable) + '">' +
+      return '<article class="object-card" data-object-card tabindex="0" role="button" aria-label="Ver ficha de ' + escapeHtml(item.name) + '" data-object-name="' + escapeHtml(item.name) + '" data-object-image="' + escapeHtml(item.image || '') + '" data-object-detail-image="' + escapeHtml(item.detailImage || '') + '" data-object-category="' + escapeHtml(item.category) + '" data-object-source="' + escapeHtml(item.source || '') + '" data-object-notes="' + escapeHtml(description) + '" data-object-status="' + escapeHtml(item.status || '') + '" data-object-model="' + escapeHtml(model ? model.file : '') + '" data-object-model-type="' + escapeHtml(model ? model.type : '') + '" data-object-model-genders="' + escapeHtml(model && model.genders ? model.genders.join('|') : '') + '" data-object-model-classes="' + escapeHtml(model && model.classes ? model.classes.join('|') : '') + '" data-category="' + escapeHtml(item.category) + '" data-search="' + escapeHtml(searchable) + '">' +
         '<div class="object-card-media"' + (item.image ? '' : ' aria-hidden="true"') + '>' + media + '</div>' +
         '<div class="object-card-body"><h2>' + escapeHtml(item.name) + '</h2></div></article>';
     }).join('');
 
-    return pageHeader(page, 'Buscador de objetos', 'Localiza objetos, materiales, recompensas y, cuando se incorporen, Titles y Outfits. Cada ficha enlaza el nombre con su método de obtención observado.', 'Catálogo de 184 fichas extraídas de capturas y vídeos; 27 tienen icono propio verificado y 29 incluyen además una ficha descriptiva ampliada. Solo se muestra un icono cuando el nombre y el objeto aparecen juntos en una ventana inequívoca; las demás fichas indican «Icono pendiente».') +
+    return pageHeader(page, 'Buscador de objetos', 'Busca objetos, materiales, equipo, prendas, armas y monturas por nombre, descripción o palabras relacionadas. La ficha muestra la descripción y dónde se obtiene; el visor 3D solo aparece cuando existe un modelo asociado.', null) +
       '<section class="system-section object-search-section" id="buscador-de-objetos"><div class="object-search-controls"><label for="object-search">Buscar por nombre, categoría u obtención</label><input id="object-search" class="object-search-input" type="search" placeholder="Ej.: Talisman, Ancient Ruins, Title…" autocomplete="off"><label for="object-category">Filtrar categoría</label><select id="object-category" class="object-category-select"><option value="all">Todas</option>' + data.categories.map(function (category) { return '<option value="' + escapeHtml(category) + '">' + escapeHtml(category) + '</option>'; }).join('') + '</select></div><p id="object-search-count" class="object-search-count"></p><div id="object-catalog-grid" class="object-catalog-grid">' + cards + '</div><p id="object-search-empty" class="verification-note" hidden>No hay objetos que coincidan. Prueba otro nombre o categoría.</p></section>' +
       '<section class="system-section verification-method" id="criterio-del-catalogo"><h2>Criterio del catálogo</h2>' + facts(['Se incluye el nombre solo cuando aparece en una pantalla, captura o vídeo identificado.', 'La obtención se separa entre confirmada, observada o pendiente.', 'Titles y Outfits tendrán fichas propias cuando se graben sus menús y se extraigan sus imágenes.', 'El catálogo crecerá sin duplicar la explicación maestra del sistema al que pertenece cada objeto.']) + '</section>' + futureZone();
   }
@@ -377,7 +402,6 @@
     if (page.type === 'wisp') { return renderWisp(page); }
     if (page.type === 'objects') { return renderObjects(page); }
     if (page.type === 'activities') { return renderActivities(page); }
-    if (page.type === 'models-3d') { return renderModels3D(page); }
     if (page.type === 'project') { return renderProject(page); }
     return null;
   };

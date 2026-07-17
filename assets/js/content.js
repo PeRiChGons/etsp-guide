@@ -19,7 +19,7 @@
       { title: 'Spirit', route: '/sistemas-del-personaje/spirit', children: ['Vista general', 'Spirits documentados', 'Basic y Upgrade', 'Array y Arraycore', 'Kismet / Spirit Treasure', 'Evolution', 'Bond', 'Cleanse y Tier Up', 'Demoncore y Pill Array', 'Datos pendientes'] },
       { title: 'Wisp', route: '/sistemas-del-personaje/wisp', children: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] }
     ] },
-    { title: 'Equipamiento y mejoras', route: '/equipamiento-y-mejoras', children: ['Equipamiento', 'Rarezas', 'Tiers', 'Estrellas', 'Craft', 'Mejoras', 'Bonificaciones', 'Materiales', { title: 'Modelos 3D del juego', route: '/equipamiento-y-mejoras/modelos-3d', children: ['Monturas', 'Armaduras', 'Armas'] }] },
+    { title: 'Equipamiento y mejoras', route: '/equipamiento-y-mejoras', children: ['Equipamiento', 'Rarezas', 'Tiers', 'Estrellas', 'Craft', 'Mejoras', 'Bonificaciones', 'Materiales'] },
     { title: 'Objetos y obtención', route: '/objetos', children: ['Buscador de objetos', 'Talisman', 'Spirit Root', 'Technique', 'Materiales', 'Recompensas', 'Titles', 'Outfits'] },
     { title: 'Actividades y mazmorras', route: '/actividades-y-mazmorras', children: ['Daily Quest', 'Rage Boss', 'Time Realm', 'Ancient Ruins', 'Spirit Spring', 'Dungeons', 'PvP', 'Alliance War', 'Kunlun'] },
     { title: 'Clases', route: '/clases', children: [
@@ -76,7 +76,6 @@
     var classMatch = route.match(/^\/clases\/(dragon-lancer|lunarborn|spiritfox|swordsage)$/);
     var top = findTopLevel(route);
     var customPages = {
-      '/equipamiento-y-mejoras/modelos-3d': { title: 'Modelos 3D del juego', type: 'models-3d', sections: ['Muestras exportadas', 'Cómo usar el visor', 'Catálogo de meshes'] },
       '/inicio': { title: 'Inicio', type: 'home', sections: ['Estado de la guía', 'Accesos rápidos', 'Método de trabajo'] },
       '/sistemas-del-personaje/stats': { title: 'Stats', type: 'stats', sections: ['Basic Stats', 'Special Stats', 'Criterio de verificación'] },
       '/sistemas-del-personaje/spirit-root': { title: 'Spirit Root', type: 'spirit-root', sections: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root', 'Obtención y materiales'] },

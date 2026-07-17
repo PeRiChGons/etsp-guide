@@ -744,6 +744,8 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
 .object-detail-media .object-detail-screenshot { width: 100%; max-height: 30rem; aspect-ratio: auto; object-fit: contain; border-width: 1px; border-radius: .7rem; background: #07121e; }
 .object-detail-media .object-detail-icon { width: 5.25rem; height: 5.25rem; }
 .object-detail-pending { display: grid; place-items: center; width: 11rem; aspect-ratio: 1; color: var(--muted); border: 1px dashed rgba(217,184,103,.6); border-radius: 1rem; text-align: center; text-transform: uppercase; letter-spacing: .08em; }
+.object-card-pending-icon small, .object-detail-pending { display: none; }
+.object-card-pending-icon, .object-card-fallback-icon { display: grid; place-items: center; width: 5.25rem; height: 5.25rem; color: var(--gold-light); border: 1px solid rgba(217,184,103,.38); border-radius: .8rem; background: radial-gradient(circle, rgba(217,184,103,.2), rgba(19,78,110,.12)); font-size: 1.8rem; }
 .object-detail-copy { align-self: center; padding: .6rem .4rem; }
 .object-detail-copy h2 { margin: .35rem 0 .75rem; color: var(--gold-light); font-size: clamp(1.45rem, 4vw, 2.15rem); }
 .object-detail-copy p { margin: .75rem 0 0; color: var(--muted); }

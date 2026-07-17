@@ -98,7 +98,7 @@
   function obtenerModalObjetos() {
     var modal = document.getElementById('object-detail-modal');
     if (modal) { return modal; }
-    document.body.insertAdjacentHTML('beforeend', '<div id="object-detail-modal" class="object-detail-modal" hidden aria-hidden="true"><div class="object-detail-backdrop" data-object-modal-close></div><section class="object-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="object-detail-title"><button class="object-detail-close" type="button" aria-label="Cerrar ficha" data-object-modal-close>×</button><div class="object-detail-media" id="object-detail-media"></div><div class="object-detail-copy"><p class="object-card-category" id="object-detail-category"></p><h2 id="object-detail-title"></h2><p class="object-detail-status" id="object-detail-status"></p><p><strong>Obtención:</strong> <span id="object-detail-source"></span></p><p id="object-detail-notes"></p><p class="object-card-evidence" id="object-detail-evidence" hidden></p></div></section></div>');
+    document.body.insertAdjacentHTML('beforeend', '<div id="object-detail-modal" class="object-detail-modal" hidden aria-hidden="true"><div class="object-detail-backdrop" data-object-modal-close></div><section class="object-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="object-detail-title"><button class="object-detail-close" type="button" aria-label="Cerrar ficha" data-object-modal-close>×</button><div class="object-detail-media" id="object-detail-media"></div><div class="object-detail-copy"><p class="object-card-category" id="object-detail-category"></p><h2 id="object-detail-title"></h2><p class="object-detail-status" id="object-detail-status"></p><p><strong>Descripción:</strong> <span id="object-detail-description"></span></p><p><strong>Obtención:</strong> <span id="object-detail-source"></span></p><p id="object-detail-notes"></p><div id="object-detail-model-controls" class="object-detail-model-controls" hidden><label><input id="object-detail-model-toggle" type="checkbox"> Ver modelo 3D</label><label id="object-detail-gender-control" hidden>Representación <select id="object-detail-gender"><option>Hombre</option><option>Mujer</option></select></label><label id="object-detail-class-control" hidden>Clase <select id="object-detail-class"><option>Dragon Lancer</option><option>Lunarborn</option><option>Spiritfox</option><option>Sword Sage</option></select></label></div><div id="object-detail-model-viewer" class="object-detail-model-viewer" hidden></div><p class="object-card-evidence" id="object-detail-evidence" hidden></p></div></section></div>');
     return document.getElementById('object-detail-modal');
   }
 
@@ -108,6 +108,28 @@
     modal.hidden = true;
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('object-detail-open');
+  }
+
+  // Crea el visor solo cuando el usuario lo solicita y la ficha tiene un modelo.
+  function actualizarVisor3D(card, mostrar) {
+    var contenedor = document.getElementById('object-detail-model-viewer');
+    if (!contenedor) { return; }
+    contenedor.innerHTML = '';
+    var archivo = card.getAttribute('data-object-model');
+    if (!mostrar || !archivo) {
+      contenedor.hidden = true;
+      return;
+    }
+    var visor = document.createElement('model-viewer');
+    visor.setAttribute('src', archivo);
+    visor.setAttribute('alt', 'Modelo 3D de ' + (card.getAttribute('data-object-name') || 'objeto'));
+    visor.setAttribute('camera-controls', '');
+    visor.setAttribute('auto-rotate', '');
+    visor.setAttribute('rotation-per-second', '24deg');
+    visor.setAttribute('shadow-intensity', '0.8');
+    visor.setAttribute('exposure', '1.05');
+    contenedor.appendChild(visor);
+    contenedor.hidden = false;
   }
 
   function abrirFichaObjeto(card) {
@@ -143,9 +165,31 @@
     }
     document.getElementById('object-detail-category').textContent = card.getAttribute('data-object-category') || '';
     document.getElementById('object-detail-title').textContent = card.getAttribute('data-object-name') || '';
-    document.getElementById('object-detail-status').textContent = card.getAttribute('data-object-status') === 'confirmado' ? 'Confirmado por evidencia visual' : 'Observado; falta completar la evidencia';
-    document.getElementById('object-detail-source').textContent = card.getAttribute('data-object-source') || 'Pendiente';
+    document.getElementById('object-detail-status').textContent = '';
+    document.getElementById('object-detail-status').hidden = true;
+    document.getElementById('object-detail-description').textContent = card.getAttribute('data-object-notes') || '';
+    document.getElementById('object-detail-source').textContent = card.getAttribute('data-object-source') || '';
     document.getElementById('object-detail-notes').textContent = card.getAttribute('data-object-notes') || '';
+    document.getElementById('object-detail-notes').hidden = true;
+    var modelFile = card.getAttribute('data-object-model');
+    var modelControls = document.getElementById('object-detail-model-controls');
+    var modelToggle = document.getElementById('object-detail-model-toggle');
+    var genderControl = document.getElementById('object-detail-gender-control');
+    var classControl = document.getElementById('object-detail-class-control');
+    var genderValues = (card.getAttribute('data-object-model-genders') || '').split('|').filter(Boolean);
+    var classValues = (card.getAttribute('data-object-model-classes') || '').split('|').filter(Boolean);
+    modelControls.hidden = !modelFile;
+    modelToggle.checked = false;
+    genderControl.hidden = genderValues.length < 2;
+    classControl.hidden = classValues.length < 2;
+    if (genderValues.length > 1) {
+      document.getElementById('object-detail-gender').innerHTML = genderValues.map(function (value) { return '<option>' + value + '</option>'; }).join('');
+    }
+    if (classValues.length > 1) {
+      document.getElementById('object-detail-class').innerHTML = classValues.map(function (value) { return '<option>' + value + '</option>'; }).join('');
+    }
+    modelToggle.onchange = function () { actualizarVisor3D(card, modelToggle.checked); };
+    actualizarVisor3D(card, false);
     // La ficha muestra la información del objeto, no el nombre técnico del vídeo de investigación.
     document.getElementById('object-detail-evidence').textContent = '';
     modal.hidden = false;

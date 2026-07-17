@@ -256,9 +256,68 @@
       '<section class="system-section verification-method" id="time-realm-notas"><h2>Cómo se documentará cada actividad</h2>' + facts(['Qué es y qué objetivo tiene.', 'Dónde se entra desde el menú del juego.', 'Qué requisitos, límites y reinicios muestra.', 'Qué recompensas se observan y qué parte sigue pendiente.', 'Qué objetos del catálogo se obtienen en esa actividad.']) + '</section>' + futureZone();
   }
 
+  function goodsCategory(name) {
+    var value = String(name || '').toLowerCase();
+    if (/outfit|garment|robe|dress|fashion|costume|armor|armour/.test(value)) return 'Outfit';
+    if (/mount|beastsoul|dragon|qiongqi|flyblade|feijian|shenlong|fugu/.test(value)) return 'Montura';
+    if (/sword|blade|spear|bow|weapon|staff|dagger|katana|lance/.test(value)) return 'Arma';
+    if (/title|chat tag/.test(value)) return 'Título';
+    if (/shard|stone|spirit|crystal|essence|root|rune|gem|coin|gold|silver|material|souvenir|voucher|ticket|card|chest|box|pack|pill|token|talisman|accessory|amulet|necklace|ring/.test(value)) return 'Material';
+    return 'Objeto';
+  }
+
+  function goodsAliases(name, category) {
+    var value = String(name || '').toLowerCase();
+    var aliases = [category, 'objeto', 'item'];
+    if (/bag|pack|chest|box|gift|container/.test(value)) aliases.push('bolsa', 'saco', 'cofre', 'caja', 'paquete', 'contenedor', 'recipiente');
+    if (/stone|crystal|shard|essence|core|gem/.test(value)) aliases.push('piedra', 'cristal', 'fragmento', 'esencia', 'gema', 'material');
+    if (/coin|gold|silver|currency/.test(value)) aliases.push('moneda', 'oro', 'plata', 'dinero', 'divisa');
+    if (/outfit|garment|robe|dress|fashion|costume/.test(value)) aliases.push('ropa', 'atuendo', 'vestido', 'prenda', 'disfraz');
+    if (/mount|beastsoul|dragon|qiongqi|flyblade|feijian/.test(value)) aliases.push('montura', 'cabalgadura', 'bestia', 'vehiculo');
+    if (/sword|blade|spear|bow|weapon|staff|dagger|katana|lance/.test(value)) aliases.push('arma', 'espada', 'lanza', 'arco', 'hoja');
+    if (/talisman|charm|amulet/.test(value)) aliases.push('talismán', 'amuleto', 'reliquia', 'encantamiento');
+    return aliases;
+  }
+
+  function searchEntriesWithExtractedGoods(data) {
+    var entries = data.entries.slice();
+    var knownIds = {};
+    var knownNames = {};
+    entries.forEach(function (entry) {
+      if (entry.id) knownIds[String(entry.id)] = true;
+      if (entry.name) knownNames[String(entry.name).toLowerCase()] = true;
+    });
+    (window.GOODS_ITEM_CATALOG || []).forEach(function (row) {
+      var name = String(row.nombre || '').trim();
+      if (!name || /^Objeto\s+\d+$/i.test(name)) return;
+      if (/Permanently|Temporarily|Obtained|Used to|Can be|Will be|Please use/i.test(name)) return;
+      var key = String(row.id || '');
+      var nameKey = name.toLowerCase();
+      if ((key && knownIds[key]) || knownNames[nameKey]) return;
+      entries.push({
+        id: key,
+        name: name,
+        category: goodsCategory(name),
+        description: row.descripcion || '',
+        source: '',
+        aliases: goodsAliases(name, goodsCategory(name)),
+        image: row.archivo || '',
+        detailImage: '',
+        notes: '',
+        status: 'client-data'
+      });
+      if (key) knownIds[key] = true;
+      knownNames[nameKey] = true;
+    });
+    return entries;
+  }
+
   function renderObjects(page) {
     var data = window.REFERENCE_DATA.objectCatalog;
-    var cards = data.entries.map(function (item) {
+    var entries = searchEntriesWithExtractedGoods(data);
+    var categories = entries.map(function (item) { return item.category; }).filter(Boolean).filter(function (category, index, list) { return list.indexOf(category) === index; }).sort();
+    data.categories = categories;
+    var cards = entries.map(function (item) {
       var model = modelForItem(item);
       var clientDescription = window.CLIENT_ITEM_TEXT && window.CLIENT_ITEM_TEXT[item.name] ? window.CLIENT_ITEM_TEXT[item.name] : '';
       var description = item.description || clientDescription || item.notes || '';

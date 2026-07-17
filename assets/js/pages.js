@@ -293,7 +293,15 @@
       if (/Permanently|Temporarily|Obtained|Used to|Can be|Will be|Please use/i.test(name)) return;
       var key = String(row.id || '');
       var nameKey = name.toLowerCase();
-      if ((key && knownIds[key]) || knownNames[nameKey]) return;
+      var existing = entries.find(function (entry) {
+        return (key && String(entry.id || '') === key) || String(entry.name || '').toLowerCase() === nameKey;
+      });
+      if (existing) {
+        if (!existing.image && row.archivo) existing.image = row.archivo;
+        if (!existing.description && row.descripcion) existing.description = row.descripcion;
+        existing.aliases = (existing.aliases || []).concat(goodsAliases(name, goodsCategory(name))).filter(function (alias, index, list) { return list.indexOf(alias) === index; });
+        return;
+      }
       entries.push({
         id: key,
         name: name,

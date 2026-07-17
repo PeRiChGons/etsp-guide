@@ -237,7 +237,7 @@
   function renderObjects(page) {
     var data = window.REFERENCE_DATA.objectCatalog;
     var cards = data.entries.map(function (item) {
-      var searchable = [item.name, item.category, item.source, item.notes, item.sourceVideo, item.timestamp].join(' ').toLowerCase();
+      var searchable = [item.name, item.aliases || [], item.category, item.source, item.notes, item.sourceVideo, item.timestamp].join(' ').toLowerCase();
       var media = item.image
         ? '<img src="' + escapeHtml(item.image) + '" alt="Icono de ' + escapeHtml(item.name) + '" loading="lazy">'
         : '<span class="object-card-pending-icon"><span aria-hidden="true">✦</span><small>Icono pendiente</small></span>';
@@ -249,6 +249,82 @@
     return pageHeader(page, 'Buscador de objetos', 'Localiza objetos, materiales, recompensas y, cuando se incorporen, Titles y Outfits. Cada ficha enlaza el nombre con su método de obtención observado.', 'Catálogo de 184 fichas extraídas de capturas y vídeos; 27 tienen icono propio verificado y 29 incluyen además una ficha descriptiva ampliada. Solo se muestra un icono cuando el nombre y el objeto aparecen juntos en una ventana inequívoca; las demás fichas indican «Icono pendiente».') +
       '<section class="system-section object-search-section" id="buscador-de-objetos"><div class="object-search-controls"><label for="object-search">Buscar por nombre, categoría u obtención</label><input id="object-search" class="object-search-input" type="search" placeholder="Ej.: Talisman, Ancient Ruins, Title…" autocomplete="off"><label for="object-category">Filtrar categoría</label><select id="object-category" class="object-category-select"><option value="all">Todas</option>' + data.categories.map(function (category) { return '<option value="' + escapeHtml(category) + '">' + escapeHtml(category) + '</option>'; }).join('') + '</select></div><p id="object-search-count" class="object-search-count"></p><div id="object-catalog-grid" class="object-catalog-grid">' + cards + '</div><p id="object-search-empty" class="verification-note" hidden>No hay objetos que coincidan. Prueba otro nombre o categoría.</p></section>' +
       '<section class="system-section verification-method" id="criterio-del-catalogo"><h2>Criterio del catálogo</h2>' + facts(['Se incluye el nombre solo cuando aparece en una pantalla, captura o vídeo identificado.', 'La obtención se separa entre confirmada, observada o pendiente.', 'Titles y Outfits tendrán fichas propias cuando se graben sus menús y se extraigan sus imágenes.', 'El catálogo crecerá sin duplicar la explicación maestra del sistema al que pertenece cada objeto.']) + '</section>' + futureZone();
+  }
+
+  // Muestras 3D exportadas desde los meshes del cliente del juego.
+  // El visor tiene un enlace de descarga para navegadores sin WebGL o sin CDN.
+  function renderModels3D(page) {
+    var modelos = [
+      {
+        nombre: 'Shenlong',
+        tipo: 'Montura',
+        archivo: 'assets/models/3d/mounts/mount-302131-shenlong.glb',
+        descripcion: 'Mesh exportado del bundle de monturas del cliente.'
+      },
+      {
+        nombre: 'Fugu',
+        tipo: 'Montura',
+        archivo: 'assets/models/3d/mounts/mount-302220-fugu.glb',
+        descripcion: 'Montura detectada en el bundle mod_201127.'
+      },
+      {
+        nombre: 'Feijian',
+        tipo: 'Montura',
+        archivo: 'assets/models/3d/mounts/mount-302168-feijian.glb',
+        descripcion: 'Montura compuesta por dos meshes del bundle mod_302168.'
+      },
+      {
+        nombre: 'Bawanglong',
+        tipo: 'Montura',
+        archivo: 'assets/models/3d/mounts/mount-302171-bawanglong.glb',
+        descripcion: 'Montura compuesta por cuatro meshes del bundle mod_302171.'
+      },
+      {
+        nombre: 'Shengshi Zijia',
+        tipo: 'Armadura',
+        archivo: 'assets/models/3d/armor/waist-210001-shengshizijia.glb',
+        descripcion: 'Pieza de armadura exportada del cliente.'
+      },
+      {
+        nombre: 'Shengdun',
+        tipo: 'Armadura',
+        archivo: 'assets/models/3d/armor/waist-210005-shengdun.glb',
+        descripcion: 'Pieza de cintura detectada en el bundle mod_210005.'
+      },
+      {
+        nombre: 'Weapon 1221033',
+        tipo: 'Arma',
+        archivo: 'assets/models/3d/weapons/weapon-1221033.glb',
+        descripcion: 'Mesh de arma exportado del cliente.'
+      },
+      {
+        nombre: 'Weapon 123149',
+        tipo: 'Arma',
+        archivo: 'assets/models/3d/weapons/weapon-123149.glb',
+        descripcion: 'Mesh de arma exportado del bundle mod_123149.'
+      },
+      {
+        nombre: 'Weapon 124140',
+        tipo: 'Arma',
+        archivo: 'assets/models/3d/weapons/weapon-124140.glb',
+        descripcion: 'Mesh de arma exportado del bundle mod_121228.'
+      },
+      {
+        nombre: 'Weapon 161101',
+        tipo: 'Arma',
+        archivo: 'assets/models/3d/weapons/weapon-161101.glb',
+        descripcion: 'Mesh de arma exportado del bundle mod_121000.'
+      }
+    ];
+
+    var tarjetas = modelos.map(function (modelo) {
+      return '<article class="model-card"><div class="model-card-viewer"><model-viewer src="' + escapeHtml(modelo.archivo) + '" alt="Modelo 3D de ' + escapeHtml(modelo.nombre) + '" camera-controls auto-rotate rotation-per-second="24deg" shadow-intensity="0.8" exposure="1.05" loading="lazy"><p class="model-viewer-fallback">El visor 3D no está disponible en este navegador.</p></model-viewer></div><div class="model-card-body"><p class="page-kicker">' + escapeHtml(modelo.tipo) + '</p><h2>' + escapeHtml(modelo.nombre) + '</h2><p>' + escapeHtml(modelo.descripcion) + '</p><a class="external-link" href="' + escapeHtml(modelo.archivo) + '" target="_blank" rel="noopener noreferrer">Abrir o descargar GLB</a></div></article>';
+    }).join('');
+
+    return pageHeader(page, 'Modelos del cliente', 'Muestras 3D preparadas para consultar objetos del juego desde la guía.', null) +
+      '<section class="system-section" id="muestras-exportadas"><h2>Muestras exportadas</h2><p>Gira, amplía y desplaza cada modelo. Estas muestras conservan la geometría extraída; la vinculación completa de materiales, texturas y animaciones se añadirá cuando terminemos de mapear los recursos Unity.</p><div class="models-3d-grid">' + tarjetas + '</div></section>' +
+      '<section class="system-section" id="como-usar-el-visor"><h2>Cómo usar el visor</h2>' + facts(['Arrastra con el ratón o el dedo para girar.', 'Usa la rueda o el gesto de pellizco para ampliar.', 'Mantén el dispositivo en horizontal si quieres ver más detalle.', 'Si el visor no carga, abre el enlace GLB de la tarjeta.']) + '</section>' +
+      '<section class="system-section" id="catalogo-de-meshes"><h2>Catálogo de meshes</h2><p>El índice completo contiene 1.398 meshes detectados en 585 bundles del cliente. El archivo técnico se puede consultar aquí:</p><p><a class="external-link" href="assets/data/model-mesh-index.csv" target="_blank" rel="noopener noreferrer">Abrir índice model-mesh-index.csv</a></p><p>Los originales y las texturas completas se conservan fuera de GitHub para no hacer pesada la web.</p></section>' + futureZone();
   }
 
   function renderHome(page) {
@@ -301,6 +377,7 @@
     if (page.type === 'wisp') { return renderWisp(page); }
     if (page.type === 'objects') { return renderObjects(page); }
     if (page.type === 'activities') { return renderActivities(page); }
+    if (page.type === 'models-3d') { return renderModels3D(page); }
     if (page.type === 'project') { return renderProject(page); }
     return null;
   };

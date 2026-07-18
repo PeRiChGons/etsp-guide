@@ -1,21 +1,13 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Redirigiendo · Eternal Sword Pact Guía</title>
-</head>
-<body>
-  <p>Redirigiendo a Eternal Sword Pact Guía…</p>
-  <script>
-    // Conserva el destino solicitado como ruta hash y vuelve a la aplicación principal.
-    (function () {
-      var base = '/etsp-guide/';
-      var path = window.location.pathname.replace(base, '').replace(/^\/+|\/+$/g, '');
-      var route = path ? '#/' + path : '#/inicio';
-      window.location.replace(base + route);
-    }());
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="0; url=./#/inicio">
+    <title>Eternal Sword Pact Guía</title>
+  </head>
+  <body>
+    <p>Abriendo Eternal Sword Pact Guía…</p>
+    <script>window.location.replace('./#/inicio');</script>
+  </body>
 </html>

@@ -1,0 +1,74 @@
+﻿[
+    {
+        "gap_id":  "objects-visible-name",
+        "priority":  "alta",
+        "area":  "objects",
+        "count":  "2994",
+        "description":  "Registros de bÃºsqueda con icono pero sin nombre visible enlazado.",
+        "source":  "object-search-database.csv",
+        "next_action":  "Relacionar nombre/descripcion de TextAssets y ficha del objeto."
+    },
+    {
+        "gap_id":  "item-source-object-link",
+        "priority":  "alta",
+        "area":  "objects",
+        "count":  "249",
+        "description":  "Fuentes internas detectadas sin relaciÃ³n inequÃ­voca con un objeto concreto.",
+        "source":  "item-source-database.csv",
+        "next_action":  "Resolver parÃ¡metros type/param contra IDs de goods y objetos."
+    },
+    {
+        "gap_id":  "dungeon-semantic-link",
+        "priority":  "alta",
+        "area":  "dungeons",
+        "count":  "619",
+        "description":  "Iconos de dungeons que necesitan enlazarse con nombre, escena, capÃ­tulo, objetivos y recompensas.",
+        "source":  "dungeons.csv",
+        "next_action":  "Relacionar iconos con lua_config_scene y datos de actividad."
+    },
+    {
+        "gap_id":  "lua-bytecode-fields",
+        "priority":  "alta",
+        "area":  "mechanics",
+        "count":  "19225",
+        "description":  "TextAssets del cliente; algunos campos estÃ¡n serializados como bytecode Lua y no exponen directamente todas las relaciones.",
+        "source":  "text-assets-index.csv",
+        "next_action":  "Decodificar estructuras o contrastar con capturas del juego."
+    },
+    {
+        "gap_id":  "zodiac-master-catalog",
+        "priority":  "media",
+        "area":  "zodiac",
+        "count":  "1",
+        "description":  "El CSV zodiac.csv existente estÃ¡ vacÃ­o, aunque hay configuraciones, iconos y Glyph extraÃ­dos.",
+        "source":  "zodiac.csv / zodiac-icons.csv / configs godRune",
+        "next_action":  "Construir el catÃ¡logo Zodiac/Glyph desde las configuraciones internas."
+    },
+    {
+        "gap_id":  "model-class-association",
+        "priority":  "media",
+        "area":  "models",
+        "count":  "102",
+        "description":  "Modelos 3D extraÃ­dos sin asociaciÃ³n automÃ¡tica a clase, gÃ©nero o pieza concreta.",
+        "source":  "model-catalog-full.csv",
+        "next_action":  "Relacionar modelo con outfit/arma mediante IDs de configuraciÃ³n y capturas."
+    },
+    {
+        "gap_id":  "ldstore-semantic-diff",
+        "priority":  "media",
+        "area":  "versions",
+        "count":  "1128",
+        "description":  "AssetBundles de LDStore inventariados, pero todavÃ­a no fusionados semÃ¡nticamente con los catÃ¡logos de Google Play.",
+        "source":  "juego-extraido-ldstore",
+        "next_action":  "Comparar nombres, hashes y mÃ³dulos y marcar diferencias de versiÃ³n."
+    },
+    {
+        "gap_id":  "server-runtime-data",
+        "priority":  "alta",
+        "area":  "global",
+        "count":  "",
+        "description":  "Estados de cuenta, recompensas dinÃ¡micas, disponibilidad real y datos exclusivos del servidor no se pueden garantizar desde los archivos del cliente.",
+        "source":  "alcance del cliente",
+        "next_action":  "Registrar como dato de servidor o capturar dentro del juego."
+    }
+]

@@ -1,59 +1,50 @@
 # Eternal Sword Pact Guía
 
-Aplicación web responsive y comunitaria para organizar una futura guía de **Eternal Sword Pact**. Funciona como una SPA sin dependencias ni proceso de compilación, preparada para publicarse en GitHub Pages.
+Nueva web local, basada en los catálogos extraídos del cliente de Eternal Sword Pact y preparada para GitHub Pages.
 
-> **Estado:** en desarrollo. La estructura y varias páginas maestras están disponibles; el contenido se incorpora únicamente cuando puede verificarse.
+## Qué incluye
 
-## Contenido disponible en desarrollo
+- Buscador dedicado exclusivamente a objetos.
+- 4.151 registros de objetos, con búsqueda por nombre, nombre interno, descripción, categoría y origen.
+- Fichas de objeto con icono, categoría, descripción, origen e ID.
+- Catálogo de 4.045 mapas y dungeons.
+- Catálogo de 6.673 módulos de mecánicas y 6.907 entradas de menús.
+- 28.558 relaciones entre recursos, objetos, menús y sistemas.
+- Navegación por hash sin recargar la aplicación.
+- Cabecera, menú lateral y pie adaptables a PC, tablet y móvil.
+- Traducciones JSON propias para español, inglés, alemán y polaco.
+- Botón de Google Translate para idiomas adicionales.
+- Fondos e ilustraciones originales con marca visible `PeRiCh`.
 
-- portada con accesos rápidos y método de trabajo;
-- listado de Basic Stats y Special Stats;
-- estructura documentada de Spirit Root;
-- plantas, nombres, fichas y materiales observados de Technique;
-- catálogos iniciales de SwordFlight y Zodiac Transformations;
-- página propia de Spirit con 15 Spirits, Array, Evolution, Cleanse y Pill Array;
-- estructura de Bond documentada mediante dos vídeos, con rangos, afinidad, Biography y capítulos;
-- primera pantalla documentada del nuevo sistema Wisp;
-- registro provisional de Hot Spring, Kunlun, Love/Token y Kismet/Spirit Treasure a partir de vídeos;
-- registro de fuentes oficiales, guías externas y contradicciones detectadas;
-- información de autoría, fuentes y carácter no oficial del proyecto.
+## Abrirla en local
 
-La lista viva de lo publicado y lo que todavía falta está en [docs/LISTA-DE-PENDIENTES.md](docs/LISTA-DE-PENDIENTES.md). Allí se explica también el nivel de evidencia de cada dato.
+Abre [index.html](index.html) con un navegador moderno. Para que los catálogos JSON se carguen en todos los navegadores, es preferible servir la carpeta con cualquier servidor estático local.
 
-Las páginas todavía incompletas muestran claramente **Contenido pendiente** y no presentan suposiciones como datos del juego. La web publica los nombres, botones, pantallas y valores que se pueden observar; mantiene pendientes las reglas, costes, fórmulas y recomendaciones que todavía no tienen pruebas suficientes.
+## Estructura principal
 
-Los vídeos no se consideran automáticamente una fuente 100 % fiable. Sirven para documentar lo que se ve en una cuenta, fecha y versión concretas. Los costes, recompensas, reinicios, probabilidades y reglas universales se publican como confirmados solo después de contrastarlos con capturas repetidas, ayuda del juego o fuentes oficiales.
+```text
+index.html                 Aplicación y marco principal
+404.html                   Redirección compatible con GitHub Pages
+assets/css/site.css        Diseño, responsive y animaciones
+assets/js/site.js          Navegación, búsqueda, fichas y traducción
+assets/lang/*.json         Español, inglés, alemán y polaco
+assets/data/site/          Catálogos JSON generados desde el análisis
+assets/images/game-data/   Iconos extraídos del cliente del juego
+assets/images/illustrations/ Fondos e ilustraciones originales PeRiCh
+```
 
-## Ramas
+## Copia de la web anterior
 
-- `main`: rama estable destinada al contenido revisado y publicable.
-- `desarrollo`: rama de trabajo para preparar y revisar cambios antes de incorporarlos a `main` mediante Pull Request.
+La versión anterior se conserva fuera del repositorio en:
 
-## Probar la web
+`T:\Guia Archivos\backups\etsp-guide-actual-20260718`
 
-1. Descarga o clona la rama `desarrollo`.
-2. Abre `index.html` directamente en un navegador moderno.
-3. Como alternativa, inicia cualquier servidor web estático en la raíz del proyecto y abre la dirección local indicada.
-4. Comprueba rutas como `#/inicio`, `#/guia-general` y `#/clases/dragon-lancer`.
+No se eliminaron los catálogos ni la documentación de investigación del repositorio.
 
-No es necesario instalar dependencias ni compilar archivos.
+## Traducción
 
-## GitHub Pages
+El selector carga `es.json`, `en.json`, `de.json` o `pl.json`. La opción **Más idiomas** abre Google Translate para el idioma que se indique.
 
-Enlace previsto: <https://perichgons.github.io/etsp-guide/>
+## Nota sobre las imágenes
 
-La publicación todavía debe configurarse o activarse desde la rama que se decida usar para GitHub Pages.
-
-## Documentación
-
-Consulta [docs/PLANO-DE-LA-GUIA.md](docs/PLANO-DE-LA-GUIA.md) para conocer la arquitectura, el mapa de contenidos y la forma de ampliar la guía.
-
-Consulta [docs/PLAN-DE-RECURSOS-VISUALES.md](docs/PLAN-DE-RECURSOS-VISUALES.md) para preparar iconos, retratos, fichas, fondos y decoraciones de forma coherente.
-
-El archivo [docs/INVESTIGACION-WEB.md](docs/INVESTIGACION-WEB.md) registra las fuentes consultadas, los límites de cada una y la información que todavía debe verificarse dentro del juego.
-
-El archivo [docs/REGISTRO-SPIRIT.md](docs/REGISTRO-SPIRIT.md) clasifica las 104 capturas aportadas para el sistema Spirit y separa los datos confirmados de los pendientes.
-
-La lista de tareas y la política de fiabilidad se mantiene en [docs/LISTA-DE-PENDIENTES.md](docs/LISTA-DE-PENDIENTES.md).
-
-El orden recomendado para nuevas capturas y vídeos está en [docs/PLAN-CAPTURAS.md](docs/PLAN-CAPTURAS.md).
+Los iconos del juego son recursos extraídos del cliente y no se han alterado. Las imágenes creadas específicamente para esta web están en `assets/images/illustrations/` y llevan la marca `PeRiCh`.

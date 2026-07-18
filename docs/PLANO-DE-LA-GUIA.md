@@ -117,3 +117,28 @@ Antes de publicar contenido como definitivo se deben contrastar:
 - carácter oficial o comunitario de cada fuente y fecha de última comprobación.
 
 No debe añadirse información del juego basada únicamente en suposiciones.
+## Regla de información incompleta
+
+La guía conserva todos los registros encontrados en los archivos del juego.
+Cuando falte un campo no se oculta la ficha: se muestra `?` en el lugar exacto
+que no tenga datos (imagen, descripción, fórmula, efecto, requisitos,
+obtención o relación). El nombre interno o el ID se conserva para que el
+registro pueda identificarse posteriormente.
+
+## Fichas interactivas
+
+Los elementos de una pantalla no son solo texto decorativo. Las tarjetas,
+huecos, nodos, habilidades, piezas, transformaciones, actividades y objetos
+se pueden abrir para consultar una ficha contextual. Cada ficha muestra lo que
+exista y deja `?` en lo que falte. El mismo patrón se aplica a Stats,
+Spirit Root, Technique, SwordFlight, Zodiac/Glyph, Spirit, Wisp, equipo,
+clases, actividades, mazmorras y objetos.
+
+## Buscador de objetos
+
+El buscador se limita a objetos, equipo, materiales, prendas, armas,
+monturas, Spirits, Wisp, Titles, SwordFlight y recompensas. Las mazmorras,
+monstruos y recursos de interfaz no se convierten en resultados de objeto.
+Cada ficha conserva ID, nombre interno, nombre visible, imagen, descripción,
+fuente y bundle cuando existen. También permite buscar por palabras
+relacionadas: por ejemplo, `vaso`, `recipiente`, `utensilio` o `cristalería`.

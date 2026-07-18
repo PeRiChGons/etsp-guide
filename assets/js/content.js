@@ -15,7 +15,7 @@
       { title: 'Spirit Root', route: '/sistemas-del-personaje/spirit-root', children: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root', 'Obtención y materiales'] },
       { title: 'Technique', route: '/sistemas-del-personaje/technique', children: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
       { title: 'SwordFlight', route: '/sistemas-del-personaje/swordflight', children: ['Funcionamiento general', 'Vermilion Bird', 'Azure Dragon', 'Azure Bird', 'Black Tortoise', 'White Tiger', 'Soaring Snake'] },
-      { title: 'Zodiac Transformations', route: '/sistemas-del-personaje/zodiac', children: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] },
+      { title: 'Zodiac Transformations', route: '/sistemas-del-personaje/zodiac', children: ['Funcionamiento general', 'Glyph', 'Gonggong', 'Hou Yi', 'Western Queen'] },
       { title: 'Spirit', route: '/sistemas-del-personaje/spirit', children: ['Vista general', 'Spirits documentados', 'Basic y Upgrade', 'Array y Arraycore', 'Kismet / Spirit Treasure', 'Evolution', 'Bond', 'Cleanse y Tier Up', 'Demoncore y Pill Array', 'Datos pendientes'] },
       { title: 'Wisp', route: '/sistemas-del-personaje/wisp', children: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] }
     ] },
@@ -81,7 +81,7 @@
       '/sistemas-del-personaje/spirit-root': { title: 'Spirit Root', type: 'spirit-root', sections: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root', 'Obtención y materiales'] },
       '/sistemas-del-personaje/technique': { title: 'Technique', type: 'technique', sections: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
       '/sistemas-del-personaje/swordflight': { title: 'SwordFlight', type: 'swordflight', sections: ['Funcionamiento general', 'Vermilion Bird', 'Azure Dragon', 'Azure Bird', 'Black Tortoise', 'White Tiger', 'Soaring Snake'] },
-      '/sistemas-del-personaje/zodiac': { title: 'Zodiac Transformations', type: 'zodiac', sections: ['Funcionamiento general', 'Gonggong', 'Hou Yi', 'Western Queen'] },
+      '/sistemas-del-personaje/zodiac': { title: 'Zodiac Transformations', type: 'zodiac', sections: ['Funcionamiento general', 'Glyph', 'Gonggong', 'Hou Yi', 'Western Queen'] },
       '/sistemas-del-personaje/spirit': { title: 'Spirit', type: 'spirit', sections: ['Vista general', 'Spirits documentados', 'Basic y Upgrade', 'Array y Arraycore', 'Kismet / Spirit Treasure', 'Evolution', 'Bond', 'Cleanse y Tier Up', 'Demoncore y Pill Array', 'Datos pendientes'] },
       '/sistemas-del-personaje/wisp': { title: 'Wisp', type: 'wisp', sections: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] },
       '/objetos': { title: 'Objetos y obtención', type: 'objects', sections: ['Buscador de objetos', 'Talisman', 'Spirit Root', 'Technique', 'Materiales', 'Recompensas', 'Titles', 'Outfits'] },

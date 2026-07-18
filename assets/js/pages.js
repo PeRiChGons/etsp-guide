@@ -56,6 +56,7 @@
   }
 
   function badge(text, pending) {
+    if (pending) { return '<span class="pending" aria-label="Dato no disponible">?</span>'; }
     return '<span class="' + (pending ? 'pending' : 'confirmed') + '">' + escapeHtml(text) + '</span>';
   }
 
@@ -71,7 +72,7 @@
 
   function futureZone() {
     return '<section class="future-zone" aria-labelledby="participacion"><h2 id="participacion">Participación de la comunidad</h2>' +
-      badge('Contenido pendiente', true) + '<p>Espacio reservado para comentarios o Discord. Todavía no está conectado a ningún servicio.</p></section>';
+      '<div class="missing-fields"><span><strong>Descripción</strong><b>?</b></span><span><strong>Fórmula</strong><b>?</b></span><span><strong>Efecto exacto</strong><b>?</b></span><span><strong>Obtención</strong><b>?</b></span></div></section>';
   }
 
   function externalLink(url, label) {
@@ -332,7 +333,7 @@
       var searchable = [item.name, item.aliases || [], item.category, item.source, description].join(' ').toLowerCase();
       var media = item.image
         ? '<img src="' + escapeHtml(item.image) + '" alt="Icono de ' + escapeHtml(item.name) + '" loading="lazy">'
-        : '<span class="object-card-pending-icon"><span aria-hidden="true">✦</span><small>Icono pendiente</small></span>';
+        : '<span class="object-card-pending-icon" aria-label="Imagen no disponible">?</span>';
       return '<article class="object-card" data-object-card tabindex="0" role="button" aria-label="Ver ficha de ' + escapeHtml(item.name) + '" data-object-name="' + escapeHtml(item.name) + '" data-object-image="' + escapeHtml(item.image || '') + '" data-object-detail-image="' + escapeHtml(item.detailImage || '') + '" data-object-category="' + escapeHtml(item.category) + '" data-object-source="' + escapeHtml(item.source || '') + '" data-object-notes="' + escapeHtml(description) + '" data-object-status="' + escapeHtml(item.status || '') + '" data-object-model="' + escapeHtml(model ? model.file : '') + '" data-object-model-type="' + escapeHtml(model ? model.type : '') + '" data-object-model-genders="' + escapeHtml(model && model.genders ? model.genders.join('|') : '') + '" data-object-model-classes="' + escapeHtml(model && model.classes ? model.classes.join('|') : '') + '" data-category="' + escapeHtml(item.category) + '" data-search="' + escapeHtml(searchable) + '">' +
         '<div class="object-card-media"' + (item.image ? '' : ' aria-hidden="true"') + '>' + media + '</div>' +
         '<div class="object-card-body"><h2>' + escapeHtml(item.name) + '</h2></div></article>';

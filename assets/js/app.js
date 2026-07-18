@@ -165,17 +165,17 @@
     } else {
       var pending = document.createElement('span');
       pending.className = 'object-detail-pending';
-      pending.textContent = 'Icono pendiente';
+      pending.textContent = '?';
       media.appendChild(pending);
     }
     document.getElementById('object-detail-category').textContent = card.getAttribute('data-object-category') || '';
     document.getElementById('object-detail-title').textContent = card.getAttribute('data-object-name') || '';
-    document.getElementById('object-detail-status').textContent = '';
-    document.getElementById('object-detail-status').hidden = true;
-    document.getElementById('object-detail-description').textContent = card.getAttribute('data-object-notes') || '';
-    document.getElementById('object-detail-source').textContent = card.getAttribute('data-object-source') || '';
-    document.getElementById('object-detail-notes').textContent = card.getAttribute('data-object-notes') || '';
-    document.getElementById('object-detail-notes').hidden = true;
+    document.getElementById('object-detail-status').textContent = card.getAttribute('data-object-status') || '?';
+    document.getElementById('object-detail-status').hidden = false;
+    document.getElementById('object-detail-description').textContent = card.getAttribute('data-object-notes') || '?';
+    document.getElementById('object-detail-source').textContent = card.getAttribute('data-object-source') || '?';
+    document.getElementById('object-detail-notes').textContent = card.getAttribute('data-object-notes') || '?';
+    document.getElementById('object-detail-notes').hidden = false;
     var modelFile = card.getAttribute('data-object-model');
     var modelControls = document.getElementById('object-detail-model-controls');
     var modelToggle = document.getElementById('object-detail-model-toggle');
@@ -218,6 +218,17 @@
     }
     if (event.key === 'Escape') { cerrarFichaObjeto(); }
   });
+
+  // Si una ruta de imagen no existe en el repositorio, sustituirla por el
+  // marcador visible «?» sin dejar un icono roto en el buscador.
+  document.addEventListener('error', function (event) {
+    var image = event.target;
+    if (!image || image.tagName !== 'IMG' || !image.closest('.object-card-media')) { return; }
+    var placeholder = document.createElement('span');
+    placeholder.className = 'object-card-pending-icon';
+    placeholder.textContent = '?';
+    image.replaceWith(placeholder);
+  }, true);
 
 
   function setMenu(open) {

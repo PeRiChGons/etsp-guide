@@ -11,7 +11,7 @@
     ] },
     { title: 'Sistemas del personaje', route: '/sistemas-del-personaje', children: [
       { title: 'Stats', route: '/sistemas-del-personaje/stats', children: ['Basic Stats', 'Special Stats'] },
-      'Skill',
+      { title: 'Skill', route: '/sistemas-del-personaje/skill', children: ['Habilidades por clase', 'Habilidades activas', 'Habilidades pasivas'] },
       { title: 'Spirit Root', route: '/sistemas-del-personaje/spirit-root', children: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root', 'Obtención y materiales'] },
       { title: 'Technique', route: '/sistemas-del-personaje/technique', children: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
       { title: 'SwordFlight', route: '/sistemas-del-personaje/swordflight', children: ['Funcionamiento general', 'Vermilion Bird', 'Azure Dragon', 'Azure Bird', 'Black Tortoise', 'White Tiger', 'Soaring Snake'] },
@@ -78,6 +78,7 @@
     var customPages = {
       '/inicio': { title: 'Inicio', type: 'home', sections: ['Estado de la guía', 'Accesos rápidos', 'Método de trabajo'] },
       '/sistemas-del-personaje/stats': { title: 'Stats', type: 'stats', sections: ['Basic Stats', 'Special Stats', 'Criterio de verificación'] },
+      '/sistemas-del-personaje/skill': { title: 'Skill', type: 'skill', sections: ['Habilidades por clase', 'Habilidades activas', 'Habilidades pasivas'] },
       '/sistemas-del-personaje/spirit-root': { title: 'Spirit Root', type: 'spirit-root', sections: ['Tipos de Spirit Root', 'Mejoras', 'Fuse', 'Decompose', 'Resonance', 'Sacrifice', 'Core Spirit Root', 'Obtención y materiales'] },
       '/sistemas-del-personaje/technique': { title: 'Technique', type: 'technique', sections: ['Funcionamiento general', 'Plantas', 'Techniques normales', 'Techniques especiales', 'Materiales de mejora'] },
       '/sistemas-del-personaje/swordflight': { title: 'SwordFlight', type: 'swordflight', sections: ['Funcionamiento general', 'Vermilion Bird', 'Azure Dragon', 'Azure Bird', 'Black Tortoise', 'White Tiger', 'Soaring Snake'] },

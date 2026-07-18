@@ -15,6 +15,8 @@ Web comunitaria y práctica para aprender Eternal Sword Pact, construir el perso
 - Traducciones JSON propias para español, inglés, alemán y polaco.
 - Botón de Google Translate para idiomas adicionales.
 - Fondos e ilustraciones originales con marca visible `PeRiCh` y recursos visuales extraídos del juego.
+- Motor de implementación que carga los catálogos normalizados de objetos, dungeons, monstruos, habilidades, Stats, Zodiac/Glyph y reglas PvP.
+- El buscador usa exclusivamente objetos, materiales, equipo, outfits, Titles y Spirit/Wisp; los 619 dungeons y 610 monstruos se consultan en Actividades y mazmorras.
 
 ## Abrirla en local
 
@@ -27,7 +29,7 @@ index.html                 Aplicación y marco principal
 404.html                   Redirección compatible con GitHub Pages
 assets/css/styles.css      Estilos base de la guía
 assets/css/styles-visual.css Capa visual inspirada en el juego
-assets/js/                  Menú, rutas, páginas, datos y visor 3D
+assets/js/                  Menú, rutas, páginas, datos, visor 3D y motor de implementación
 assets/lang/*.json          Español, inglés, alemán y polaco
 assets/data/                Catálogos maestros y datos extraídos
 assets/images/              Fondos, capturas e iconos del juego

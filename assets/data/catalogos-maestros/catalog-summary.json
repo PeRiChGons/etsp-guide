@@ -1,0 +1,57 @@
+﻿{
+    "generated_from":  [
+                           "T:/Guia Archivos/analisis",
+                           "T:/Guia Archivos/juego-extraido",
+                           "T:/Guia Archivos/juego-extraido-ldstore/AndroidData/com.mten.ld"
+                       ],
+    "catalogs":  [
+                     {
+                         "catalog":  "menu-catalog.csv",
+                         "rows":  6907,
+                         "analysis":  "T:\\Guia Archivos\\analisis\\catalogos-maestros\\menu-catalog.csv",
+                         "repository":  "C:\\Users\\Central\\Documents\\GitHub\\etsp-guide\\assets\\data\\catalogos-maestros\\menu-catalog.csv"
+                     },
+                     {
+                         "catalog":  "object-catalog.csv",
+                         "rows":  4151,
+                         "analysis":  "T:\\Guia Archivos\\analisis\\catalogos-maestros\\object-catalog.csv",
+                         "repository":  "C:\\Users\\Central\\Documents\\GitHub\\etsp-guide\\assets\\data\\catalogos-maestros\\object-catalog.csv"
+                     },
+                     {
+                         "catalog":  "resource-catalog.csv",
+                         "rows":  58898,
+                         "analysis":  "T:\\Guia Archivos\\analisis\\catalogos-maestros\\resource-catalog.csv",
+                         "repository":  "C:\\Users\\Central\\Documents\\GitHub\\etsp-guide\\assets\\data\\catalogos-maestros\\resource-catalog.csv"
+                     },
+                     {
+                         "catalog":  "dungeon-catalog.csv",
+                         "rows":  4045,
+                         "analysis":  "T:\\Guia Archivos\\analisis\\catalogos-maestros\\dungeon-catalog.csv",
+                         "repository":  "C:\\Users\\Central\\Documents\\GitHub\\etsp-guide\\assets\\data\\catalogos-maestros\\dungeon-catalog.csv"
+                     },
+                     {
+                         "catalog":  "mechanics-catalog.csv",
+                         "rows":  6673,
+                         "analysis":  "T:\\Guia Archivos\\analisis\\catalogos-maestros\\mechanics-catalog.csv",
+                         "repository":  "C:\\Users\\Central\\Documents\\GitHub\\etsp-guide\\assets\\data\\catalogos-maestros\\mechanics-catalog.csv"
+                     },
+                     {
+                         "catalog":  "relations.csv",
+                         "rows":  28558,
+                         "analysis":  "T:\\Guia Archivos\\analisis\\catalogos-maestros\\relations.csv",
+                         "repository":  "C:\\Users\\Central\\Documents\\GitHub\\etsp-guide\\assets\\data\\catalogos-maestros\\relations.csv"
+                     },
+                     {
+                         "catalog":  "catalog-gaps.csv",
+                         "rows":  8,
+                         "analysis":  "T:\\Guia Archivos\\analisis\\catalogos-maestros\\catalog-gaps.csv",
+                         "repository":  "C:\\Users\\Central\\Documents\\GitHub\\etsp-guide\\assets\\data\\catalogos-maestros\\catalog-gaps.csv"
+                     }
+                 ],
+    "rules":  [
+                  "Cada fila conserva fuente, bundle, versiÃ³n y estado de evidencia.",
+                  "No se inventan nombres, descripciones, recompensas o asociaciones de clase.",
+                  "Los huecos quedan en catalog-gaps.csv.",
+                  "Google Play y LDStore se mantienen como versiones diferenciadas."
+              ]
+}

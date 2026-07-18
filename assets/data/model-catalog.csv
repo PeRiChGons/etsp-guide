@@ -1,0 +1,11 @@
+model_id,nombre,tipo,mesh_principal,bundle_origen,archivo_web,clases,representaciones,descripcion
+302131,Shenlong,Montura,Mount_302131_shenlong,mod_302131.assetbundle,assets/models/3d/mounts/mount-302131-shenlong.glb,,Universal,Montura identificada en el cliente
+302168,Feijian,Montura,Mount_302168_feijian,mod_302168.assetbundle,assets/models/3d/mounts/mount-302168-feijian.glb,,Universal,Montura compuesta por varias mallas
+302171,Bawanglong,Montura,Mount_302171_bawanglong,mod_302171.assetbundle,assets/models/3d/mounts/mount-302171-bawanglong.glb,,Universal,Montura compuesta por varias mallas
+302220,Fugu,Montura,Mount_302220_fugu,mod_201127.assetbundle,assets/models/3d/mounts/mount-302220-fugu.glb,,Universal,Montura identificada en el cliente
+210001,Shengshi Zijia,Outfit,Waist_210001_shengshizijia,model_208001.assetbundle,assets/models/3d/armor/waist-210001-shengshizijia.glb,,,Pieza de vestimenta de cintura
+210005,Shengdun,Outfit,Waist_210005_shengdun,mod_210005.assetbundle,assets/models/3d/armor/waist-210005-shengdun.glb,,,Pieza de vestimenta de cintura
+1221033,Weapon 1221033,Arma,RoleWeapon_1221033_trail_S001,mod_1221033.assetbundle,assets/models/3d/weapons/weapon-1221033.glb,,,Modelo de arma extraído del cliente
+123149,Weapon 123149,Arma,RoleWeapon_123149_woman_trail_S001,mod_123149.assetbundle,assets/models/3d/weapons/weapon-123149.glb,,Mujer,Modelo de arma con variante femenina
+124140,Weapon 124140,Arma,RoleWeapon_124140_WDJ005,mod_121228.assetbundle,assets/models/3d/weapons/weapon-124140.glb,,,Modelo de arma extraído del cliente
+161101,Weapon 161101,Arma,RoleWeapon_161101_CZK_023,mod_121000.assetbundle,assets/models/3d/weapons/weapon-161101.glb,,,Modelo de arma extraído del cliente

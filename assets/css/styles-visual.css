@@ -1,0 +1,380 @@
+/*
+  Capa visual de Eternal Sword Pact Guía.
+  Se añade sobre los estilos de la guía para reforzar la identidad visual
+  del juego sin cambiar la navegación ni el contenido catalogado.
+*/
+
+:root {
+  --bg: #030714;
+  --surface: rgba(8, 19, 42, .92);
+  --surface-raised: rgba(17, 33, 67, .94);
+  --surface-bright: rgba(31, 55, 104, .9);
+  --border: rgba(116, 182, 255, .42);
+  --gold: #e8bd55;
+  --gold-light: #ffe6a0;
+  --blue: #56b7ff;
+  --cyan: #64f0ff;
+  --violet: #a18bff;
+  --crimson: #f06b82;
+  --text: #f4f7ff;
+  --muted: #b9c9e7;
+}
+
+body {
+  background:
+    linear-gradient(135deg, rgba(3, 7, 20, .76), rgba(6, 19, 46, .74)),
+    url('../images/backgrounds/etsp-hero-atmosphere.png') center top / cover fixed,
+    radial-gradient(circle at 75% 0, #183b78 0, #030714 42rem);
+  background-attachment: fixed;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: '';
+  opacity: .22;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, #000, transparent 80%);
+}
+
+.site-header {
+  height: var(--header-height);
+  border-bottom: 1px solid rgba(232, 189, 85, .62);
+  background:
+    linear-gradient(90deg, rgba(3, 8, 25, .98), rgba(13, 31, 68, .95), rgba(3, 8, 25, .98));
+  box-shadow: 0 0 26px rgba(47, 157, 255, .2), 0 8px 35px #000b;
+}
+
+.site-header::after {
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  content: '';
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--gold), var(--cyan), transparent);
+  opacity: .8;
+}
+
+.brand {
+  text-shadow: 0 0 18px rgba(100, 240, 255, .35);
+}
+
+.header-search-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.65rem;
+  margin-left: auto;
+  padding: .45rem .85rem;
+  border: 1px solid rgba(232, 189, 85, .5);
+  border-radius: .45rem;
+  background: rgba(232, 189, 85, .09);
+  color: var(--gold-light);
+  text-decoration: none;
+  box-shadow: inset 0 0 15px rgba(232, 189, 85, .05);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.header-search-link:hover,
+.header-search-link:focus-visible {
+  border-color: var(--cyan);
+  background: rgba(86, 183, 255, .18);
+  transform: translateY(-1px);
+}
+
+.brand-mark {
+  border-color: var(--gold-light);
+  background: linear-gradient(145deg, rgba(232, 189, 85, .25), rgba(66, 181, 255, .18));
+  box-shadow: 0 0 18px rgba(232, 189, 85, .42), inset 0 0 18px rgba(100, 240, 255, .12);
+}
+
+.status-badge,
+.language-control select {
+  border-color: rgba(100, 240, 255, .58);
+  background: rgba(7, 18, 42, .88);
+  color: var(--gold-light);
+}
+
+.app-shell {
+  background: linear-gradient(90deg, rgba(1, 5, 16, .92), rgba(1, 5, 16, .22) 22%, rgba(1, 5, 16, .14) 78%, rgba(1, 5, 16, .82));
+}
+
+.sidebar,
+.context-sidebar {
+  border-color: rgba(100, 240, 255, .3);
+  background:
+    linear-gradient(180deg, rgba(8, 22, 53, .95), rgba(3, 9, 25, .96)),
+    url('../images/backgrounds/spirit-section-bg.png') center / cover;
+  box-shadow: inset 0 0 32px rgba(55, 146, 255, .1);
+}
+
+.sidebar::before,
+.context-sidebar::before {
+  display: block;
+  height: 3px;
+  margin: -.2rem -.75rem 1rem;
+  content: '';
+  background: linear-gradient(90deg, transparent, var(--gold), var(--cyan), transparent);
+  opacity: .7;
+}
+
+.nav-link {
+  border-left-width: 4px;
+  border-radius: .45rem;
+  color: #d7e5ff;
+  transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.nav-link:hover {
+  background: linear-gradient(90deg, rgba(54, 147, 255, .25), rgba(50, 62, 130, .12));
+  color: #fff;
+  transform: translateX(3px);
+}
+
+.nav-link.active {
+  border-left-color: var(--gold-light);
+  background: linear-gradient(90deg, rgba(232, 189, 85, .32), rgba(86, 183, 255, .14), transparent);
+  color: var(--gold-light);
+  box-shadow: inset 0 0 18px rgba(232, 189, 85, .08), 0 0 16px rgba(86, 183, 255, .1);
+}
+
+.expand-button:hover,
+.context-link:hover,
+.context-link:focus-visible {
+  background: rgba(86, 183, 255, .16);
+}
+
+#contenido {
+  position: relative;
+  isolation: isolate;
+}
+
+#contenido::before {
+  position: absolute;
+  top: 2rem;
+  right: 4%;
+  width: 10rem;
+  height: 10rem;
+  z-index: -1;
+  content: '';
+  border: 1px solid rgba(232, 189, 85, .17);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.6rem rgba(86, 183, 255, .03), 0 0 0 3.2rem rgba(232, 189, 85, .02);
+  opacity: .8;
+}
+
+.home-hero {
+  position: relative;
+  min-height: clamp(25rem, 55vh, 39rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  overflow: hidden;
+  margin: -1rem -1rem 2rem;
+  padding: clamp(2rem, 7vw, 5.5rem);
+  border: 1px solid rgba(232, 189, 85, .55);
+  border-radius: 1rem;
+  background:
+    linear-gradient(90deg, rgba(3, 8, 24, .95), rgba(3, 8, 24, .38) 58%, rgba(3, 8, 24, .72)),
+    url('../images/backgrounds/etsp-hero-atmosphere.png') center / cover;
+  box-shadow: 0 22px 60px #000a, inset 0 0 40px rgba(86, 183, 255, .14);
+}
+
+.home-hero::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  background: linear-gradient(120deg, transparent 25%, rgba(100, 240, 255, .12) 48%, transparent 68%);
+  transform: translateX(-110%);
+  animation: hero-sweep 9s ease-in-out infinite;
+}
+
+.home-hero h1 {
+  max-width: 12ch;
+  color: #fff;
+  font-size: clamp(2.6rem, 7vw, 5.8rem);
+  letter-spacing: -.025em;
+  text-shadow: 0 3px 0 #10162c, 0 0 24px rgba(100, 240, 255, .42), 0 0 42px rgba(232, 189, 85, .24);
+}
+
+.home-hero .lead {
+  max-width: 55ch;
+  color: #e4edff;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.system-section,
+.content-card,
+.fact-card,
+.verification-note,
+.future-zone,
+.object-card,
+.model-card {
+  border-color: rgba(100, 240, 255, .3);
+  background: linear-gradient(145deg, rgba(15, 37, 77, .91), rgba(5, 14, 34, .94));
+  box-shadow: 0 14px 38px rgba(0, 0, 0, .28), inset 0 1px rgba(255, 255, 255, .08), inset 0 0 30px rgba(86, 183, 255, .05);
+}
+
+.system-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.system-section::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8rem;
+  height: 2px;
+  content: '';
+  background: linear-gradient(90deg, var(--gold), var(--cyan), transparent);
+}
+
+.system-section h2,
+.content-card h2,
+.fact-card h3,
+.context-heading h1 {
+  color: var(--gold-light);
+  text-shadow: 0 0 15px rgba(232, 189, 85, .24);
+}
+
+.quick-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+}
+
+.quick-link {
+  min-height: 8.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: relative;
+  overflow: hidden;
+  padding: 1.2rem;
+  border: 1px solid rgba(232, 189, 85, .35);
+  border-radius: .75rem;
+  background: linear-gradient(145deg, rgba(37, 74, 137, .8), rgba(5, 14, 34, .96));
+  color: #fff;
+  box-shadow: inset 0 0 26px rgba(86, 183, 255, .1);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.quick-link::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .12), transparent);
+  transform: translateX(-120%);
+  transition: transform .45s ease;
+}
+
+.quick-link:hover {
+  border-color: var(--gold-light);
+  box-shadow: 0 0 22px rgba(86, 183, 255, .24), inset 0 0 24px rgba(232, 189, 85, .12);
+  transform: translateY(-4px);
+}
+
+.quick-link:hover::after { transform: translateX(120%); }
+.quick-link strong { color: var(--gold-light); font-size: 1.08rem; }
+.quick-link span { color: #d0e0fb; font-size: .92rem; }
+
+.class-gallery {
+  min-height: 21rem;
+  display: flex;
+  align-items: end;
+  margin: 0 0 2rem;
+  padding: 2rem;
+  border: 1px solid rgba(232, 189, 85, .55);
+  border-radius: 1rem;
+  background:
+    linear-gradient(90deg, rgba(3, 8, 24, .96), rgba(3, 8, 24, .25)),
+    url('../images/backgrounds/class-gallery.png') center / cover;
+  box-shadow: 0 22px 50px #0009;
+}
+
+.class-gallery-copy { max-width: 33rem; }
+.class-gallery-copy h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+
+.object-search-input,
+.object-category-select,
+.language-control select {
+  border-color: rgba(100, 240, 255, .55);
+  background: rgba(4, 13, 31, .92);
+  color: #f4f7ff;
+  box-shadow: inset 0 0 16px rgba(86, 183, 255, .07);
+}
+
+.object-catalog-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10.5rem), 1fr));
+  gap: .8rem;
+}
+
+.object-card {
+  min-height: 12.5rem;
+  overflow: hidden;
+  border-radius: .65rem;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+.object-card:hover,
+.object-card:focus-visible {
+  border-color: var(--gold-light);
+  box-shadow: 0 0 25px rgba(86, 183, 255, .25), inset 0 0 24px rgba(232, 189, 85, .12);
+  transform: translateY(-4px);
+}
+
+.object-card-media {
+  min-height: 8.5rem;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, rgba(66, 120, 206, .32), rgba(3, 10, 25, .98) 70%);
+}
+
+.object-card-media img {
+  max-height: 8rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(100, 240, 255, .34));
+}
+
+.object-card-body { padding: .8rem .9rem 1rem; }
+.object-card-body h2 { margin: 0; font-size: 1rem; color: var(--gold-light); }
+
+.model-card-viewer,
+model-viewer {
+  background: radial-gradient(circle, #234884, #030817 72%);
+}
+
+.pending { display: none; }
+.object-card-pending-icon small,
+.object-detail-pending { display: none; }
+.object-card-pending-icon::after,
+.object-detail-pending::after { content: '✦'; color: var(--gold-light); font-size: 2.8rem; text-shadow: 0 0 18px rgba(232, 189, 85, .42); }
+.site-footer { border-top-color: rgba(232, 189, 85, .55); background: #020611eF; color: #c7d8f4; }
+
+@keyframes hero-sweep {
+  0%, 58%, 100% { transform: translateX(-110%); }
+  72% { transform: translateX(110%); }
+}
+
+@media (max-width: 58rem) {
+  .home-hero { margin-inline: 0; }
+  .sidebar { background-color: #06122b; }
+}
+
+@media (max-width: 42rem) {
+  .header-search-link { display: none; }
+  .home-hero { min-height: 23rem; padding: 1.5rem; }
+  .home-hero h1 { font-size: clamp(2.25rem, 14vw, 4rem); }
+  .quick-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero::after { animation: none; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}

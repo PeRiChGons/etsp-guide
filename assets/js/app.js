@@ -78,11 +78,12 @@
     var empty = document.getElementById('object-search-empty');
     if (!search || !category || !cards.length) { return; }
 
-    var query = search.value.trim().toLowerCase();
+    var query = search.value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     var selectedCategory = category.value;
     var visible = 0;
     cards.forEach(function (card) {
-      var matchesText = !query || card.getAttribute('data-search').indexOf(query) !== -1;
+      var searchable = (card.getAttribute('data-search') || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      var matchesText = !query || searchable.indexOf(query) !== -1;
       var matchesCategory = selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory;
       var show = matchesText && matchesCategory;
       card.hidden = !show;

@@ -186,7 +186,7 @@
   function synonyms(value) {
     var text = String(value || '').toLowerCase();
     var result = ['objeto', 'item'];
-    if (/bag|pack|box|chest|container|voucher|card/.test(text)) { result.push('bolsa', 'cofre', 'caja', 'paquete', 'recipiente', 'tarjeta', 'vale'); }
+    if (/bag|pack|box|chest|container|voucher|card|vase|glass|cup|goblet/.test(text)) { result.push('bolsa', 'cofre', 'caja', 'paquete', 'recipiente', 'tarjeta', 'vale', 'vaso', 'utensilio', 'cristaleria', 'cristalería'); }
     if (/stone|crystal|shard|essence|core|gem/.test(text)) { result.push('piedra', 'cristal', 'fragmento', 'esencia', 'núcleo', 'gema'); }
     if (/outfit|dress|robe|fashion|costume|headdress/.test(text)) { result.push('ropa', 'atuendo', 'vestido', 'prenda', 'disfraz', 'sombrero'); }
     if (/mount|beast|dragon|feijian|shenlong|fugu/.test(text)) { result.push('montura', 'cabalgadura', 'bestia', 'vehículo'); }
@@ -294,5 +294,14 @@
   });
   document.addEventListener('catalog:loaded', function () {
     if (window.GuideRouter && currentRoute() === '/objetos') { window.GuideRouter.render(); }
+  });
+  document.addEventListener('route:changed', function () {
+    closeEntity();
+    var objectModal = document.getElementById('object-detail-modal');
+    if (objectModal) {
+      objectModal.hidden = true;
+      objectModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('object-detail-open');
+    }
   });
 }());

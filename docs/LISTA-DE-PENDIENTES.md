@@ -141,6 +141,17 @@ En esos apartados se publica qué pantalla o acción se observa. No se publican 
 - Notas oficiales que expliquen cambios de sistemas o nombres.
 - Enlaces concretos para cualquier dato tomado de Internet.
 
+### 10. Mapa de estructura y relaciones
+
+- Crear un mapa editable de la guía, separado de la web publicada.
+- Registrar las tablas lógicas de **Secciones**, **Categorías**, **Subcategorías**, **Campos** y **Relaciones**.
+- Definir qué campos aparecen en cada apartado sin duplicar la información maestra.
+- Relacionar las páginas de clase con los sistemas generales correspondientes: por ejemplo, una recomendación de Dragon Lancer debe enlazar con el campo concreto de Basic Stats, SwordFlight, Technique, Spirit Root, Zodiac o Glyph.
+- Definir para cada campo las columnas que podrá mostrar la web: Campo, Nombre publicado, Nombre completo, Descripción, Fórmula y Efecto exacto.
+- Marcar mediante selección qué campos y columnas se publican y cuáles se mantienen fuera de la web.
+- Mantener separadas las relaciones entre objetos, sistemas, clases, actividades, materiales, imágenes y fuentes.
+- Preparar primero este mapa y revisarlo antes de crear nuevas páginas, categorías o contenido en la guía.
+
 ## ¿Son los vídeos 100 % fiables?
 
 No. Un vídeo es una fuente muy útil, pero no convierte automáticamente todo lo que aparece en una regla universal.

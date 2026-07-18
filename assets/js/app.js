@@ -214,6 +214,7 @@
     if (event.key === 'Escape') { cerrarFichaObjeto(); }
   });
 
+
   function setMenu(open) {
     document.body.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));

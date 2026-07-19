@@ -120,3 +120,10 @@ Los nombres vacÃ­os permanecen vacÃ­os, las relaciones ambiguas no se fuerza
 ## Ficheros principales
 
 Consultar implementation-index.json para la lista completa y los contadores. Este paquete estÃ¡ preparado en la carpeta de anÃ¡lisis, en el repositorio local y en la copia de trabajo de T:\Guia Archivos\etsp-guide; todavÃ­a no se ha publicado en GitHub.
+
+## Pasada semántica 2026-07-19
+
+- Se generaron semantic-links.csv, goods-semantic-index.csv, monster-semantic-index.csv, oss-monster-links.csv y dungeon-semantic-index.csv.
+- Se recuperaron 489 nombres directos de monstruos desde los módulos data_mon_* del cliente.
+- Se conservaron sin inventar los enlaces que el cliente no hace demostrables; el detalle está en SEMANTIC-STATUS.md.
+

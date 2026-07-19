@@ -160,7 +160,7 @@
         status: 'Ficha del cliente',
         bundle: text(row.bundle) || '?',
         image: text(row.icono_relativo) || '',
-        aliases: [name, row.descripcion, row.source_names, synonyms(name)].join(' ')
+        aliases: [name, row.descripcion, row.source_names, row.keywords, synonyms(name)].join(' ')
       };
     });
   }
@@ -286,8 +286,10 @@
   function renderActivities() {
     var cards = datos.mazmorras.map(function (row) {
       var title = text(row.nombre_interno) || '?';
-      var image = imagePath('dungeons', row.archivo_salida);
-      return entity(title, 'Escena: ' + (text(row.scene_id) || '?') + ' · Capítulo: ' + (text(row.chapter) || '?') + ' · Recompensas: ?', 'Dungeon catalog: ' + (text(row.bundle_origen) || '?'), '🗺️', image);
+      var image = imagePath('dungeons', text(row.archivo_salida) || text(row.archivo));
+      var scene = text(row.scene_id) || text(row.escena_clave) || '?';
+      var bundle = text(row.bundle_origen) || text(row.bundle) || '?';
+      return entity(title, 'Escena: ' + scene + ' · Capítulo: ' + (text(row.chapter) || text(row.capitulo) || '?') + ' · Recompensas: ' + (text(row.recompensas) || '?'), 'Dungeon catalog: ' + bundle, '🗺️', image);
     }).join('');
     return pageHeader('Actividades y mazmorras', 'Contenido del juego', 'Catálogo visual de dungeons y espacios de actividad extraídos del cliente. Los filtros separan la ficha de dungeon de los monstruos.') +
       '<section class="system-section" id="dungeon-catalog"><div class="object-search-controls"><label for="dungeon-search">Buscar dungeon por nombre interno o bundle</label><input id="dungeon-search" class="object-search-input" type="search" placeholder="Ej.: 1_1_1, advancedungeon…" autocomplete="off"></div><p id="dungeon-count" class="object-search-count">' + datos.mazmorras.length + ' dungeons catalogadas</p><div id="dungeon-grid" class="interactive-grid dungeon-grid">' + cards + '</div></section>' +
@@ -351,9 +353,9 @@
   function loadAll() {
     Promise.all([
       readCsv('objects-index.csv'),
-      readCsv('goods-items-index.csv'),
-      readCsv('dungeons-index.csv'),
-      readCsv('monsters-index.csv'),
+      readCsv('goods-semantic-index.csv'),
+      readCsv('dungeon-semantic-index.csv'),
+      readCsv('monster-semantic-index.csv'),
       readCsv('class-skill-evidence.csv'),
       readCsv('skills-icons-index.csv'),
       readCsv('stats-index.csv'),

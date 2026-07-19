@@ -1,5 +1,5 @@
 ﻿{
-    "generated_at":  "2026-07-18T23:26:16",
+    "generated_at":  "2026-07-19T02:06:40+02:00",
     "product":  "Eternal Sword Pact",
     "purpose":  "Paquete de datos normalizado para implementar la guÃ­a sin inventar campos no presentes.",
     "source_roots":  [
@@ -38,7 +38,14 @@
                     "master-object-catalog.csv",
                     "master-resource-catalog.csv",
                     "master-dungeon-catalog.csv",
-                    "master-mechanics-catalog.csv"
+                    "master-mechanics-catalog.csv",
+                    "goods-semantic-index.csv",
+                    "monster-semantic-index.csv",
+                    "boss-monster-links.csv",
+                    "dungeon-semantic-index.csv",
+                    "semantic-links.csv",
+                    "semantic-coverage.json",
+                    "SEMANTIC-STATUS.md"
                 ],
     "counts":  {
                    "object_search_records":  3243,
@@ -63,7 +70,13 @@
                    "master_resource_records":  58898,
                    "master_dungeon_records":  4045,
                    "master_mechanics_records":  6673,
-                   "gaps":  11
+                   "gaps":  11,
+                   "monsters_with_direct_name":  489,
+                   "boss_monster_name_links":  31,
+                   "semantic_direct_relations":  30026,
+                   "semantic_evidence_relations":  199,
+                   "semantic_detected_relations":  118,
+                   "dungeon_scene_keys":  38
                },
     "evidence_policy":  [
                             "Los nombres internos no se convierten automÃ¡ticamente en nombres publicados.",

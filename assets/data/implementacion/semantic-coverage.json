@@ -1,0 +1,24 @@
+﻿{
+    "generated_at":  "2026-07-19T02:06:40.4942925+02:00",
+    "source_root":  "T:\\Guia Archivos\\analisis",
+    "direct_relations":  30026,
+    "client_evidence_relations":  199,
+    "detected_relations":  118,
+    "goods_total":  705,
+    "goods_with_description":  274,
+    "goods_with_detected_sources":  118,
+    "monster_modules":  610,
+    "monsters_with_direct_name":  489,
+    "boss_names":  26,
+    "boss_monster_exact_links":  31,
+    "dungeon_visual_records":  619,
+    "dungeon_scene_keys":  38,
+    "unresolved_categories":  [
+                                  "dungeon-name-chapter-reward-link",
+                                  "object-icon-text-link-for-visual-only-records",
+                                  "LuaJIT-numeric-fields",
+                                  "model-class-gender-item-link",
+                                  "server-runtime-rewards-and-availability",
+                                  "boss-resistance-value-interpretation"
+                              ]
+}

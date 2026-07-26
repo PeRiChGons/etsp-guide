@@ -73,12 +73,12 @@
     "community": {
       "title": "Społeczność",
       "kicker": "Gracze Eternal Sword Pact",
-      "lead": "Zarejestruj postacie i rozmawiaj na każdej stronie poradnika za pomocą konta GitHub.",
+      "lead": "Zarejestruj postacie i korzystaj z własnego czatu poradnika.",
       "profile": "Profil gracza",
       "profileCopy": "Nazwa postaci, klasa, Królestwo, serwer i język.",
       "classesCopy": "Przeglądaj dostępne umiejętności i konfiguracje.",
       "accessTitle": "Dostęp i prywatność",
-      "accessCopy": "Poradnik i rozmowy można czytać bez konta. Bezpieczne logowanie GitHub służy do zapisywania postaci, komentowania i odpowiadania. Witryna nie zarządza hasłami."
+      "accessCopy": "Poradnik i rozmowy można czytać bez konta. Bezpieczny link e-mail służy do zapisywania postaci i pisania. Witryna nie zarządza hasłami."
     },
     "equipment": {
       "title": "Ekwipunek i ulepszenia",

@@ -73,12 +73,12 @@
     "community": {
       "title": "Community",
       "kicker": "Eternal Sword Pact players",
-      "lead": "Register your characters and join the conversation on every guide page with your GitHub account.",
+      "lead": "Register your characters and join the guide's own live chat.",
       "profile": "Player profile",
       "profileCopy": "Character name, class, Realm, server and language.",
       "classesCopy": "Browse available skills and builds.",
       "accessTitle": "Access and privacy",
-      "accessCopy": "The guide and conversations are public to read. Secure GitHub access is used to save characters, comment or reply. This site never manages passwords."
+      "accessCopy": "The guide and conversations are public to read. A secure email link is used to save characters or write. This site never manages passwords."
     },
     "equipment": {
       "title": "Equipment and upgrades",

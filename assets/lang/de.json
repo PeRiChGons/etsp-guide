@@ -73,12 +73,12 @@
     "community": {
       "title": "Community",
       "kicker": "Spieler von Eternal Sword Pact",
-      "lead": "Registriere deine Charaktere und diskutiere mit deinem GitHub-Konto auf jeder Seite des Leitfadens.",
+      "lead": "Registriere deine Charaktere und nutze den eigenen Live-Chat des Leitfadens.",
       "profile": "Spielerprofil",
       "profileCopy": "Charaktername, Klasse, Reich, Server und Sprache.",
       "classesCopy": "Verfügbare Fähigkeiten und Builds ansehen.",
       "accessTitle": "Zugang und Datenschutz",
-      "accessCopy": "Leitfaden und Gespräche sind öffentlich lesbar. Zum Speichern von Charakteren, Kommentieren oder Antworten wird der sichere GitHub-Zugang verwendet. Die Website verwaltet keine Passwörter."
+      "accessCopy": "Leitfaden und Gespräche sind öffentlich lesbar. Zum Speichern von Charakteren oder Schreiben wird ein sicherer E-Mail-Link verwendet. Die Website verwaltet keine Passwörter."
     },
     "equipment": {
       "title": "Ausrüstung und Verbesserungen",

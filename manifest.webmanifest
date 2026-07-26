@@ -1,0 +1,32 @@
+{
+  "id": "/etsp-guide/",
+  "name": "Eternal Sword Pact Guía",
+  "short_name": "ESP Guía",
+  "description": "Guía visual y comunitaria de Eternal Sword Pact.",
+  "lang": "es",
+  "start_url": "/etsp-guide/#/inicio",
+  "scope": "/etsp-guide/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#071a39",
+  "theme_color": "#071b3f",
+  "categories": ["games", "education", "reference"],
+  "icons": [
+    {
+      "src": "assets/images/app/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Buscar objetos",
+      "url": "/etsp-guide/#/objetos?apartado=buscador-de-objetos"
+    },
+    {
+      "name": "Comunidad",
+      "url": "/etsp-guide/#/comunidad"
+    }
+  ]
+}

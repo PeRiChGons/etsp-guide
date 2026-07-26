@@ -158,7 +158,7 @@
     return header(
       t('pages.community.title', 'Comunidad'),
       t('pages.community.kicker', 'Jugadores de Eternal Sword Pact'),
-      t('pages.community.lead', 'Registra tus personajes y conversa en cada apartado de la guía mediante tu cuenta de GitHub.')
+      t('pages.community.lead', 'Registra tus personajes y conversa en el chat propio de la guía.')
     ) +
       '<section class="game-menu-grid">' +
       routeCard('/comunidad', '♙', t('pages.community.profile', 'Perfil de jugador'), t('pages.community.profileCopy', 'Nombre del personaje, clase, Reino, servidor e idioma.')) +
@@ -166,7 +166,7 @@
       routeCard('/objetos', '◇', t('menu.objetos-y-obtencion', 'Objetos y obtención'), t('ui.searchObjects', 'Buscar objetos')) +
       '</section>' +
       '<section class="ornate-panel"><h2>' + esc(t('pages.community.accessTitle', 'Acceso y privacidad')) +
-      '</h2><p>' + esc(t('pages.community.accessCopy', 'La guía y las conversaciones pueden leerse sin cuenta. Para guardar personajes, comentar o responder se utiliza el acceso seguro de GitHub. La web no administra contraseñas.')) +
+      '</h2><p>' + esc(t('pages.community.accessCopy', 'La guía y las conversaciones pueden leerse sin cuenta. Para guardar personajes o escribir se utiliza un enlace seguro enviado por correo. La web no administra contraseñas.')) +
       '</p></section>';
   }
 

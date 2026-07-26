@@ -73,12 +73,12 @@
     "community": {
       "title": "Comunidad",
       "kicker": "Jugadores de Eternal Sword Pact",
-      "lead": "Registra tus personajes y conversa en cada apartado de la guía mediante tu cuenta de GitHub.",
+      "lead": "Registra tus personajes y conversa en el chat propio de la guía.",
       "profile": "Perfil de jugador",
       "profileCopy": "Nombre del personaje, clase, Reino, servidor e idioma.",
       "classesCopy": "Consulta habilidades y construcciones disponibles.",
       "accessTitle": "Acceso y privacidad",
-      "accessCopy": "La guía y las conversaciones pueden leerse sin cuenta. Para guardar personajes, comentar o responder se utiliza el acceso seguro de GitHub. La web no administra contraseñas."
+      "accessCopy": "La guía y las conversaciones pueden leerse sin cuenta. Para guardar personajes o escribir se utiliza un enlace seguro enviado por correo. La web no administra contraseñas."
     },
     "equipment": {
       "title": "Equipamiento y mejoras",

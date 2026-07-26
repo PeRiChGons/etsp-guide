@@ -12,6 +12,7 @@
   var realtimeSubscription = null;
   var session = null;
   var emotes = [];
+  var availableChannels = [];
 
   function escapeHtml(value) {
     return String(value === undefined || value === null ? '' : value)
@@ -33,6 +34,7 @@
       '<div class="player-profile-panel" id="player-profile-panel"><p>Cargando perfil…</p></div>' +
       '<section class="game-chat" aria-label="Chat de Eternal Sword Pact">' +
       '<div class="chat-room"><header class="chat-room-title"><div><small>Conversación de este apartado</small><strong id="chat-channel-title">General</strong></div>' +
+      '<label class="chat-channel-selector" id="chat-channel-selector" hidden>Elegir conversación<select id="chat-channel-select" aria-label="Elegir conversación"></select></label>' +
       '<button class="text-action" id="chat-refresh" type="button">Actualizar</button></header>' +
       '<div class="chat-messages" id="chat-messages" role="log" aria-live="polite"><p>Cargando mensajes…</p></div>' +
       '<form class="chat-composer" id="chat-form"><div class="chat-character-row">' +
@@ -209,11 +211,26 @@
       document.getElementById('chat-messages').innerHTML = '<p>La conversación no está disponible.</p>';
       return;
     }
+    availableChannels = result.data;
     var wantedSlug = channelSlugForCurrentRoute();
     var selected = result.data.find(function (channel) {
       return channel.slug === wantedSlug;
     }) || result.data[0];
+    if (isMainChatRoute()) {
+      var selectorLabel = document.getElementById('chat-channel-selector');
+      var selector = document.getElementById('chat-channel-select');
+      selector.innerHTML = result.data.map(function (channel) {
+        return '<option value="' + escapeHtml(channel.id) + '">' + escapeHtml(channel.title) + '</option>';
+      }).join('');
+      selector.value = selected.id;
+      selectorLabel.hidden = false;
+    }
     await selectChannel(selected);
+  }
+
+  function isMainChatRoute() {
+    var path = location.hash.replace(/^#\/?/, '').toLowerCase().split('?')[0];
+    return path === '' || path === 'inicio';
   }
 
   function channelSlugForCurrentRoute() {
@@ -357,6 +374,15 @@
     }
     if (event.target.id === 'chat-form') {
       event.preventDefault(); sendMessage(event.target);
+    }
+  });
+
+  document.addEventListener('change', function (event) {
+    if (event.target && event.target.id === 'chat-channel-select') {
+      var selected = availableChannels.find(function (channel) {
+        return channel.id === event.target.value;
+      });
+      if (selected) { selectChannel(selected); }
     }
   });
 

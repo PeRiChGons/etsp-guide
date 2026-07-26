@@ -19,9 +19,36 @@
   <link rel="apple-touch-icon" href="assets/images/app/icon-512.png">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/styles-visual.css?v=20260726-2">
+  <script>
+    try {
+      if (!localStorage.getItem('etsp-intro-disabled') && !sessionStorage.getItem('etsp-intro-v1') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('intro-pending');
+      }
+    } catch (error) {}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="guide-intro" id="guide-intro" aria-label="Introducción de Eternal Sword Pact Guía">
+    <div class="intro-atmosphere" aria-hidden="true"></div>
+    <div class="intro-book" aria-hidden="true">
+      <div class="intro-pages">
+        <img class="intro-perich-logo" src="assets/images/app/logo-perich.png" alt="">
+        <strong>Eternal Sword Pact</strong>
+        <em>Guía</em>
+        <small>Hecho por PeRiCh y ChatGPT</small>
+      </div>
+      <img class="intro-cover" src="assets/images/app/icon-1024.png" alt="">
+    </div>
+    <p class="intro-opening">El pacto ha sido abierto</p>
+    <div class="intro-controls">
+      <label class="intro-never">
+        <input id="intro-never" type="checkbox">
+        <span>No volver a mostrar</span>
+      </label>
+      <button class="intro-skip" id="intro-skip" type="button">Saltar</button>
+    </div>
+  </div>
   <header class="site-header">
     <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="menu-lateral" aria-expanded="false">
       <span aria-hidden="true">☰</span><span data-i18n="ui.openMenu">Abrir menú</span>
@@ -94,6 +121,7 @@
   <script src="assets/js/community.js?v=20260727-1"></script>
   <script src="assets/js/router.js?v=20260717-3"></script>
   <script src="assets/js/app.js?v=20260726-2"></script>
+  <script src="assets/js/intro.js?v=20260727-1"></script>
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   <script>
     if (window.Capacitor && typeof window.Capacitor.isNativePlatform === 'function' && window.Capacitor.isNativePlatform()) {

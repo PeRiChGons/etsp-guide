@@ -766,7 +766,7 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
 
 .intro-pending .guide-intro {
   display: grid;
-  animation: intro-veil 4.8s ease forwards;
+  animation: intro-veil 5.5s ease forwards;
 }
 
 .intro-atmosphere {
@@ -776,7 +776,7 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
     radial-gradient(circle, rgba(255, 187, 62, .8) 0 1px, transparent 2px) 20% 30% / 11rem 9rem,
     radial-gradient(circle, rgba(65, 197, 255, .75) 0 1px, transparent 2px) 70% 55% / 13rem 12rem;
   filter: blur(.3px);
-  animation: intro-stars 4.5s linear both;
+  animation: intro-stars 5.2s linear both;
 }
 
 .intro-book {
@@ -784,7 +784,7 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
   width: min(68vw, 32rem);
   aspect-ratio: 1;
   transform-style: preserve-3d;
-  animation: intro-book-arrival 4.4s cubic-bezier(.2, .75, .18, 1) both;
+  animation: intro-book-arrival 5.2s cubic-bezier(.2, .75, .18, 1) both;
 }
 
 .intro-cover,
@@ -802,7 +802,7 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
   object-fit: cover;
   transform-origin: 4% 50%;
   backface-visibility: hidden;
-  animation: intro-cover-open 4.4s cubic-bezier(.46, .01, .2, 1) both;
+  animation: intro-cover-open 5.2s cubic-bezier(.46, .01, .2, 1) both;
 }
 
 .intro-pages {
@@ -818,7 +818,7 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
     #f0dba6;
   transform: translateZ(-2px);
   opacity: 0;
-  animation: intro-pages-reveal 4.4s ease both;
+  animation: intro-pages-reveal 5.2s ease both;
 }
 
 .intro-pages strong {
@@ -849,7 +849,7 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
   text-transform: uppercase;
   text-shadow: 0 0 1.2rem #e9a32b;
   opacity: 0;
-  animation: intro-caption 4.4s ease both;
+  animation: intro-caption 5.2s ease both;
 }
 
 .intro-controls {

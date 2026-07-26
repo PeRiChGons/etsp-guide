@@ -739,6 +739,16 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
   box-shadow: 0 -10px 30px rgba(0, 0, 0, .28);
 }
 
+.site-credits {
+  color: #efe5c7;
+  letter-spacing: .02em;
+}
+
+.site-credits strong {
+  color: var(--gold-light);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
 /* CATÁLOGO DE OBJETOS */
 .object-search-section { position: relative; }
 .object-search-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, 16rem); gap: .55rem 1rem; align-items: end; margin-bottom: 1rem; }

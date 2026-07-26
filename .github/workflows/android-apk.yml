@@ -36,6 +36,7 @@ jobs:
         run: |
           npx cap add android
           npx cap sync android
+          npm run icons:android
 
       - name: Compilar APK instalable
         working-directory: mobile/android

@@ -1,146 +1,506 @@
-﻿[
-    {
-        "code":  "a01_1",
-        "file":  "assets/images/chat-emotes/a01_1.png",
-        "source_name":  "a01_1",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a01_2",
-        "file":  "assets/images/chat-emotes/a01_2.png",
-        "source_name":  "a01_2",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a01_3",
-        "file":  "assets/images/chat-emotes/a01_3.png",
-        "source_name":  "a01_3",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a01_4",
-        "file":  "assets/images/chat-emotes/a01_4.png",
-        "source_name":  "a01_4",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a02_1",
-        "file":  "assets/images/chat-emotes/a02_1.png",
-        "source_name":  "a02_1",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a02_2",
-        "file":  "assets/images/chat-emotes/a02_2.png",
-        "source_name":  "a02_2",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a02_3",
-        "file":  "assets/images/chat-emotes/a02_3.png",
-        "source_name":  "a02_3",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a02_4",
-        "file":  "assets/images/chat-emotes/a02_4.png",
-        "source_name":  "a02_4",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a02_5",
-        "file":  "assets/images/chat-emotes/a02_5.png",
-        "source_name":  "a02_5",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a02_6",
-        "file":  "assets/images/chat-emotes/a02_6.png",
-        "source_name":  "a02_6",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a03_1",
-        "file":  "assets/images/chat-emotes/a03_1.png",
-        "source_name":  "a03_1",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a03_2",
-        "file":  "assets/images/chat-emotes/a03_2.png",
-        "source_name":  "a03_2",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a03_3",
-        "file":  "assets/images/chat-emotes/a03_3.png",
-        "source_name":  "a03_3",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a03_4",
-        "file":  "assets/images/chat-emotes/a03_4.png",
-        "source_name":  "a03_4",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a03_5",
-        "file":  "assets/images/chat-emotes/a03_5.png",
-        "source_name":  "a03_5",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a04_1",
-        "file":  "assets/images/chat-emotes/a04_1.png",
-        "source_name":  "a04_1",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a04_2",
-        "file":  "assets/images/chat-emotes/a04_2.png",
-        "source_name":  "a04_2",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a05_1",
-        "file":  "assets/images/chat-emotes/a05_1.png",
-        "source_name":  "a05_1",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a05_2",
-        "file":  "assets/images/chat-emotes/a05_2.png",
-        "source_name":  "a05_2",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a05_3",
-        "file":  "assets/images/chat-emotes/a05_3.png",
-        "source_name":  "a05_3",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a05_4",
-        "file":  "assets/images/chat-emotes/a05_4.png",
-        "source_name":  "a05_4",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a05_5",
-        "file":  "assets/images/chat-emotes/a05_5.png",
-        "source_name":  "a05_5",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a06_1",
-        "file":  "assets/images/chat-emotes/a06_1.png",
-        "source_name":  "a06_1",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    },
-    {
-        "code":  "a06_2",
-        "file":  "assets/images/chat-emotes/a06_2.png",
-        "source_name":  "a06_2",
-        "bundle":  "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle"
-    }
+[
+  {
+    "code": "a01",
+    "file": "assets/images/chat-emotes/a01.gif",
+    "source_name": "a01_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a02",
+    "file": "assets/images/chat-emotes/a02.gif",
+    "source_name": "a02_1",
+    "frames": 6,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a03",
+    "file": "assets/images/chat-emotes/a03.gif",
+    "source_name": "a03_1",
+    "frames": 5,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a04",
+    "file": "assets/images/chat-emotes/a04.gif",
+    "source_name": "a04_1",
+    "frames": 2,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a05",
+    "file": "assets/images/chat-emotes/a05.gif",
+    "source_name": "a05_1",
+    "frames": 5,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a06",
+    "file": "assets/images/chat-emotes/a06.gif",
+    "source_name": "a06_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a07",
+    "file": "assets/images/chat-emotes/a07.gif",
+    "source_name": "a07_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a08",
+    "file": "assets/images/chat-emotes/a08.gif",
+    "source_name": "a08_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a09",
+    "file": "assets/images/chat-emotes/a09.gif",
+    "source_name": "a09_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a10",
+    "file": "assets/images/chat-emotes/a10.gif",
+    "source_name": "a10_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a11",
+    "file": "assets/images/chat-emotes/a11.gif",
+    "source_name": "a11_1",
+    "frames": 6,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a12",
+    "file": "assets/images/chat-emotes/a12.gif",
+    "source_name": "a12_1",
+    "frames": 2,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a13",
+    "file": "assets/images/chat-emotes/a13.gif",
+    "source_name": "a13_1",
+    "frames": 2,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a14",
+    "file": "assets/images/chat-emotes/a14.gif",
+    "source_name": "a14_1",
+    "frames": 5,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a15",
+    "file": "assets/images/chat-emotes/a15.gif",
+    "source_name": "a15_1",
+    "frames": 5,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a16",
+    "file": "assets/images/chat-emotes/a16.gif",
+    "source_name": "a16_1",
+    "frames": 6,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a17",
+    "file": "assets/images/chat-emotes/a17.gif",
+    "source_name": "a17_1",
+    "frames": 2,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a18",
+    "file": "assets/images/chat-emotes/a18.gif",
+    "source_name": "a18_1",
+    "frames": 2,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a19",
+    "file": "assets/images/chat-emotes/a19.gif",
+    "source_name": "a19_1",
+    "frames": 6,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a20",
+    "file": "assets/images/chat-emotes/a20.gif",
+    "source_name": "a20_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a21",
+    "file": "assets/images/chat-emotes/a21.gif",
+    "source_name": "a21_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a22",
+    "file": "assets/images/chat-emotes/a22.gif",
+    "source_name": "a22_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a23",
+    "file": "assets/images/chat-emotes/a23.gif",
+    "source_name": "a23_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a24",
+    "file": "assets/images/chat-emotes/a24.gif",
+    "source_name": "a24_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a25",
+    "file": "assets/images/chat-emotes/a25.gif",
+    "source_name": "a25_1",
+    "frames": 9,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a26",
+    "file": "assets/images/chat-emotes/a26.gif",
+    "source_name": "a26_1",
+    "frames": 8,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a27",
+    "file": "assets/images/chat-emotes/a27.gif",
+    "source_name": "a27_1",
+    "frames": 6,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a28",
+    "file": "assets/images/chat-emotes/a28.gif",
+    "source_name": "a28_1",
+    "frames": 8,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a29",
+    "file": "assets/images/chat-emotes/a29.gif",
+    "source_name": "a29_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a30",
+    "file": "assets/images/chat-emotes/a30.gif",
+    "source_name": "a30_1",
+    "frames": 3,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a31",
+    "file": "assets/images/chat-emotes/a31.gif",
+    "source_name": "a31_1",
+    "frames": 5,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a32",
+    "file": "assets/images/chat-emotes/a32.gif",
+    "source_name": "a32_1",
+    "frames": 9,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a33",
+    "file": "assets/images/chat-emotes/a33.gif",
+    "source_name": "a33_1",
+    "frames": 6,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a34",
+    "file": "assets/images/chat-emotes/a34.gif",
+    "source_name": "a34_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a35",
+    "file": "assets/images/chat-emotes/a35.gif",
+    "source_name": "a35_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a36",
+    "file": "assets/images/chat-emotes/a36.gif",
+    "source_name": "a36_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a37",
+    "file": "assets/images/chat-emotes/a37.gif",
+    "source_name": "a37_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a38",
+    "file": "assets/images/chat-emotes/a38.gif",
+    "source_name": "a38_1",
+    "frames": 4,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a39",
+    "file": "assets/images/chat-emotes/a39.gif",
+    "source_name": "a39_1",
+    "frames": 3,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a40",
+    "file": "assets/images/chat-emotes/a40.gif",
+    "source_name": "a40_1",
+    "frames": 5,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "a41",
+    "file": "assets/images/chat-emotes/a41.gif",
+    "source_name": "a41_1",
+    "frames": 5,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b01",
+    "file": "assets/images/chat-emotes/b01.gif",
+    "source_name": "b01_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b02",
+    "file": "assets/images/chat-emotes/b02.gif",
+    "source_name": "b02_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b03",
+    "file": "assets/images/chat-emotes/b03.gif",
+    "source_name": "b03_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b04",
+    "file": "assets/images/chat-emotes/b04.gif",
+    "source_name": "b04_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b05",
+    "file": "assets/images/chat-emotes/b05.gif",
+    "source_name": "b05_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b06",
+    "file": "assets/images/chat-emotes/b06.gif",
+    "source_name": "b06_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b07",
+    "file": "assets/images/chat-emotes/b07.gif",
+    "source_name": "b07_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b08",
+    "file": "assets/images/chat-emotes/b08.gif",
+    "source_name": "b08_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b09",
+    "file": "assets/images/chat-emotes/b09.gif",
+    "source_name": "b09_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b10",
+    "file": "assets/images/chat-emotes/b10.gif",
+    "source_name": "b10_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b11",
+    "file": "assets/images/chat-emotes/b11.gif",
+    "source_name": "b11_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b12",
+    "file": "assets/images/chat-emotes/b12.gif",
+    "source_name": "b12_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b14",
+    "file": "assets/images/chat-emotes/b14.gif",
+    "source_name": "b14_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b15",
+    "file": "assets/images/chat-emotes/b15.gif",
+    "source_name": "b15_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b16",
+    "file": "assets/images/chat-emotes/b16.gif",
+    "source_name": "b16_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b17",
+    "file": "assets/images/chat-emotes/b17.gif",
+    "source_name": "b17_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b18",
+    "file": "assets/images/chat-emotes/b18.gif",
+    "source_name": "b18_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b19",
+    "file": "assets/images/chat-emotes/b19.gif",
+    "source_name": "b19_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b20",
+    "file": "assets/images/chat-emotes/b20.gif",
+    "source_name": "b20_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b21",
+    "file": "assets/images/chat-emotes/b21.gif",
+    "source_name": "b21_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b22",
+    "file": "assets/images/chat-emotes/b22.gif",
+    "source_name": "b22_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  },
+  {
+    "code": "b23",
+    "file": "assets/images/chat-emotes/b23.gif",
+    "source_name": "b23_1",
+    "frames": 1,
+    "bundle": "Android-data\\com.mten.tgp\\com.mten.tgp\\files\\AssetBundles\\Android\\others\\assets\\artv2\\ui\\atlasv1\\chatall\\chatemoji\\tex.assetbundle",
+    "evidence": "cliente_y_video_chat_2026-07-27"
+  }
 ]

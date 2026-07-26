@@ -1615,8 +1615,7 @@ body.theme-activities { --accent: #ff984f; --accent-soft: rgba(255, 152, 79, .24
   color: white;
 }
 .game-chat {
-  display: grid;
-  grid-template-columns: minmax(11rem, 16rem) minmax(0, 1fr);
+  display: block;
   min-height: 38rem;
   overflow: hidden;
   border: 1px solid rgba(255, 222, 140, .42);
@@ -1770,15 +1769,7 @@ body {
   .profile-dashboard { grid-template-columns: 1fr; }
   .profile-user { grid-column: auto; }
   .character-roster { border-top: 1px solid rgba(129, 212, 255, .25); border-left: 0; padding-top: 1rem; padding-left: 0; }
-  .game-chat { grid-template-columns: 1fr; }
-  .chat-channels {
-    display: flex;
-    gap: .35rem;
-    overflow-x: auto;
-    border-right: 0;
-    border-bottom: 1px solid rgba(129, 212, 255, .2);
-  }
-  .chat-channels button { flex: 0 0 12rem; margin: 0; }
+  .game-chat { min-height: 31rem; }
 }
 
 @media (max-width: 32rem) {

@@ -32,8 +32,7 @@
       '<span class="community-live"><i></i> Chat en directo</span></div>' +
       '<div class="player-profile-panel" id="player-profile-panel"><p>Cargando perfil…</p></div>' +
       '<section class="game-chat" aria-label="Chat de Eternal Sword Pact">' +
-      '<nav class="chat-channels" id="chat-channels" aria-label="Canales"><p>Cargando canales…</p></nav>' +
-      '<div class="chat-room"><header class="chat-room-title"><div><small>Canal</small><strong id="chat-channel-title">General</strong></div>' +
+      '<div class="chat-room"><header class="chat-room-title"><div><small>Conversación de este apartado</small><strong id="chat-channel-title">General</strong></div>' +
       '<button class="text-action" id="chat-refresh" type="button">Actualizar</button></header>' +
       '<div class="chat-messages" id="chat-messages" role="log" aria-live="polite"><p>Cargando mensajes…</p></div>' +
       '<form class="chat-composer" id="chat-form"><div class="chat-character-row">' +
@@ -204,19 +203,36 @@
   }
 
   async function loadChannels() {
-    var nav = document.getElementById('chat-channels');
-    if (!client || !nav) { return; }
+    if (!client) { return; }
     var result = await client.from('chat_channels').select('*').order('sort_order');
     if (result.error || !result.data.length) {
-      nav.innerHTML = '<p>Los canales no están disponibles.</p>';
+      document.getElementById('chat-messages').innerHTML = '<p>La conversación no está disponible.</p>';
       return;
     }
-    nav.innerHTML = result.data.map(function (channel) {
-      return '<button type="button" data-chat-channel="' + escapeHtml(channel.id) + '">' +
-        '<span>#</span><strong>' + escapeHtml(channel.title) + '</strong><small>' +
-        escapeHtml(channel.description) + '</small></button>';
-    }).join('');
-    await selectChannel(result.data[0]);
+    var wantedSlug = channelSlugForCurrentRoute();
+    var selected = result.data.find(function (channel) {
+      return channel.slug === wantedSlug;
+    }) || result.data[0];
+    await selectChannel(selected);
+  }
+
+  function channelSlugForCurrentRoute() {
+    var locationValue = location.hash.replace(/^#\/?/, '').toLowerCase();
+    var path = locationValue.split('?')[0];
+    var query = locationValue.split('?')[1] || '';
+    if (path.indexOf('clases/dragon-lancer') === 0) { return 'dragon-lancer'; }
+    if (path.indexOf('clases/spiritfox') === 0) { return 'spiritfox'; }
+    if (path.indexOf('clases/lunarborn') === 0) { return 'lunarborn'; }
+    if (path.indexOf('clases/swordsage') === 0) { return 'swordsage'; }
+    if (path.indexOf('objetos') === 0 || path.indexOf('equipamiento-y-mejoras') === 0) {
+      return 'objetos';
+    }
+    if (query.indexOf('pvp') !== -1 || path.indexOf('/pvp') !== -1) { return 'pvp'; }
+    if (path.indexOf('actividades-y-mazmorras') === 0) { return 'pve'; }
+    if (path.indexOf('guia-general') === 0 || path.indexOf('sistemas-del-personaje') === 0) {
+      return 'ayuda';
+    }
+    return 'general';
   }
 
   async function loadEmotes() {

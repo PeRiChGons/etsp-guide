@@ -1579,6 +1579,7 @@ body.theme-activities { --accent: #ff984f; --accent-soft: rgba(255, 152, 79, .24
 .app-download-link > span:first-child { grid-row: 1 / 3; font-size: 1.15rem; }
 .app-download-link small { color: #9eeaff; font-size: .58rem; }
 .app-download-link:hover { border-color: #ffe18a; filter: brightness(1.12); }
+.native-app .app-download-link { display: none; }
 
 /* Chat propio inspirado en la ventana social del juego. */
 .community-live {

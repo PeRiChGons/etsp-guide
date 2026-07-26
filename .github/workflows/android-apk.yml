@@ -1,0 +1,62 @@
+name: Compilar aplicación Android
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "app-v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Preparar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Instalar Capacitor
+        working-directory: mobile
+        run: npm install
+
+      - name: Crear el proyecto Android
+        working-directory: mobile
+        run: |
+          npx cap add android
+          npx cap sync android
+
+      - name: Compilar APK instalable
+        working-directory: mobile/android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+          cp app/build/outputs/apk/debug/app-debug.apk ../../../Eternal-Sword-Pact-Guide.apk
+
+      - name: Guardar APK como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: Eternal-Sword-Pact-Guide-Android
+          path: Eternal-Sword-Pact-Guide.apk
+
+      - name: Publicar descarga estable
+        if: startsWith(github.ref, 'refs/tags/app-v')
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Eternal Sword Pact Guía para Android ${{ github.ref_name }}"
+          body: |
+            Aplicación Android instalable de Eternal Sword Pact Guía.
+
+            La aplicación abre la guía pública en su propia ventana. Las actualizaciones de contenido aparecen automáticamente sin reinstalarla.
+          files: Eternal-Sword-Pact-Guide.apk

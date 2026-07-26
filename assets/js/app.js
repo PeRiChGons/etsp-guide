@@ -24,7 +24,11 @@
     return '<li class="nav-group"><div class="nav-row">' + label + expand + '</div>' + children + '</li>';
   }
 
-  navigation.innerHTML = '<ul class="nav-list">' + window.GUIDE_MENU.map(function (item) { return itemMarkup(item, [item], 0); }).join('') + '</ul>';
+  function renderNavigation() {
+    navigation.innerHTML = '<ul class="nav-list">' + window.GUIDE_MENU.map(function (item) { return itemMarkup(item, [item], 0); }).join('') + '</ul>';
+  }
+
+  renderNavigation();
 
   // Busca la entrada del menú que corresponde a la ruta activa.
   function findMenuEntry(items, route) {
@@ -279,6 +283,12 @@
     });
     renderContextPanel(event.detail.route);
     actualizarCatalogoObjetos();
+  });
+
+  document.addEventListener('language:changed', function () {
+    renderNavigation();
+    var route = window.location.hash.replace(/^#/, '').split('?')[0] || '/inicio';
+    renderContextPanel(route);
   });
 
   window.GuideRouter.start();

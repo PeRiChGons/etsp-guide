@@ -19,7 +19,9 @@
     "pending": "Treść oczekująca",
     "inDevelopment": "Przewodnik społeczności w budowie",
     "verifiedStatus": "Aktualny status",
-    "projectFooter": "Nieoficjalny projekt społeczności · Opublikowano według poziomu dowodów"
+    "projectFooter": "Nieoficjalny projekt społeczności · Źródła i ograniczenia na dole strony",
+    "home": "Start",
+    "sourcesNotes": "Źródła i uwagi"
   },
   "menu": {
     "inicio": "Start",
@@ -29,6 +31,7 @@
     "objetos-y-obtencion": "Przedmioty i pozyskiwanie",
     "actividades-y-mazmorras": "Aktywności i lochy",
     "clases": "Klasy",
+    "comunidad": "Społeczność",
     "proyecto": "Projekt",
     "stats": "Statystyki",
     "skill": "Umiejętność",
@@ -65,5 +68,24 @@
     "investigacion-web": "Badanie sieci",
     "lista-de-pendientes": "Lista oczekujących",
     "aviso-sobre-contenido-no-oficial": "Informacja o nieoficjalnej treści"
+  },
+  "pages": {
+    "community": {
+      "title": "Społeczność",
+      "kicker": "Gracze Eternal Sword Pact",
+      "lead": "Zarejestruj postacie i rozmawiaj na każdej stronie poradnika za pomocą konta GitHub.",
+      "profile": "Profil gracza",
+      "profileCopy": "Nazwa postaci, klasa, Królestwo, serwer i język.",
+      "classesCopy": "Przeglądaj dostępne umiejętności i konfiguracje.",
+      "accessTitle": "Dostęp i prywatność",
+      "accessCopy": "Poradnik i rozmowy można czytać bez konta. Bezpieczne logowanie GitHub służy do zapisywania postaci, komentowania i odpowiadania. Witryna nie zarządza hasłami."
+    },
+    "equipment": {
+      "title": "Ekwipunek i ulepszenia",
+      "kicker": "Kuźnia postaci",
+      "lead": "Gear, Gem i Soul to powiązane systemy, każdy z własnymi funkcjami i materiałami.",
+      "buildTitle": "Jak korzystać z tej sekcji",
+      "buildCopy": "Wybory zależą od klasy, przedmiotu i trybu gry. Poradnik nie wymyśla uniwersalnej konfiguracji, jeśli dane jej nie potwierdzają."
+    }
   }
 }

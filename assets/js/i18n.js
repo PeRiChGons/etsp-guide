@@ -1,8 +1,9 @@
-/* Gestiona los idiomas locales sin depender de un servicio externo. */
+/* Gestiona ES/EN/DE/PL desde JSON y deriva los demás a Google Translate. */
 (function () {
   'use strict';
 
   var locale = window.localStorage.getItem('etsp-language') || 'es';
+  var localLanguages = ['es', 'en', 'de', 'pl'];
   var dictionary = {};
 
   function readPath(source, path) {
@@ -21,24 +22,24 @@
       element.textContent = translate(key, element.textContent);
     });
     var selector = document.getElementById('language-selector');
-    if (selector) { selector.value = locale === 'es' ? '' : locale; }
+    if (selector) { selector.value = locale; }
   }
 
   function refreshPage() {
+    document.documentElement.lang = locale;
     applyStaticTranslations();
     if (window.GuideRouter && window.GuideRouter.render) {
       window.GuideRouter.render();
     }
+    document.dispatchEvent(new CustomEvent('language:changed', { detail: { locale: locale } }));
   }
 
   function loadLanguage(nextLocale) {
-    if (nextLocale === 'es') {
-      locale = 'es';
-      dictionary = {};
-      window.localStorage.setItem('etsp-language', locale);
-      refreshPage();
+    if (nextLocale.indexOf('google:') === 0) {
+      openGoogleTranslate(nextLocale.slice(7));
       return Promise.resolve();
     }
+    if (localLanguages.indexOf(nextLocale) === -1) { return Promise.resolve(); }
     return fetch('assets/lang/' + encodeURIComponent(nextLocale) + '.json', { cache: 'no-store' })
       .then(function (response) {
         if (!response.ok) { throw new Error('Idioma no disponible'); }
@@ -53,15 +54,30 @@
       .catch(function () {
         locale = 'es';
         dictionary = {};
+        window.localStorage.setItem('etsp-language', locale);
         refreshPage();
       });
+  }
+
+  function openGoogleTranslate(language) {
+    var target = language === 'more' ? 'en' : language;
+    var localPreview = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+    var publicPage = 'https://perichgons.github.io/etsp-guide/' + window.location.hash;
+    var currentPage = localPreview ? publicPage : window.location.href;
+    var translateUrl = 'https://translate.google.com/translate?sl=' +
+      encodeURIComponent(locale || 'es') + '&tl=' + encodeURIComponent(target) +
+      '&u=' + encodeURIComponent(currentPage);
+    window.open(translateUrl, '_blank', 'noopener,noreferrer');
+    var selector = document.getElementById('language-selector');
+    if (selector) { selector.value = locale; }
   }
 
   window.I18n = {
     getLocale: function () { return locale; },
     t: translate,
     setLanguage: loadLanguage,
-    apply: applyStaticTranslations
+    apply: applyStaticTranslations,
+    isLocal: function (language) { return localLanguages.indexOf(language) !== -1; }
   };
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -71,6 +87,6 @@
         if (this.value) { loadLanguage(this.value); }
       });
     }
-    if (locale !== 'es') { loadLanguage(locale); }
+    loadLanguage(locale);
   });
 }());

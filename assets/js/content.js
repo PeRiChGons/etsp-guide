@@ -19,8 +19,13 @@
       { title: 'Spirit', route: '/sistemas-del-personaje/spirit', children: ['Vista general', 'Spirits documentados', 'Basic y Upgrade', 'Array y Arraycore', 'Kismet / Spirit Treasure', 'Evolution', 'Bond', 'Cleanse y Tier Up', 'Demoncore y Pill Array', 'Datos pendientes'] },
       { title: 'Wisp', route: '/sistemas-del-personaje/wisp', children: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] }
     ] },
-    { title: 'Equipamiento y mejoras', route: '/equipamiento-y-mejoras', children: ['Equipamiento', 'Rarezas', 'Tiers', 'Estrellas', 'Craft', 'Mejoras', 'Bonificaciones', 'Materiales'] },
-    { title: 'Objetos y obtención', route: '/objetos', children: ['Buscador de objetos', 'Talisman', 'Spirit Root', 'Technique', 'Materiales', 'Recompensas', 'Titles', 'Outfits'] },
+    { title: 'Equipamiento y mejoras', route: '/equipamiento-y-mejoras', children: [
+      { title: 'Gear', route: '/equipamiento-y-mejoras/gear', children: ['Piezas', 'Rarezas', 'Tiers', 'Estrellas', 'Craft', 'Mejoras'] },
+      { title: 'Gem', route: '/equipamiento-y-mejoras/gem', children: ['Engaste', 'Tipos de gema', 'Mejora', 'Bonificaciones'] },
+      { title: 'Soul', route: '/equipamiento-y-mejoras/soul', children: ['Gear Soul', 'Melting', 'Materiales', 'Resultados'] },
+      'Bonificaciones', 'Materiales'
+    ] },
+    { title: 'Objetos y obtención', route: '/objetos', children: ['Buscador de objetos', 'Talisman', 'Spirit Root', 'Technique', 'Materiales', 'Recompensas', 'Titles', { title: 'Outfits', route: '/objetos/outfits' }] },
     { title: 'Actividades y mazmorras', route: '/actividades-y-mazmorras', children: ['Daily Quest', 'Rage Boss', 'Time Realm', 'Ancient Ruins', 'Spirit Spring', 'Dungeons', 'PvP', 'Alliance War', 'Kunlun'] },
     { title: 'Clases', route: '/clases', children: [
       'Comparación de clases',
@@ -29,6 +34,7 @@
       { title: 'Spiritfox', route: '/clases/spiritfox', children: classSections },
       { title: 'Swordsage', route: '/clases/swordsage', children: classSections }
     ] },
+    { title: 'Comunidad', route: '/comunidad', children: ['Perfil de jugador', 'Personajes', 'Conversaciones'] },
     { title: 'Proyecto', route: '/proyecto', children: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Investigación web', 'Lista de pendientes', 'Aviso sobre contenido no oficial'] }
   ];
 
@@ -86,7 +92,12 @@
       '/sistemas-del-personaje/spirit': { title: 'Spirit', type: 'spirit', sections: ['Vista general', 'Spirits documentados', 'Basic y Upgrade', 'Array y Arraycore', 'Kismet / Spirit Treasure', 'Evolution', 'Bond', 'Cleanse y Tier Up', 'Demoncore y Pill Array', 'Datos pendientes'] },
       '/sistemas-del-personaje/wisp': { title: 'Wisp', type: 'wisp', sections: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] },
       '/objetos': { title: 'Objetos y obtención', type: 'objects', sections: ['Buscador de objetos', 'Talisman', 'Spirit Root', 'Technique', 'Materiales', 'Recompensas', 'Titles', 'Outfits'] },
+      '/objetos/outfits': { title: 'Outfits', type: 'outfits', sections: ['Visor 3D', 'Piezas disponibles', 'Variantes', 'Obtención'] },
+      '/equipamiento-y-mejoras/gear': { title: 'Gear', type: 'gear', sections: ['Piezas', 'Rarezas', 'Tiers', 'Estrellas', 'Craft', 'Mejoras'] },
+      '/equipamiento-y-mejoras/gem': { title: 'Gem', type: 'gem', sections: ['Engaste', 'Tipos de gema', 'Mejora', 'Bonificaciones'] },
+      '/equipamiento-y-mejoras/soul': { title: 'Soul', type: 'soul', sections: ['Gear Soul', 'Melting', 'Materiales', 'Resultados'] },
       '/actividades-y-mazmorras': { title: 'Actividades y mazmorras', type: 'activities', sections: ['Vista general', 'Daily Quest', 'Rage Boss', 'Time Realm', 'Ancient Ruins', 'Spirit Spring', 'Dungeons', 'PvP', 'Alliance War', 'Kunlun'] },
+      '/comunidad': { title: 'Comunidad', type: 'community', sections: ['Perfil de jugador', 'Personajes', 'Conversaciones'] },
       '/proyecto': { title: 'Proyecto', type: 'project', sections: ['Sobre la guía', 'Objetivo', 'Autores', 'Verificación de la información', 'Fuentes', 'Investigación web', 'Lista de pendientes', 'Aviso sobre contenido no oficial'] }
     };
     if (customPages[route]) {

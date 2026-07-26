@@ -19,7 +19,9 @@
     "pending": "Content pending",
     "inDevelopment": "Community guide in development",
     "verifiedStatus": "Current status",
-    "projectFooter": "Unofficial community project · Published by evidence level"
+    "projectFooter": "Unofficial community project · Sources and limits at the foot of each page",
+    "home": "Home",
+    "sourcesNotes": "Sources and notes"
   },
   "menu": {
     "inicio": "Home",
@@ -29,6 +31,7 @@
     "objetos-y-obtencion": "Objects and acquisition",
     "actividades-y-mazmorras": "Activities and dungeons",
     "clases": "Classes",
+    "comunidad": "Community",
     "proyecto": "Project",
     "stats": "Stats",
     "skill": "Skill",
@@ -65,5 +68,24 @@
     "investigacion-web": "Web research",
     "lista-de-pendientes": "Pending list",
     "aviso-sobre-contenido-no-oficial": "Unofficial content notice"
+  },
+  "pages": {
+    "community": {
+      "title": "Community",
+      "kicker": "Eternal Sword Pact players",
+      "lead": "Register your characters and join the conversation on every guide page with your GitHub account.",
+      "profile": "Player profile",
+      "profileCopy": "Character name, class, Realm, server and language.",
+      "classesCopy": "Browse available skills and builds.",
+      "accessTitle": "Access and privacy",
+      "accessCopy": "The guide and conversations are public to read. Secure GitHub access is used to save characters, comment or reply. This site never manages passwords."
+    },
+    "equipment": {
+      "title": "Equipment and upgrades",
+      "kicker": "Character forge",
+      "lead": "Gear, Gem and Soul are related systems, each with its own functions and materials.",
+      "buildTitle": "How to use this section",
+      "buildCopy": "Choices depend on class, item and game mode. The guide does not invent a universal build when the available data does not prove one."
+    }
   }
 }

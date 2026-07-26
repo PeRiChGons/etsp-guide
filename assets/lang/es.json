@@ -19,7 +19,9 @@
     "pending": "Contenido pendiente",
     "inDevelopment": "Guia comunitaria en desarrollo",
     "verifiedStatus": "Estado actual",
-    "projectFooter": "Proyecto comunitario no oficial · Publicado por niveles de evidencia"
+    "projectFooter": "Proyecto comunitario no oficial · Fuentes y límites al pie",
+    "home": "Inicio",
+    "sourcesNotes": "Fuentes y notas"
   },
   "menu": {
     "inicio": "Inicio",
@@ -29,6 +31,7 @@
     "objetos-y-obtencion": "Objetos y obtención",
     "actividades-y-mazmorras": "Actividades y mazmorras",
     "clases": "Clases",
+    "comunidad": "Comunidad",
     "proyecto": "Proyecto",
     "stats": "Stats",
     "skill": "Skill",
@@ -65,5 +68,24 @@
     "investigacion-web": "Investigacion web",
     "lista-de-pendientes": "Lista de pendientes",
     "aviso-sobre-contenido-no-oficial": "Aviso sobre contenido no oficial"
+  },
+  "pages": {
+    "community": {
+      "title": "Comunidad",
+      "kicker": "Jugadores de Eternal Sword Pact",
+      "lead": "Registra tus personajes y conversa en cada apartado de la guía mediante tu cuenta de GitHub.",
+      "profile": "Perfil de jugador",
+      "profileCopy": "Nombre del personaje, clase, Reino, servidor e idioma.",
+      "classesCopy": "Consulta habilidades y construcciones disponibles.",
+      "accessTitle": "Acceso y privacidad",
+      "accessCopy": "La guía y las conversaciones pueden leerse sin cuenta. Para guardar personajes, comentar o responder se utiliza el acceso seguro de GitHub. La web no administra contraseñas."
+    },
+    "equipment": {
+      "title": "Equipamiento y mejoras",
+      "kicker": "Forja del personaje",
+      "lead": "Gear, Gem y Soul son sistemas relacionados, cada uno con funciones y materiales propios.",
+      "buildTitle": "Cómo usar esta sección",
+      "buildCopy": "Las decisiones dependen de la clase, la pieza y el modo de juego. La guía no inventa una configuración universal cuando los datos no la demuestran."
+    }
   }
 }

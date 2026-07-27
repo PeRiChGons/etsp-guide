@@ -1,6 +1,6 @@
 {
   "appId": "com.perichgons.eternalswordpactguide",
-  "appName": "Eternal Sword Pact Guía",
+  "appName": "EtSwPact Guide",
   "webDir": "www",
   "server": {
     "url": "https://perichgons.github.io/etsp-guide/",

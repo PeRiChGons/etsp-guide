@@ -24,4 +24,20 @@ for (const [densidad, tamano] of Object.entries(densidades)) {
   }
 }
 
+const nombresLocalizados = {
+  "values-es": "EtSwPact Guía",
+  "values-de": "EtSwPact Guide",
+  "values-pl": "EtSwPact Poradnik",
+};
+
+for (const [carpetaIdioma, nombre] of Object.entries(nombresLocalizados)) {
+  const carpeta = path.join(recursos, carpetaIdioma);
+  await fs.mkdir(carpeta, { recursive: true });
+  await fs.writeFile(
+    path.join(carpeta, "strings.xml"),
+    `<?xml version="1.0" encoding="utf-8"?>\n<resources>\n    <string name="app_name">${nombre}</string>\n    <string name="title_activity_main">${nombre}</string>\n</resources>\n`,
+    "utf8",
+  );
+}
+
 console.log("Iconos Android generados desde el libro mágico de la guía.");

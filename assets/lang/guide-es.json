@@ -1,0 +1,164 @@
+{
+  "home": {
+    "title": "Eternal Sword Pact Guía",
+    "lead": "Guía práctica del juego organizada por sistemas, clases y actividades. Los valores que el cliente no demuestra se muestran como ?.",
+    "sections": [
+      ["Cómo usar la guía", "Elige una sección del menú como si abrieras una función del juego. Cada página reúne explicación, uso, relaciones, objetos y fuentes disponibles."],
+      ["Versiones del juego", "Google Play/LDPlayer y LDStore se documentan por separado cuando sus archivos o contenidos no coinciden."],
+      ["Comunidad", "El chat puede leerse sin cuenta. Para escribir, guardar personajes o informar de errores se utiliza el acceso seguro de la comunidad."]
+    ]
+  },
+  "general": {
+    "title": "Guía general",
+    "lead": "Orientación para entender la interfaz, progresar y decidir dónde invertir recursos.",
+    "sections": [
+      ["Primeros pasos", "Sigue las misiones principales para abrir sistemas y conserva los materiales cuyo uso todavía no comprendas. La guía no indica un nivel de desbloqueo si no está demostrado."],
+      ["Progresión", "La fuerza del personaje combina nivel, etapa de evolución, equipo, habilidades, Spirit Root, Technique, SwordFlight, Zodiac, Spirits y otros sistemas."],
+      ["Recursos", "Comprueba siempre la descripción del objeto y su sistema relacionado antes de gastarlo. El buscador de esta web contiene únicamente objetos y bienes."]
+    ]
+  },
+  "systems": {
+    "title": "Sistemas del personaje",
+    "lead": "Centro de consulta para Stats, Skill, Spirit Root, Technique, SwordFlight, Zodiac, Spirit y Wisp.",
+    "sections": [
+      ["Relaciones", "Los sistemas pueden compartir estadísticas y materiales, pero solo se muestran relaciones directas cuando aparecen en el cliente o en una observación documentada."],
+      ["Construcción", "La recomendación depende de la clase, el contenido PvE o PvP y las estadísticas disponibles. Los datos exactos desconocidos permanecen como ?."],
+      ["Mejoras", "Antes de mejorar, revisa el efecto descrito, el coste y si el recurso se utiliza también en otra sección."]
+    ]
+  },
+  "stats": {
+    "title": "Stats",
+    "lead": "Las estadísticas describen ataque, supervivencia, precisión, mitigación y bonificaciones de sistemas.",
+    "sections": [
+      ["Basic Stats", "Incluyen HP, ATK, S.A, DEF, CRIT, TEN, PEN, BLOCK y modificadores de daño, habilidades, Spirit, Transformation y Technique."],
+      ["Special Stats", "Incluyen bonificaciones porcentuales, CRIT DMG, Stun, resistencias, Suppression, EXP Boost y Stamina Points Bonus."],
+      ["Elección", "Compara el beneficio real para tu clase y modo de juego; no se presenta una prioridad universal sin datos que la demuestren."]
+    ]
+  },
+  "skill": {
+    "title": "Skill",
+    "lead": "Consulta las habilidades recuperadas del cliente y su relación con cada clase.",
+    "sections": [
+      ["Por clase", "Dragon Lancer, Lunarborn, Spiritfox y Swordsage conservan listas separadas. Un nombre recuperado no implica por sí solo una rotación o prioridad exacta."],
+      ["Activas y pasivas", "Las habilidades activas se ejecutan durante el combate; las pasivas modifican el personaje o una mecánica cuando se cumplen sus condiciones."],
+      ["Construcción", "Usa la descripción demostrada y prueba la interacción en juego. Los multiplicadores o tiempos no disponibles aparecen como ?."]
+    ]
+  },
+  "spirit-root": {
+    "title": "Spirit Root",
+    "lead": "Sistema de raíces, mejoras y combinaciones relacionado con estadísticas y materiales propios.",
+    "sections": [
+      ["Gestión", "La interfaz incluye mejoras, Fuse, Decompose, Resonance, Sacrifice y Core Spirit Root."],
+      ["Materiales", "Consulta cada objeto en el buscador antes de usarlo. No se atribuye una fuente de obtención si los archivos no la demuestran."],
+      ["Configuración", "Compara las estadísticas ofrecidas con las necesidades de tu clase y del modo PvE o PvP."]
+    ]
+  },
+  "technique": {
+    "title": "Technique",
+    "lead": "Sistema de técnicas normales y especiales que emplea plantas y materiales de mejora.",
+    "sections": [
+      ["Uso", "Revisa el efecto de cada Technique y su coste antes de mejorarla. Los nombres del cliente se conservan para poder relacionarlos con los objetos."],
+      ["Plantas", "Las plantas son recursos del sistema; el buscador permite localizar los bienes documentados sin mezclar monstruos o mazmorras."],
+      ["Prioridad", "La mejor Technique depende de la clase y del objetivo. Cuando la relación no es directa se evita presentarla como exacta."]
+    ]
+  },
+  "swordflight": {
+    "title": "SwordFlight",
+    "lead": "Consulta Vermilion Bird, Azure Dragon, Azure Bird, Black Tortoise, White Tiger y Soaring Snake.",
+    "sections": [
+      ["Funcionamiento", "SwordFlight reúne opciones de progresión y bonificaciones. Cada entrada conserva su identidad y fuentes."],
+      ["Elección", "Compara las estadísticas y efectos mostrados con tu construcción; no se inventa un mejor SwordFlight universal."],
+      ["Datos", "Los valores o materiales no recuperados se muestran como ?."]
+    ]
+  },
+  "zodiac": {
+    "title": "Zodiac y Glyph",
+    "lead": "Sistema de transformaciones con Glyph y entradas como Gonggong, Hou Yi y Western Queen.",
+    "sections": [
+      ["Transformaciones", "Las relaciones recuperadas del cliente se conservan sin afirmar efectos exactos que no estén descritos."],
+      ["Glyph", "Los Glyph forman parte del sistema Zodiac y deben compararse por sus efectos y estadísticas disponibles."],
+      ["PvE y PvP", "La utilidad puede cambiar según el modo; los valores desconocidos permanecen como ?."]
+    ]
+  },
+  "spirit": {
+    "title": "Spirit",
+    "lead": "Gestión de Spirits mediante Basic, Upgrade, Array, Arraycore, Kismet, Evolution, Bond, Cleanse, Tier Up, Demoncore y Pill Array.",
+    "sections": [
+      ["Formación", "La posición y las relaciones entre Spirits se consultan desde Array y los vínculos documentados."],
+      ["Progresión", "Comprueba qué recurso consume cada mejora y si el cambio es reversible antes de confirmarlo."],
+      ["Datos pendientes", "Las tasas, límites o desbloqueos no demostrados se representan con ?."]
+    ]
+  },
+  "wisp": {
+    "title": "Wisp",
+    "lead": "Sistema relacionado con Wisp Array, Sprite, Summon, Sacrifice y accesos asociados.",
+    "sections": [
+      ["Uso", "La guía separa las funciones observadas de las relaciones recuperadas del cliente."],
+      ["Mejoras", "Revisa el coste y el resultado visible antes de consumir recursos."],
+      ["Rumor", "Cuando una explicación procede únicamente de la comunidad puede mostrarse como Rumor y no como dato confirmado."]
+    ]
+  },
+  "equipment": {
+    "title": "Equipamiento y mejoras",
+    "lead": "Centro de Gear, Gem y Soul con piezas, rarezas, tiers, estrellas, craft, materiales y bonificaciones.",
+    "sections": [
+      ["Gear", "Compara la pieza, su tier, rareza, estrellas y estadísticas antes de reemplazarla o usarla como material."],
+      ["Gem", "Las gemas se engastan y mejoran dentro de su sistema; el beneficio depende del tipo y de la ranura disponible."],
+      ["Soul", "Gear Soul y Melting se documentan sin asignar un requisito de nivel o fecha cuando no se conoce con exactitud."]
+    ]
+  },
+  "objects": {
+    "title": "Objetos y obtención",
+    "lead": "Buscador exclusivo de objetos, bienes y materiales. No devuelve monstruos ni mazmorras.",
+    "sections": [
+      ["Búsqueda", "Escribe el nombre completo o parcial y filtra por categoría. Los nombres del cliente se mantienen para facilitar la comparación con el juego."],
+      ["Obtención", "Una fuente solo se muestra cuando está relacionada por los archivos o por una observación documentada; en caso contrario aparece ?."],
+      ["Variantes", "Google Play/LDPlayer y LDStore permanecen separadas si un objeto o texto difiere entre versiones."]
+    ]
+  },
+  "activities": {
+    "title": "Actividades y mazmorras",
+    "lead": "Consulta Daily Quest, Rage Boss, Time Realm, Ancient Ruins, Spirit Spring, Dungeons, PvP, Alliance War y Kunlun.",
+    "sections": [
+      ["Preparación", "Revisa el tipo de actividad, los intentos visibles, tu construcción y las recompensas demostradas antes de entrar."],
+      ["PvE", "Prioriza supervivencia y daño según el objetivo, los enemigos y el tiempo disponible."],
+      ["PvP", "Las reglas recuperadas del cliente se distinguen de consejos generales; las fórmulas exactas no disponibles aparecen como ?."]
+    ]
+  },
+  "classes": {
+    "title": "Clases",
+    "lead": "Comparación de Dragon Lancer, Lunarborn, Spiritfox y Swordsage.",
+    "sections": [
+      ["Identidad", "Cada clase conserva habilidades, estadísticas y recursos separados cuando el cliente establece esa relación."],
+      ["Construcción", "Consulta la página de la clase para combinar Stats, Skill, Spirit Root, Technique, SwordFlight, Zodiac, PvE y PvP."],
+      ["Elección", "No existe una clase universalmente mejor; la elección depende del estilo y del contenido."]
+    ]
+  },
+  "class": {
+    "title": "Guía de clase",
+    "lead": "Construcción organizada por habilidades, estadísticas y sistemas relacionados.",
+    "sections": [
+      ["Habilidades", "La lista procede de los archivos recuperados del cliente. Las rotaciones exactas no demostradas permanecen como ?."],
+      ["Estadísticas", "Selecciona estadísticas que apoyen el papel y las habilidades de la clase, separando las necesidades PvE y PvP."],
+      ["Sistemas", "Compara Spirit Root, Technique, SwordFlight y Zodiac por sus efectos disponibles; una relación inferida no se presenta como exacta."]
+    ]
+  },
+  "community": {
+    "title": "Comunidad",
+    "lead": "Perfiles de jugador, personajes y conversaciones de la guía.",
+    "sections": [
+      ["Lectura", "Las conversaciones pueden leerse sin iniciar sesión."],
+      ["Participación", "Para escribir o guardar personajes se utiliza el acceso seguro configurado para la comunidad."],
+      ["Perfil", "Cada personaje puede guardar nombre, clase, reino o etapa de evolución, servidor e idioma."]
+    ]
+  },
+  "project": {
+    "title": "Proyecto",
+    "lead": "Guía comunitaria no oficial creada por PeRiCh y ChatGPT.",
+    "sections": [
+      ["Método", "La guía relaciona archivos extraídos, observaciones en vídeo y fuentes conservadas. No rellena datos exactos sin evidencia."],
+      ["Fuentes", "Las fuentes y límites aparecen en la letra pequeña de cada sección o conjunto de datos."],
+      ["Pendientes", "Los valores desconocidos se marcan con ?. Las aportaciones de la comunidad sin verificación se presentan como Rumor."]
+    ]
+  }
+}

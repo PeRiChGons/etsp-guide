@@ -5,6 +5,7 @@
   var locale = window.localStorage.getItem('etsp-language') || 'es';
   var localLanguages = ['es', 'en', 'de', 'pl'];
   var dictionary = {};
+  var guideDictionary = {};
 
   function readPath(source, path) {
     return path.split('.').reduce(function (value, key) {
@@ -40,20 +41,25 @@
       return Promise.resolve();
     }
     if (localLanguages.indexOf(nextLocale) === -1) { return Promise.resolve(); }
-    return fetch('assets/lang/' + encodeURIComponent(nextLocale) + '.json', { cache: 'no-store' })
-      .then(function (response) {
-        if (!response.ok) { throw new Error('Idioma no disponible'); }
-        return response.json();
+    return Promise.all([
+      fetch('assets/lang/' + encodeURIComponent(nextLocale) + '.json', { cache: 'no-store' }),
+      fetch('assets/lang/guide-' + encodeURIComponent(nextLocale) + '.json', { cache: 'no-store' })
+    ])
+      .then(function (responses) {
+        if (!responses[0].ok || !responses[1].ok) { throw new Error('Idioma no disponible'); }
+        return Promise.all([responses[0].json(), responses[1].json()]);
       })
       .then(function (data) {
         locale = nextLocale;
-        dictionary = data;
+        dictionary = data[0];
+        guideDictionary = data[1];
         window.localStorage.setItem('etsp-language', locale);
         refreshPage();
       })
       .catch(function () {
         locale = 'es';
         dictionary = {};
+        guideDictionary = {};
         window.localStorage.setItem('etsp-language', locale);
         refreshPage();
       });
@@ -77,6 +83,7 @@
     t: translate,
     setLanguage: loadLanguage,
     apply: applyStaticTranslations,
+    getGuidePage: function (key) { return guideDictionary[key] || null; },
     isLocal: function (language) { return localLanguages.indexOf(language) !== -1; }
   };
 

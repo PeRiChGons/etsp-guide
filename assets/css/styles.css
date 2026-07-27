@@ -944,6 +944,69 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
   .guide-intro { display: none !important; }
 }
 
+/* Resumen editorial traducible que acompaña las herramientas y catálogos existentes. */
+.guide-complete-overview {
+  position: relative;
+  margin: 0 0 1.4rem;
+  padding: clamp(1rem, 2.5vw, 1.7rem);
+  overflow: hidden;
+  border: 1px solid rgba(225, 190, 102, .42);
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(43, 162, 208, .16), transparent 30%),
+    linear-gradient(145deg, rgba(13, 31, 52, .97), rgba(5, 13, 24, .98));
+  box-shadow: 0 1.1rem 2.5rem rgba(0, 0, 0, .28);
+}
+
+.guide-complete-overview::after {
+  content: "✦";
+  position: absolute;
+  top: .7rem;
+  right: 1rem;
+  color: rgba(239, 198, 92, .7);
+  font-size: 1.45rem;
+}
+
+.guide-complete-overview > h1 {
+  margin: .15rem 0 .55rem;
+  color: #fff0bd;
+}
+
+.guide-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: .8rem;
+  margin-top: 1rem;
+}
+
+.guide-overview-card {
+  padding: .9rem 1rem;
+  border: 1px solid rgba(92, 181, 213, .25);
+  border-radius: .75rem;
+  background: rgba(4, 13, 24, .66);
+}
+
+.guide-overview-card h2 {
+  margin: 0 0 .4rem;
+  color: #f0d28a;
+  font-size: 1.05rem;
+}
+
+.guide-overview-card p {
+  margin: 0;
+  color: #d7e2ec;
+  line-height: 1.55;
+}
+
+.guide-source-note {
+  margin: 1rem 0 0;
+  padding-top: .75rem;
+  border-top: 1px solid rgba(225, 190, 102, .2);
+  color: #9fb0c0;
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
 /* CATÁLOGO DE OBJETOS */
 .object-search-section { position: relative; }
 .object-search-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, 16rem); gap: .55rem 1rem; align-items: end; margin-bottom: 1rem; }

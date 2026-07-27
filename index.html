@@ -117,6 +117,7 @@
   <script src="assets/js/enhancements.js?v=20260718-1"></script>
   <script src="assets/js/implementation.js?v=20260719-3"></script>
   <script src="assets/js/experience.js?v=20260726-2"></script>
+  <script src="assets/js/complete-guide.js?v=20260727-2"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/js/community.js?v=20260727-1"></script>
   <script src="assets/js/router.js?v=20260717-3"></script>
@@ -127,7 +128,11 @@
     if (window.Capacitor && typeof window.Capacitor.isNativePlatform === 'function' && window.Capacitor.isNativePlatform()) {
       document.documentElement.classList.add('native-app');
     }
-    if ('serviceWorker' in navigator) {
+    if ('serviceWorker' in navigator && (location.hostname === '127.0.0.1' || location.hostname === 'localhost')) {
+      navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        registrations.forEach(function (registration) { registration.unregister(); });
+      });
+    } else if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
         navigator.serviceWorker.register('service-worker.js');
       });

@@ -22,6 +22,7 @@
     if (route === '/sistemas-del-personaje/wisp') { return 'wisp'; }
     if (route === '/equipamiento-y-mejoras' || /^\/equipamiento-y-mejoras\//.test(route)) { return 'equipment'; }
     if (route === '/objetos' || route === '/objetos/outfits') { return 'objects'; }
+    if (route === '/bosses') { return 'bosses'; }
     if (route === '/actividades-y-mazmorras') { return 'activities'; }
     if (route === '/clases') { return 'classes'; }
     if (/^\/clases\//.test(route)) { return 'class'; }
@@ -68,6 +69,15 @@
     var route = routeActual();
     var key = claveDeRuta(route);
     var data = window.I18n && window.I18n.getGuidePage ? window.I18n.getGuidePage(key) : null;
+    if (route === '/inicio') {
+      return '<section class="home-class-showcase" aria-label="Las cuatro clases de Eternal Sword Pact">' +
+        '<a href="#/clases" aria-label="Ver Dragon Lancer, Lunarborn, Spiritfox y Swordsage">' +
+        '<img src="assets/images/home/four-classes.png" alt="Dragon Lancer, Lunarborn, Spiritfox y Swordsage reunidos en una plataforma celestial">' +
+        '</a></section>';
+    }
+    if (route === '/bosses' && window.renderBossesPage) {
+      return bloqueEditorial(data, page, route) + window.renderBossesPage();
+    }
     var contenidoExistente = renderAnterior ? renderAnterior(page) : '';
     return bloqueEditorial(data, page, route) + contenidoExistente;
   };

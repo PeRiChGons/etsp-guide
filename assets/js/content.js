@@ -26,6 +26,7 @@
       'Bonificaciones', 'Materiales'
     ] },
     { title: 'Objetos y obtención', route: '/objetos', children: ['Buscador de objetos', 'Talisman', 'Spirit Root', 'Technique', 'Materiales', 'Recompensas', 'Titles', { title: 'Outfits', route: '/objetos/outfits' }] },
+    { title: 'Bosses', route: '/bosses', children: ['Catálogo de bosses', 'Nivel y estadísticas', 'Daño y resistencia', 'Debilidades', 'Preparación PvE'] },
     { title: 'Actividades y mazmorras', route: '/actividades-y-mazmorras', children: ['Daily Quest', 'Rage Boss', 'Time Realm', 'Ancient Ruins', 'Spirit Spring', 'Dungeons', 'PvP', 'Alliance War', 'Kunlun'] },
     { title: 'Clases', route: '/clases', children: [
       'Comparación de clases',
@@ -93,6 +94,7 @@
       '/sistemas-del-personaje/wisp': { title: 'Wisp', type: 'wisp', sections: ['Vista general', 'Wisp Array', 'Sprite y Summon', 'Sacrifice', 'Accesos relacionados', 'Datos pendientes'] },
       '/objetos': { title: 'Objetos y obtención', type: 'objects', sections: ['Buscador de objetos', 'Talisman', 'Spirit Root', 'Technique', 'Materiales', 'Recompensas', 'Titles', 'Outfits'] },
       '/objetos/outfits': { title: 'Outfits', type: 'outfits', sections: ['Visor 3D', 'Piezas disponibles', 'Variantes', 'Obtención'] },
+      '/bosses': { title: 'Bosses', type: 'bosses', sections: ['Catálogo de bosses', 'Nivel y estadísticas', 'Daño y resistencia', 'Debilidades', 'Preparación PvE'] },
       '/equipamiento-y-mejoras/gear': { title: 'Gear', type: 'gear', sections: ['Piezas', 'Rarezas', 'Tiers', 'Estrellas', 'Craft', 'Mejoras'] },
       '/equipamiento-y-mejoras/gem': { title: 'Gem', type: 'gem', sections: ['Engaste', 'Tipos de gema', 'Mejora', 'Bonificaciones'] },
       '/equipamiento-y-mejoras/soul': { title: 'Soul', type: 'soul', sections: ['Gear Soul', 'Melting', 'Materiales', 'Resultados'] },

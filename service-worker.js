@@ -1,5 +1,5 @@
 /* Caché básico de la aplicación. Los datos del chat siempre se consultan en Supabase. */
-var CACHE_NAME = 'etsp-guide-v20260727-complete';
+var CACHE_NAME = 'etsp-guide-v20260727-bosses';
 var APP_SHELL = [
   './',
   './index.html',
@@ -10,12 +10,14 @@ var APP_SHELL = [
   './assets/js/i18n.js',
   './assets/js/community.js',
   './assets/js/complete-guide.js',
+  './assets/js/bosses.js',
   './assets/js/intro.js',
   './assets/js/router.js',
   './assets/js/app.js',
   './assets/images/app/icon-192.png',
   './assets/images/app/icon-512.png',
   './assets/images/app/logo-perich.png',
+  './assets/images/home/four-classes.png',
   './assets/lang/guide-es.json',
   './assets/lang/guide-en.json',
   './assets/lang/guide-de.json',

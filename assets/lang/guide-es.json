@@ -116,6 +116,15 @@
       ["Variantes", "Google Play/LDPlayer y LDStore permanecen separadas si un objeto o texto difiere entre versiones."]
     ]
   },
+  "bosses": {
+    "title": "Bosses",
+    "lead": "Catálogo separado de bosses con variantes vinculadas a monstruos del cliente y sus estadísticas disponibles.",
+    "sections": [
+      ["Nivel y estadísticas", "Cada variante puede mostrar nivel, límite de HP, DEF, RESIST y Toughness cuando esos campos se recuperan. Si falta un valor aparece ?."],
+      ["Daño por nivel", "El nivel y las defensas permiten comparar variantes, pero la fórmula exacta de daño por diferencia de nivel no está demostrada y se mantiene como ?."],
+      ["Preparación", "Compara el nivel visible, las resistencias y las reglas de la actividad. Las debilidades no interpretadas no se presentan como confirmadas."]
+    ]
+  },
   "activities": {
     "title": "Actividades y mazmorras",
     "lead": "Consulta Daily Quest, Rage Boss, Time Realm, Ancient Ruins, Spirit Spring, Dungeons, PvP, Alliance War y Kunlun.",

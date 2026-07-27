@@ -1,5 +1,5 @@
 /* Caché básico de la aplicación. Los datos del chat siempre se consultan en Supabase. */
-var CACHE_NAME = 'etsp-guide-v20260727-bosses';
+var CACHE_NAME = 'etsp-guide-v20260727-stats';
 var APP_SHELL = [
   './',
   './index.html',

@@ -1057,6 +1057,20 @@ body[class*="theme-"] .verification-note { border-left-color: var(--accent); bac
   .home-class-showcase img { object-fit: contain; object-position: center; }
 }
 
+.stats-meaning-table th:first-child { width: 14%; }
+.stats-meaning-table th:nth-child(2) { width: 26%; }
+.stats-meaning-table code {
+  display: inline-block;
+  padding: .2rem .45rem;
+  border: 1px solid rgba(100, 218, 239, .32);
+  border-radius: .35rem;
+  color: #a7f2ff;
+  background: rgba(3, 15, 28, .58);
+  font: 700 .9rem/1.2 system-ui, sans-serif;
+}
+.stats-meaning-table td strong { color: #ffe4a0; }
+.stats-meaning-table td:last-child { line-height: 1.55; }
+
 /* CATÁLOGO DE OBJETOS */
 .object-search-section { position: relative; }
 .object-search-controls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, 16rem); gap: .55rem 1rem; align-items: end; margin-bottom: 1rem; }

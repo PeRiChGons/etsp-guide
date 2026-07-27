@@ -224,10 +224,128 @@
     if (!rows.length && window.STATS_CONTENT) {
       rows = (window.STATS_CONTENT.basic || []).concat(window.STATS_CONTENT.special || []).map(function (name) { return { campo: name, descripcion_en: '?' }; });
     }
-    var table = rows.map(function (row) { return '<tr><th scope="row">' + escapeHtml(row.campo || '?') + '</th><td>' + escapeHtml(row.campo || '?') + '</td><td>' + escapeHtml(row.descripcion_en || '?') + '</td><td>?</td><td>?</td></tr>'; }).join('');
-    return pageHeader('Stats', 'Sistemas del personaje', 'Campos detectados en Basic Stats y Special Stats. El término del juego se conserva y cada ficha permite ampliar la información.') +
-      '<section class="system-section" id="basic-stats"><h2>Basic Stats</h2><div class="table-scroll" tabindex="0"><table class="stats-table"><thead><tr><th>Campo</th><th>Nombre publicado</th><th>Descripción del cliente</th><th>Fórmula</th><th>Efecto exacto</th></tr></thead><tbody>' + table + '</tbody></table></div></section>' +
-      '<section class="system-section" id="special-stats"><h2>Special Stats</h2><p>Los campos disponibles se muestran con el mismo modelo; la ficha se completa cuando existe descripción o fórmula independiente.</p><div class="interactive-grid">' + rows.map(function (row) { return entity(row.campo || '?', row.descripcion_en || '?', row.fuente || '?', '📊'); }).join('') + '</div></section>';
+    var locale = window.I18n && window.I18n.getLocale ? window.I18n.getLocale() : 'es';
+    var ui = {
+      es: {
+        game: 'Nombre en el juego', meaning: 'Qué significa', effect: 'Qué modifica',
+        lead: 'Traducción práctica de los nombres mostrados en Basic Stats y Special Stats.',
+        specialCopy: 'Estas estadísticas pertenecen a la pestaña Special Stats; no son objetos ni materiales.',
+        unknown: 'Estadística mostrada por el juego. El cliente recuperado no incluye una explicación más precisa.'
+      },
+      en: {
+        game: 'In-game name', meaning: 'Meaning', effect: 'What it changes',
+        lead: 'Practical explanation of the names shown under Basic Stats and Special Stats.',
+        specialCopy: 'These statistics belong to the Special Stats tab; they are not items or materials.',
+        unknown: 'A statistic shown by the game. The recovered client does not include a more precise explanation.'
+      },
+      de: {
+        game: 'Name im Spiel', meaning: 'Bedeutung', effect: 'Was verändert wird',
+        lead: 'Praktische Erklärung der Namen unter Basic Stats und Special Stats.',
+        specialCopy: 'Diese Werte gehören zur Registerkarte Special Stats; sie sind keine Gegenstände oder Materialien.',
+        unknown: 'Ein im Spiel angezeigter Wert. Der wiederhergestellte Client enthält keine genauere Erklärung.'
+      },
+      pl: {
+        game: 'Nazwa w grze', meaning: 'Znaczenie', effect: 'Co modyfikuje',
+        lead: 'Praktyczne objaśnienie nazw w Basic Stats i Special Stats.',
+        specialCopy: 'Te statystyki należą do zakładki Special Stats; nie są przedmiotami ani materiałami.',
+        unknown: 'Statystyka widoczna w grze. Odzyskany klient nie zawiera dokładniejszego objaśnienia.'
+      }
+    }[locale] || null;
+    ui = ui || {
+      game: 'In-game name', meaning: 'Meaning', effect: 'What it changes',
+      lead: 'Practical explanation of Basic Stats and Special Stats.',
+      specialCopy: 'These are statistics, not items.', unknown: 'No more precise description is available.'
+    };
+
+    var meaningEs = {
+      'HP': 'Vida', 'ATK': 'Ataque', 'S.A': 'Ataque especial', 'DEF': 'Defensa',
+      'CRIT': 'Probabilidad de crítico', 'TEN': 'Tenacidad', 'PEN': 'Penetración',
+      'BLOCK': 'Bloqueo', 'CRIT DMG': 'Daño crítico', 'Stun': 'Aturdimiento',
+      'Stun RES': 'Resistencia al aturdimiento', 'Suppression': 'Supresión',
+      'Suppression RES': 'Resistencia a la supresión', 'Skill DMG dealt': 'Daño de habilidades infligido',
+      'Skill DMG taken': 'Reducción del daño de habilidades recibido',
+      'Spirit DMG dealt': 'Daño de Spirit infligido', 'Spirit DMG taken': 'Reducción del daño de Spirit recibido',
+      'Transformation DMG dealt': 'Daño de transformación infligido',
+      'Transformation DMG taken': 'Reducción del daño de transformación recibido',
+      'Technique DMG dealt': 'Daño de Technique infligido',
+      'Technique DMG taken': 'Reducción del daño de Technique recibido',
+      'DMG dealt': 'Daño infligido', 'DMG taken': 'Reducción del daño recibido',
+      'Focus': 'Probabilidad de Focus', 'Focus RES': 'Resistencia a Focus',
+      'Bash': 'Probabilidad de Bash', 'Bash RES': 'Resistencia a Bash',
+      'HP Bonus': 'Bonificación de Vida', 'ATK Bonus': 'Bonificación de Ataque',
+      'S.A Bonus': 'Bonificación de Ataque especial', 'DEF Bonus': 'Bonificación de Defensa',
+      'CRIT Bonus': 'Bonificación de Crítico', 'TEN Bonus': 'Bonificación de Tenacidad',
+      'PEN Bonus': 'Bonificación de Penetración', 'CRIT DMG Bonus': 'Bonificación de Daño crítico',
+      'BLOCK Bonus': 'Bonificación de Bloqueo', 'EXP Boost': 'Bonificación de experiencia',
+      'Stamina Points Bonus': 'Bonificación de puntos de Stamina'
+    };
+    var descriptionEs = {
+      'HP': 'Aumenta porcentualmente los HP máximos. Cuanta más Vida tienes, más daño puedes soportar.',
+      'ATK': 'Aumenta porcentualmente el Ataque y, con ello, el daño que infliges.',
+      'S.A': 'Aumenta porcentualmente el Ataque especial y el daño asociado a esta estadística.',
+      'DEF': 'Aumenta porcentualmente la Defensa y reduce el daño que recibes.',
+      'CRIT': 'Aumenta la probabilidad de realizar un golpe crítico.',
+      'TEN': 'Reduce la probabilidad de recibir golpes críticos.',
+      'PEN': 'Aumenta la probabilidad de infligir daño adicional mediante Penetración.',
+      'BLOCK': 'Mejora el efecto de bloqueo de daño.',
+      'CRIT DMG': 'Aumenta el daño causado cuando un golpe es crítico.',
+      'Stun': 'Las habilidades de despertar de Holy Beast Spirit pueden aturdir a jugadores.',
+      'Stun RES': 'Reduce la probabilidad de ser aturdido por habilidades de despertar de Holy Beast Spirit.',
+      'Suppression': 'Las habilidades de despertar de Mythical Beast Spirit pueden aplicar Supresión a jugadores.',
+      'Suppression RES': 'Reduce la probabilidad de sufrir Supresión de habilidades de despertar de Mythical Beast Spirit.',
+      'Skill DMG dealt': 'Aumenta porcentualmente el daño infligido por las habilidades de clase.',
+      'Skill DMG taken': 'Reduce porcentualmente el daño recibido de habilidades de clase.',
+      'Spirit DMG dealt': 'Aumenta porcentualmente el daño infligido por habilidades de Spirit.',
+      'Spirit DMG taken': 'Reduce porcentualmente el daño recibido de habilidades de Spirit.',
+      'Transformation DMG dealt': 'Aumenta porcentualmente el daño infligido por habilidades de transformación.',
+      'Transformation DMG taken': 'Reduce porcentualmente el daño recibido de habilidades de transformación.',
+      'Technique DMG dealt': 'Aumenta porcentualmente el daño infligido por habilidades de Technique.',
+      'Technique DMG taken': 'Reduce porcentualmente el daño recibido de habilidades de Technique.',
+      'DMG dealt': 'Aumenta porcentualmente el daño de Ataque que infliges.',
+      'DMG taken': 'Reduce porcentualmente el daño que recibes.',
+      'Focus': 'Aumenta la probabilidad de causar Focus DMG, descrito por el cliente como daño doble.',
+      'Focus RES': 'Reduce la probabilidad de recibir Focus DMG.',
+      'Bash': 'Aumenta la probabilidad de causar Bash, descrito por el cliente como daño doble.',
+      'Bash RES': 'Reduce la probabilidad de recibir Bash.'
+    };
+
+    function meaning(name) {
+      if (locale === 'es') { return meaningEs[name] || name.replace(/ Bonus$/, '') + ' · bonificación'; }
+      return name.replace(/ RES$/, ' Resistance').replace(/ DMG$/, ' Damage');
+    }
+
+    function description(row) {
+      if (locale === 'es') { return descriptionEs[row.campo] || ui.unknown; }
+      return row.descripcion_en && row.descripcion_en !== '?' ? row.descripcion_en : ui.unknown;
+    }
+
+    function statsTable(list) {
+      return '<div class="table-scroll" tabindex="0"><table class="stats-table stats-meaning-table"><thead><tr>' +
+        '<th>' + escapeHtml(ui.game) + '</th><th>' + escapeHtml(ui.meaning) + '</th><th>' + escapeHtml(ui.effect) + '</th>' +
+        '</tr></thead><tbody>' + list.map(function (row) {
+          return '<tr><th scope="row"><code>' + escapeHtml(row.campo || '?') + '</code></th><td><strong>' +
+            escapeHtml(meaning(row.campo || '?')) + '</strong></td><td>' + escapeHtml(description(row)) + '</td></tr>';
+        }).join('') + '</tbody></table></div>';
+    }
+
+    var specialNames = (window.STATS_CONTENT && window.STATS_CONTENT.special) || [
+      'HP Bonus', 'ATK Bonus', 'S.A Bonus', 'DEF Bonus', 'CRIT Bonus', 'TEN Bonus',
+      'PEN Bonus', 'CRIT DMG Bonus', 'BLOCK Bonus', 'Stun', 'Stun RES',
+      'Suppression', 'Suppression RES', 'EXP Boost', 'Stamina Points Bonus'
+    ];
+    var rowByName = {};
+    rows.forEach(function (row) { rowByName[row.campo] = row; });
+    var specialRows = specialNames.map(function (name) {
+      return rowByName[name] || { campo: name, descripcion_en: '?' };
+    });
+    var specialLookup = {};
+    specialRows.forEach(function (row) { specialLookup[row.campo] = true; });
+    var basicRows = rows.filter(function (row) { return !specialLookup[row.campo]; });
+
+    return pageHeader('Stats', 'Sistemas del personaje', ui.lead) +
+      '<section class="system-section" id="basic-stats"><h2>Basic Stats</h2>' + statsTable(basicRows) + '</section>' +
+      '<section class="system-section" id="special-stats"><h2>Special Stats</h2><p>' +
+      escapeHtml(ui.specialCopy) + '</p>' + statsTable(specialRows) + '</section>';
   }
 
   function renderZodiac() {
